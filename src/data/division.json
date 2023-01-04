@@ -1,0 +1,61 @@
+[{
+        "name": "COMPANY GOODS",
+        "route": "company-goods"
+    },
+    {
+        "name": "FRESH PRODUCE",
+        "route": "fresh-produce"
+    },
+    {
+        "name": "GENERAL MERCHANDISE",
+        "route": "general-merchandise"
+    },
+    {
+        "name": "PACKED COMMODITY",
+        "route": "packed-commodity"
+    },
+    {
+        "name": "LIFESTYLE",
+        "route": "lifestyle"
+    },
+    {
+        "name": "RESTAURANT",
+        "route": "restaurant"
+    },
+    {
+        "name": "44-E-COM HOME DELIVERY",
+        "route": "44-e-com-home-delivery"
+    },
+    {
+        "name": "44-HOME DELIVERY",
+        "route": "44-home-delivery"
+    },
+    {
+        "name": "60-HOME DELIVERY",
+        "route": "60-home-delivery"
+    },
+    {
+        "name": "CONSUMABLES",
+        "route": "consumables"
+    },
+    {
+        "name": "FURNITURE",
+        "route": "furniture"
+    },
+    {
+        "name": "INTERNAL PURCHASE",
+        "route": "internal-purchase"
+    },
+    {
+        "name": "MEDICINE",
+        "route": "medicine"
+    },
+    {
+        "name": "VEHICLE",
+        "route": "vehicle"
+    },
+    {
+        "name": "LOOSE COMMODITY",
+        "route": "loose-commodity"
+    }
+]
