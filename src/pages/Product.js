@@ -54,10 +54,12 @@ const Product = () => {
                     <div className="col-lg-8 mb-3">
                         <div style={{ borderRadius: '1rem', boxShadow: '0 5px 15px #c4c4c44d' }} className="bg-white p-5 mt-4 mx-auto">
                             <h3 className='fs-5 fw-bold'>{product.name}</h3>
+                            <p><span className='text-muted'>Brand: </span>{product.brand}</p>
                             <hr />
                             <p style={{textAlign: 'justify'}} className='fs-6'>{product.description}</p>
                             <hr />
-                            <small>Price: <span className='fs-5 fw-bold'>{product.price}</span> Taka</small>
+                            <small>Price: <span className='fs-5 fw-bold'>৳ {product.price}</span></small>
+                            <p className='pt-1'><b>You save</b>: <small className='text-danger'>৳ {product.prev_price - product.curr_price}</small></p>
                         </div>
                     </div>
                 </div>

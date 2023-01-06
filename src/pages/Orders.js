@@ -5,7 +5,7 @@ const Orders = () => {
     return (
         <section>
             <Navbar />
-            Orders
+            <h1 className='mt-5 fs-4 text-center'>Orders</h1>
         </section>
     );
 };

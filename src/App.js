@@ -15,6 +15,7 @@ import Dashboard from './pages/Dashboard';
 import Shipping from './pages/Shipping';
 import Payment from './pages/Payment';
 import Product from './pages/Product';
+import Category from './pages/Category';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/products' element={<Products />} />
           <Route path="/product/:id" element={<Product />} />
+          <Route path="/category/:id" element={<Category />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/login' element={<Login />} />
 

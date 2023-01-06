@@ -12,16 +12,27 @@ const Products = () => {
     const navigate = useNavigate();
 
     const [cart, setCart] = useState([]);
+    // eslint-disable-next-line
+    const [quantity, setQuantity] = useState(1);
 
     const addToCart = (product) => {
-        const newCart = [...cart, product];
-        setCart(newCart)
-        addToDB(product.id);
+        shoppingCart(product)
         Swal.fire(
             'Successful!',
             `You Have Added ${product.name}!`,
             'success'
-          )
+        )
+    }
+
+    const shoppingCart = (product) => {
+        const newCart = [...cart, product];
+        setCart(newCart)
+        addToDB(product.id);
+    }
+
+    const handleClick = (product) => {
+        shoppingCart(product);
+        navigate('/shipping')
     }
 
     return (
@@ -39,24 +50,33 @@ const Products = () => {
                                         <Link to={`/product/${product.id}`} onClick={() => { window.scrollTo(0, 0); }} className='text-decoration-none text-black'>
                                             <img src={product.image} className="cart-img-top img-fluid mx-auto d-block" alt={product.name} />
                                         </Link>
+                                        
                                         <div className="d-flex justify-content-between align-items-center">
                                             <div className="cart-body col-sm-6">
                                                 <h5 className="cart-title">{product.name}</h5>
-                                                <p className="cart-text">Price: {product.price} Taka</p>
+                                                <p className="cart-text">Price: <b>{product.price * parseFloat(quantity)}</b> Taka</p>
                                             </div>
 
                                             <div className="d-flex col-sm-6">
-                                                <div onClick= {()=> {
+                                                <button onClick={() => {
                                                     window.scrollTo(0, 0);
                                                     navigate(`/product/${product.id}`);
-                                                }} className="col-sm-6 my-3">
-                                                    <button className="btn btn-outline-dark">Details</button>
-                                                </div>
-                                                <div onClick={() => addToCart(product) } className="col-sm-6 my-3 mx-3">
-                                                    <button className="btn btn-outline-secondary">Cart</button>
-                                                </div>
+                                                }} className="btn btn-outline-dark">Details</button>
+
+                                                <button onClick={() => handleClick(product)} className='btn btn-danger ms-2 px-3'>Buy</button>
                                             </div>
                                         </div>
+
+                                        {/* <select className='form-select' id='quantity' onChangeCapture={() => setQuantity(document.getElementById('quantity').querySelector('option:checked').value)}>
+
+                                            {
+                                                product.weight.map((item, index) =>
+                                                    <option key={index + 1} value={item.amount} className='mt-5'>{item.title}</option>)
+                                            }
+
+                                        </select> */}
+
+                                        <button onClick={() => addToCart(product)} className="btn btn-dark mx-auto d-block my-3">Add to Cart</button>
                                     </div>
                                 </div>
                             );

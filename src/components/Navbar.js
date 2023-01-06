@@ -3,8 +3,11 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../images/logo.jpg'
 import products from '../data/products.json';
 import { getStoredCart } from '../utilities/localDB';
+import useAuth from '../hooks/useAuth';
 
 const Navbar = () => {
+
+    const { user } = useAuth();
 
     const activeStyles = {
         color: '#dc3545',
@@ -41,18 +44,12 @@ const Navbar = () => {
                                 isActive ? activeStyles : undefined
                             )}
                             className="nav-link text-white fw-bold text-center" to="/products">Products</NavLink>
-                        <NavLink
-                            onClick={() => { window.scrollTo(0, 0); }}
-                            style={({ isActive }) => (
-                                isActive ? activeStyles : undefined
-                            )}
-                            className="nav-link text-white fw-bold text-center" to="/orders">Orders</NavLink>
 
                         {
-                            cart.length > 0 ? 
-                            <NavLink onClick={() => { window.scrollTo(0, 0); }} style={({ isActive }) => (
-                                isActive ? activeStyles : undefined
-                            )} className="nav-link text-white fw-bold text-center" to="/cart">Cart <sup className='fw-bold bg-warning rounded px-1 text-black'>{cart.reduce((a, b) => { return a + (b.quantity); }, 0)}</sup></NavLink>
+                            cart.length > 0 ?
+                                <NavLink onClick={() => { window.scrollTo(0, 0); }} style={({ isActive }) => (
+                                    isActive ? activeStyles : undefined
+                                )} className="nav-link text-white fw-bold text-center" to="/cart">Cart <sup className='fw-bold bg-warning rounded px-1 text-black'>{cart.reduce((a, b) => { return a + (b.quantity); }, 0)}</sup></NavLink>
                                 :
                                 <NavLink
                                     onClick={() => { window.scrollTo(0, 0); }}
@@ -62,30 +59,36 @@ const Navbar = () => {
                                     className="nav-link text-white fw-bold text-center" to="/cart">Cart</NavLink>
                         }
 
-                        {/* <NavLink
-                            onClick={() => { window.scrollTo(0, 0); }}
-                            style={({ isActive }) => (
-                                isActive ? activeStyles : undefined
-                            )}
-                            className="nav-link text-white fw-bold text-center" to="/cart">Cart</NavLink> */}
-                        <NavLink
-                            onClick={() => { window.scrollTo(0, 0); }}
-                            style={({ isActive }) => (
-                                isActive ? activeStyles : undefined
-                            )}
-                            className="nav-link text-white fw-bold text-center" to="/login">Login</NavLink>
-                        <NavLink
-                            onClick={() => { window.scrollTo(0, 0); }}
-                            style={({ isActive }) => (
-                                isActive ? activeStyles : undefined
-                            )}
-                            className="nav-link text-white fw-bold text-center" to="/profile">Profile</NavLink>
-                        <NavLink
-                            onClick={() => { window.scrollTo(0, 0); }}
-                            style={({ isActive }) => (
-                                isActive ? activeStyles : undefined
-                            )}
-                            className="nav-link text-white fw-bold text-center" to="/dashboard">Dashboard</NavLink>
+                        {
+                            user?.email ?
+                                <>
+                                    <NavLink
+                                        onClick={() => { window.scrollTo(0, 0); }}
+                                        style={({ isActive }) => (
+                                            isActive ? activeStyles : undefined
+                                        )}
+                                        className="nav-link text-white fw-bold text-center" to="/profile">Profile</NavLink>
+                                    <NavLink
+                                        onClick={() => { window.scrollTo(0, 0); }}
+                                        style={({ isActive }) => (
+                                            isActive ? activeStyles : undefined
+                                        )}
+                                        className="nav-link text-white fw-bold text-center" to="/dashboard">Dashboard</NavLink>
+                                    <NavLink
+                                        onClick={() => { window.scrollTo(0, 0); }}
+                                        style={({ isActive }) => (
+                                            isActive ? activeStyles : undefined
+                                        )}
+                                        className="nav-link text-white fw-bold text-center" to="/orders">Orders</NavLink>
+                                </>
+                                :
+                                <NavLink
+                                    onClick={() => { window.scrollTo(0, 0); }}
+                                    style={({ isActive }) => (
+                                        isActive ? activeStyles : undefined
+                                    )}
+                                    className="nav-link text-white fw-bold text-center" to="/login">Login</NavLink>
+                        }
                     </div>
                 </div>
             </div>

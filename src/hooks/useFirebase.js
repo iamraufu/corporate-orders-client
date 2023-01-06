@@ -19,6 +19,7 @@ const useFirebase = () => {
     // let navigate = useNavigate();
     // let location = useLocation();
 
+    // google login
     const google = () => {
         signInWithPopup(auth, googleProvider)
             .then(result => {
@@ -33,6 +34,7 @@ const useFirebase = () => {
             })
     }
 
+    // github login
     const github = () => {
         signInWithPopup(auth, githubProvider)
             .then(result => {
@@ -47,6 +49,7 @@ const useFirebase = () => {
             })
     }
 
+    // reset password
     const resetPassword = (email) => {
         sendPasswordResetEmail(auth, email)
             .then(result => {
@@ -58,6 +61,7 @@ const useFirebase = () => {
             })
     }
 
+    // reset password
     const logOut = () => {
         signOut(auth)
             .then(() => {
@@ -67,6 +71,7 @@ const useFirebase = () => {
             })
     }
 
+    // persist login
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {

@@ -1,0 +1,117 @@
+[{
+        "name": "Great Savings",
+        "route": "great-savings"
+    },
+    {
+        "name": "Winter Care Collection",
+        "route": "winter-care-collection"
+    },
+    {
+        "name": "Deals On Unilever",
+        "route": "deals-on-unilever"
+    },
+    {
+        "name": "Buy More Save More",
+        "route": "buy-more-save-more"
+    },
+    {
+        "name": "Half Price Offers",
+        "route": "half-price-offers"
+    },
+    {
+        "name": "Buy1 Get1 Offers",
+        "route": "buy1-get1-offers"
+    },
+    {
+        "name": "Voucher Offers",
+        "route": "voucher-offers"
+    },
+    {
+        "name": "Our Own Products",
+        "route": "our-own-products"
+    },
+    {
+        "name": "Fruits and Vegetables",
+        "route": "fruits-and-vegetables"
+    },
+    {
+        "name": "Meat & Fish",
+        "route": "meat-and-fish"
+    },
+    {
+        "name": "Cooking Essentials",
+        "route": "cooking-essentials"
+    },
+    {
+        "name": "Sauces & Pickles",
+        "route": "sauces-and-pickles"
+    },
+    {
+        "name": "Snacks & Instant Foods",
+        "route": "snacks-and-instant-foods"
+    },
+    {
+        "name": "Chocolates & Candies",
+        "route": "chocolates-and-candies"
+    },
+    {
+        "name": "Breads, Biscuits & Cakes",
+        "route": "breads-biscuits-cakes"
+    },
+    {
+        "name": "Spreads",
+        "route": "spreads"
+    },
+    {
+        "name": "Dairy",
+        "route": "dairy"
+    },
+    {
+        "name": "Beverages",
+        "route": "beverages"
+    },
+    {
+        "name": "Baby Food & Care",
+        "route": "baby-food-care"
+    },
+    {
+        "name": "Home Care & Cleaning",
+        "route": "home-care-cleaning"
+    },
+    {
+        "name": "Personal Care",
+        "route": "personal-care"
+    },
+    {
+        "name": "Home & Living",
+        "route": "home-living"
+    },
+    {
+        "name": "Home Appliances",
+        "route": "hone-appliances"
+    },
+    {
+        "name": "Stationery",
+        "route": "stationery"
+    },
+    {
+        "name": "Gift & Toys",
+        "route": "gift-and-toys"
+    },
+    {
+        "name": "Pet Care",
+        "route": "pet-care"
+    },
+    {
+        "name": "Fashion / Life Style",
+        "route": "fashion-life-style"
+    },
+    {
+        "name": "Sports",
+        "route": "sports"
+    },
+    {
+        "name": "Office Products",
+        "route": "office-products"
+    }
+]
