@@ -1,21 +1,22 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import useAuth from '../hooks/useAuth';
-// import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/Sidebar';
 
 const Home = () => {
-
-    const { user } = useAuth()
 
     return (
         <section style={{ minHeight: '100vh' }}>
             <Navbar />
-            <h1 className='mt-5 fs-4 text-center'>Homepage</h1>
-            
-            <div className="container mt-5">
-                <h2>Welcome {user?.email}</h2>
+
+            <div style={{ margin: '0', padding: '0' }} className="container-fluid row">
+                <div style={{padding:'0'}} className="col-lg-2 col-md-3">
+                    <Sidebar />
+                </div>
+
+                <div className="col-lg-10 col-md-3">
+                    <h1 className="text-center fw-bold fs-5 my-3">Swapno Corporate Orders</h1>
+                </div>
             </div>
-            {/* <Sidebar /> */}
         </section>
     );
 };

@@ -74,7 +74,7 @@ const Cart = () => {
                                                         <td>{product?.price}</td>
                                                         <td>{product?.quantity}</td>
                                                         <td>{product?.quantity * product.price}</td>
-                                                        <td><button onClick={() => removeFromDb(product.id)} className='btn btn-danger'>Remove</button></td>
+                                                        <td><button onClick={() => removeFromDb(product._id)} className='btn btn-danger'>Remove</button></td>
                                                     </tr>
                                                 ))
                                             }
