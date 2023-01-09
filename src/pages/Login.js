@@ -8,7 +8,7 @@ const Login = () => {
 
     let navigate = useNavigate();
     let location = useLocation();
-    let from = location.state?.from?.pathname || "/products";
+    let from = location.state?.from?.pathname || "/";
 
     const { user, setUser } = useAuth();
     
@@ -19,7 +19,7 @@ const Login = () => {
     const [loginError, setLoginError] = useState('');
 
     const processLogin = (details) => {
-        fetch('https://swapno.up.railway.app/login', {
+        fetch('https://shwapno.up.railway.app/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(details)

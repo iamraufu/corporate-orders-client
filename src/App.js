@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
+// eslint-disable-next-line
 import Products from './pages/Products';
 import Orders from './pages/Orders';
 import Cart from './pages/Cart';
@@ -11,7 +12,7 @@ import AuthProvider from './context/AuthProvider';
 import { Suspense } from 'react';
 import logo from './images/logo.jpg';
 import PrivateOutlet from './components/PrivateOutlet';
-import Dashboard from './pages/Dashboard';
+// import Dashboard from './pages/Dashboard';
 import Shipping from './pages/Shipping';
 import Payment from './pages/Payment';
 import Product from './pages/Product';
@@ -25,7 +26,7 @@ function App() {
         <span className="sr-only">Loading...</span>
       </div> */}
       <img src={logo} id='breathing' width={100} height={100} className='img-fluid' alt="logo of Skill Shikhun" />
-      {/* <p>Swapno Corporate Orders are Loading...</p> */}
+      {/* <p>Shwapno Corporate Orders are Loading...</p> */}
       <p className='text-center'>Loading...</p>
     </div>
 
@@ -35,7 +36,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
-          <Route path='/products' element={<Products />} />
+          {/* <Route path='/products' element={<Products />} /> */}
           <Route path="/product/:id" element={<Product />} />
           <Route path="/:id" element={<Category />} />
           <Route path='/cart' element={<Cart />} />
@@ -43,7 +44,7 @@ function App() {
 
           <Route path='/' element={<PrivateOutlet />}>
             <Route path="profile" element={<Profile />} />
-            <Route path="dashboard" element={<Dashboard />} />
+            {/* <Route path="dashboard" element={<Dashboard />} /> */}
             <Route path="shipping" element={<Shipping />} />
             <Route path="payment" element={<Payment />} />
             <Route path='orders' element={<Orders />} />

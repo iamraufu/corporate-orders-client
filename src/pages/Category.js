@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import Sidebar from '../components/Sidebar';
+import Skeleton from '../components/Skeleton';
 import divisionData from '../data/division.json'
 import NotFound from './NotFound';
 
@@ -19,12 +20,10 @@ const Category = () => {
     const category = division?.name
 
     useEffect(() => {
-        fetch(`https://swapno.up.railway.app/products/${category}/${skip}/${limit}`)
+        fetch(`https://shwapno.up.railway.app/products/${category}/${skip}/${limit}`)
             .then(response => response.json())
             .then(data => setProducts(data))
     }, [category, skip, limit])
-
-    console.log(products)
 
     return (
         <section>
@@ -50,7 +49,18 @@ const Category = () => {
                                                 </div>
                                             )}
                                     </div>
-                                    : <p className='mt-5'>Loading...</p>
+                                    :
+                                    <div style={{ margin: '0' }} className="row justify-content-center align-items-center px-3">
+                                        <div className='skeleton-deck col-lg-3 col-md-5 col-sm-8 my-5 mx-1'>
+                                            <Skeleton />
+                                        </div>
+                                        <div className='skeleton-deck col-lg-3 col-md-5 col-sm-8 my-5 mx-1'>
+                                            <Skeleton />
+                                        </div>
+                                        <div className='skeleton-deck col-lg-3 col-md-5 col-sm-8 my-5 mx-1'>
+                                            <Skeleton />
+                                        </div>
+                                    </div>
                         }
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import upset from '../images/upset.png';
 
 const NotFound = () => {
     return (
-        <div style={{ minHeight: '100vh', backgroundColor: '#f8f8f8' }} className='container-fluid d-flex justify-content-center align-items-center'>
+        <div style={{  backgroundColor: '#f8f8f8' }} className='container-fluid d-flex justify-content-center align-items-center'>
             <div className="">
                 <img className='img-fluid' src={upset} alt="404" />
                 <h1 style={{ fontSize: '80px' }} className='text-center fw-bold text-muted'>404</h1>

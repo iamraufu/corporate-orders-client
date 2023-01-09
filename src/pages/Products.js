@@ -5,7 +5,7 @@ import products from '../data/products.json';
 import { Link, useNavigate } from 'react-router-dom';
 // import Footer from '../Shared/Footer/Footer';
 import { addToDB } from '../utilities/localDB';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 const Products = () => {
 
@@ -17,11 +17,11 @@ const Products = () => {
 
     const addToCart = (product) => {
         shoppingCart(product)
-        Swal.fire(
-            'Successful!',
-            `You Have Added ${product.name}!`,
-            'success'
-        )
+        // Swal.fire(
+        //     'Successful!',
+        //     `You Have Added ${product.name}!`,
+        //     'success'
+        // )
     }
 
     const shoppingCart = (product) => {

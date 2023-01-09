@@ -24,7 +24,7 @@ const Navbar = () => {
     return (
         <nav style={{ backgroundColor: '#df0100', boxShadow: '0 5px 15px #c4c4c44d' }} className="navbar navbar-expand-md sticky-top">
             <div className="container">
-                <Link className="navbar-brand" to="/"><img className='img-fluid' width={85} src={logo} alt="logo" /></Link>
+                <Link onClick={() => { window.scrollTo(0, 0); }} className="navbar-brand" to="/"><img className='img-fluid' width={85} src={logo} alt="logo" /></Link>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -38,18 +38,22 @@ const Navbar = () => {
                                 isActive ? activeStyles : undefined
                             )}
                             className="nav-link text-white fw-bold text-center" to="/">Home</NavLink>
-                        <NavLink
+                        {/* <NavLink
                             onClick={() => { window.scrollTo(0, 0); }}
                             style={({ isActive }) => (
                                 isActive ? activeStyles : undefined
                             )}
-                            className="nav-link text-white fw-bold text-center" to="/products">Products</NavLink>
+                            className="nav-link text-white fw-bold text-center" to="/products">Products</NavLink> */}
 
                         {
                             cart.length > 0 ?
                                 <NavLink onClick={() => { window.scrollTo(0, 0); }} style={({ isActive }) => (
                                     isActive ? activeStyles : undefined
-                                )} className="nav-link text-white fw-bold text-center" to="/cart">Cart <sup className='fw-bold bg-warning rounded px-1 text-black'>{cart.reduce((a, b) => { return a + (b.quantity); }, 0)}</sup></NavLink>
+                                )} className="nav-link text-white fw-bold text-center" to="/cart">Cart 
+                                <sup className='fw-bold bg-warning rounded px-1 text-black'>
+                                    {cart.reduce((a, b) => { return a + (b.quantity); }, 0)}
+                                </sup>
+                                    </NavLink>
                                 :
                                 <NavLink
                                     onClick={() => { window.scrollTo(0, 0); }}
@@ -68,12 +72,12 @@ const Navbar = () => {
                                             isActive ? activeStyles : undefined
                                         )}
                                         className="nav-link text-white fw-bold text-center" to="/profile">Profile</NavLink>
-                                    <NavLink
+                                    {/* <NavLink
                                         onClick={() => { window.scrollTo(0, 0); }}
                                         style={({ isActive }) => (
                                             isActive ? activeStyles : undefined
                                         )}
-                                        className="nav-link text-white fw-bold text-center" to="/dashboard">Dashboard</NavLink>
+                                        className="nav-link text-white fw-bold text-center" to="/dashboard">Dashboard</NavLink> */}
                                     <NavLink
                                         onClick={() => { window.scrollTo(0, 0); }}
                                         style={({ isActive }) => (

@@ -7,7 +7,7 @@ const useCredential = () => {
 
     // getting userInfo from localStorage id and backend API
     const userData = () => {
-        fetch('https://swapno.up.railway.app/user/' + id)
+        fetch('https://shwapno.up.railway.app/user/' + id)
             .then(response => response.json())
             .then(data => setUser(data))
     }

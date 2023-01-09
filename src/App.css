@@ -28,3 +28,11 @@
     background-size: 200% 100%;
     border-radius: 5px;
 }
+
+.product-by-division {
+    background-color: #F8F8F8;
+    border: 1px solid lightgrey;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+}

@@ -1,4 +1,4 @@
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 
 // use local storage to manage cart data
 const addToDB = id =>{
@@ -8,6 +8,7 @@ const addToDB = id =>{
     const storedCart = localStorage.getItem('cart');
     if(storedCart){
         cart = JSON.parse(storedCart);
+        console.log(cart)
     }
 
     // add quantity
@@ -43,11 +44,11 @@ const removeFromDb = id =>{
             delete shoppingCart[id];
             localStorage.setItem('cart', JSON.stringify(shoppingCart));
         }
-        Swal.fire(
-            'Product Removed!',
-            'You have removed a Product!',
-            'info'
-          )
+        // Swal.fire(
+        //     'Product Removed!',
+        //     'You have removed a Product!',
+        //     'info'
+        //   )
     }
       setTimeout(() => window.location.reload(), 1000);
 }

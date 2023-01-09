@@ -15,9 +15,32 @@ const Cart = () => {
     const [disabled, setDisabled] = useState(true);
 
     let savedCart = getStoredCart()
+    console.log(savedCart)
     let cart = [];
+
     for (let key in savedCart) {
         cart.push({ ...products.find(pd => pd.id === key), quantity: savedCart[key] })
+    }
+
+    // useEffect(()=> {
+    //     if (savedCart){
+    //         console.log(savedCart)
+    //         let cart = [];
+    //         for (let key in savedCart) {
+    //             cart.push({
+    //                 ...products.find(pd => pd.id === key), 
+    //                 quantity: savedCart[key] 
+    //             })
+    //             console.log(cart)
+    //     }
+    // }
+    // },[])
+
+    // eslint-disable-next-line
+    const fetchProductInfo = (id) => {
+        fetch(`https://shwapno.up.railway.app/product/+${id}`)
+        .then(response => response.json())
+        .then(data => console.log(data))
     }
 
     useEffect(() => {
@@ -83,7 +106,7 @@ const Cart = () => {
                                     <button onClick={() => deleteShoppingCart()} className='btn btn-outline-danger'>Remove All Products</button>
                                 </div>
                                 :
-                                <p style={{ maxWidth: '500px', backgroundColor: '#E9EEF4' }} className='p-2 text-primary'>Your Cart is empty <Link to='/products' className='text-decoration-none'><span className='text-black'>Go Back</span></Link></p>
+                                <p style={{ maxWidth: '500px', backgroundColor: '#E9EEF4' }} className='p-2 text-primary'>Your Cart is empty <Link to='/' className='text-decoration-none'><span className='text-black'>Go Back</span></Link></p>
                         }
                     </div>
 
