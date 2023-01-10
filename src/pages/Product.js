@@ -23,8 +23,8 @@ const Product = () => {
     const [cartProductCount, setCartProductCount] = useState(cartProduct.length)
     const shoppingList = JSON.parse(localStorage.getItem('shopping-cart'));
 
-    const shoppingCartItems = shoppingList.filter(pd => pd?.code === product?.code)
-    console.log(shoppingCartItems)
+    // const shoppingCartItems = shoppingList.filter(pd => pd?.code === product?.code)
+    // console.log(shoppingCartItems)
 
     useEffect(() => {
         setCartProduct(shoppingList.filter(pd => pd?.code === product?.code))
