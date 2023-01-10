@@ -5,9 +5,9 @@ import { addToDB } from '../utilities/localDB';
 const ProductCard = ({ product }) => {
 
     const [cart, setCart] = useState([]);
-    const shoppingList = JSON.parse(localStorage.getItem('shopping-cart'));
-    const thisProduct = shoppingList.filter(pd => pd?.code === product?.code)
-    console.log(thisProduct,shoppingList);
+    // const shoppingList = JSON.parse(localStorage.getItem('shopping-cart'));
+    // const thisProduct = shoppingList?.filter(pd => pd?.code === product?.code)
+    // console.log(thisProduct,shoppingList);
 
     const addToCart = (product) => {
         const newCart = [...cart, product];
@@ -50,7 +50,7 @@ const ProductCard = ({ product }) => {
                         <button
                             // onClick={() => handleRemove(product)} 
                             className='btn btn-sm btn-danger px-4 fw-bold'>-</button>
-                        <h3 className='fs-6 mt-2 px-4 py-1 fw-bold'>{thisProduct[0]?.count || 1}</h3>
+                        <h3 className='fs-6 mt-2 px-4 py-1 fw-bold'>Not Implemented</h3>
                         <button onClick={() => addToCart(product)} className='btn btn-sm btn-success px-4 fw-bold'>+</button>
                     </div>
                 </div>
