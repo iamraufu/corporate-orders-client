@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { addToDB } from '../utilities/localDB';
-// import Swal from 'sweetalert2';
 
 const ProductCard = ({ product }) => {
 
     const [cart, setCart] = useState([]);
-    const addToCart = (product) => {
-        shoppingCart(product)
-        // Swal.fire(
-        //     'Successful!',
-        //     `You Have Added ${product.name}!`,
-        //     'success'
-        // )
-    }
+    const shoppingList = JSON.parse(localStorage.getItem('shopping-cart'));
+    const thisProduct = shoppingList.filter(pd => pd?.code === product?.code)
+    console.log(thisProduct,shoppingList);
 
-    const shoppingCart = (product) => {
+    const addToCart = (product) => {
         const newCart = [...cart, product];
         setCart(newCart)
-        addToDB(product._id);
+        addToDB(product.code);
+    }
+
+    const handleCart = (product) => {
+        document.getElementById(`product-${product.code}`).style.display = 'block';
+        document.getElementById(`btn-${product.code}`).style.display = 'none';
+        addToCart(product)
     }
 
     return (
@@ -30,21 +30,10 @@ const ProductCard = ({ product }) => {
                 </Link>
 
                 <div className="cart-body">
-                        <h5 className="cart-title px-2">{product.name || 'Name Not Available'}</h5>
-                        <p className="cart-text ps-2">Product Code: <b>{product.code}</b></p>
-                        <p className="cart-text ps-2">Price: <b>{product.price || 'Not uploaded'}</b> Taka</p>
-                        <p className="cart-text ps-2">In Stock: <b>{product.quantity || 'Not uploaded'}</b></p>
-
-                    {/* <div className="d-flex col-sm-6">
-                        <button onClick={() => {
-                            window.scrollTo(0, 0);
-                            navigate(`/product/${product.id}`);
-                        }} className="btn btn-outline-dark">Details</button>
-
-                        <button 
-                        onClick={() => handleClick(product)} 
-                        className='btn btn-danger ms-2 px-3'>Buy</button>
-                    </div> */}
+                    <h5 className="cart-title px-2">{product.name || 'Name Not Available'}</h5>
+                    <p className="cart-text ps-2">Product Code: <b>{product.code}</b></p>
+                    <p className="cart-text ps-2">Price: <b>{product.price || 'Not uploaded'}</b> Taka</p>
+                    <p className="cart-text ps-2">In Stock: <b>{product.quantity || 'Not uploaded'}</b></p>
                 </div>
 
                 {/* <select className='form-select' id='quantity' onChangeCapture={() => setQuantity(document.getElementById('quantity').querySelector('option:checked').value)}>
@@ -54,11 +43,23 @@ const ProductCard = ({ product }) => {
                                                     <option key={index + 1} value={item.amount} className='mt-5'>{item.title}</option>)
                                             }
 
-                                        </select> */}
+                </select> */}
 
-                <button 
-                onClick={() => addToCart(product)} 
-                className="btn btn-dark mx-auto d-block my-3 cart-text">Add to Cart</button>
+                <div id={`product-${product?.code}`} style={{ display: 'none' }}>
+                    <div className="d-flex justify-content-center align-items-center mt-1">
+                        <button
+                            // onClick={() => handleRemove(product)} 
+                            className='btn btn-sm btn-danger px-4 fw-bold'>-</button>
+                        <h3 className='fs-6 mt-2 px-4 py-1 fw-bold'>{thisProduct[0]?.count || 1}</h3>
+                        <button onClick={() => addToCart(product)} className='btn btn-sm btn-success px-4 fw-bold'>+</button>
+                    </div>
+                </div>
+
+                <div id={`btn-${product?.code}`}>
+                    <button
+                        onClick={() => handleCart(product)}
+                        className="btn btn-primary mx-auto d-block cart-text">Add to Cart</button>
+                </div>
             </div>
         </div>
     );

@@ -32,7 +32,9 @@ const Category = () => {
             <div style={{ margin: '0', padding: '0' }} className="container-fluid">
                 <div style={{ margin: '0' }} className="row">
                     <div style={{ padding: '0' }} className="col-lg-2 col-md-2">
-                        <Sidebar />
+                        <div style={{ top: '70px' }} className="sticky-top">
+                            <Sidebar />
+                        </div>
                     </div>
 
                     <div style={{ padding: '0' }} className="col-lg-10 col-md-10">

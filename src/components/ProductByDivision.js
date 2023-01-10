@@ -20,7 +20,7 @@ const ProductByDivision = ({ category }) => {
                     <h2 className='cart-title p-2 fw-bold'>{category?.name}</h2>
                 </Link>
                 <Link to={`${category?.route}`} className='text-black text-decoration-none'>
-                    <button className='btn btn-dark px-4 me-2'>See All</button>
+                    <button className='btn btn-sm btn-dark px-4 me-2'>See All</button>
                 </Link>
             </div>
             <div className="row justify-content-center align-items-center mt-3">
