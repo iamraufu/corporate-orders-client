@@ -66,7 +66,9 @@ const Product = () => {
 
                         <div className="d-flex justify-content-center align-items-center">
                             <div id={`btn-${product?.code}`}>
-                                <button onClick={() => handleCart(product)} className='btn btn-sm btn-primary mt-2 fw-bold'>Add to Cart</button>
+                                {
+                                    product?.name && <button onClick={() => handleCart(product)} className='btn btn-sm btn-primary mt-2 fw-bold'>Add to Cart</button>
+                                }
                             </div>
                         </div>
 
@@ -74,11 +76,11 @@ const Product = () => {
 
                     <div className="col-lg-8 mb-3">
                         <div style={{ borderRadius: '1rem', boxShadow: '0 5px 15px #c4c4c44d' }} className="bg-white p-5 mt-4 mx-auto">
-                            <h3 className='fs-5 fw-bold'>{product.name}</h3>
+                            <h3 className='fs-5 fw-bold'>{product.name || "Loading..."}</h3>
                             <hr />
                             <p style={{ textAlign: 'justify' }} className='fs-6'>{product.description || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure explicabo temporibus, repellendus laboriosam in nihil natus reprehenderit? Temporibus hic earum praesentium culpa, quod at perferendis corrupti, iusto eligendi exercitationem repudiandae maiores nihil repellat nemo aspernatur vel architecto fugit placeat dignissimos sit voluptatum sapiente laboriosam. Sapiente iusto fugiat voluptatibus maiores vero!'}</p>
                             <hr />
-                            <small>Price: <span className='fs-5 fw-bold'>৳ {product.price || 'Not Uploaded'}</span></small>
+                            <small>Price: <span className='fs-5 fw-bold'>৳ {product.price || 'Loading...'}</span></small>
                         </div>
                     </div>
                 </div>
