@@ -6,7 +6,6 @@ import division from '../data/division.json'
 const Sidebar = () => {
 
     // const category = [...new Set(products.map((item) => item.division))];
-    // console.log(category);
 
     const activeStyles = {
         color: '#dc3545',

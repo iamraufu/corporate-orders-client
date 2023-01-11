@@ -37,25 +37,23 @@ const removeFromCart = code => {
     const quantity = cart[code];
     if (quantity) {
         const newQuantity = quantity - 1;
+
         if (newQuantity === 0){
             removeFromDb(code)
         }
         else {
             cart[code] = newQuantity;
+            localStorage.setItem('cart', JSON.stringify(cart));
         }
     }
 
-    else {
-        cart[code] = 1;
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
+    // localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 const addCartProductsToDB = () => {
     const savedCart = getStoredCart()
     const productKeys = Object.keys(savedCart)
-    fetch('https://shwapno.up.railway.app/productsByCodes', {
+    fetch('http://localhost:8000/productsByCodes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -89,7 +87,6 @@ const removeFromDb = code => {
     if (storedCart) {
         const shoppingCart = JSON.parse(storedCart);
         if (code in shoppingCart) {
-            console.log(code);
             delete shoppingCart[code];
             localStorage.setItem('cart', JSON.stringify(shoppingCart));
         }

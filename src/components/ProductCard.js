@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { addToDB } from '../utilities/localDB';
+import { addToDB, removeFromCart, removeFromDb } from '../utilities/localDB';
 
 const ProductCard = ({ product }) => {
 
     const [cart, setCart] = useState([]);
-    // const shoppingList = JSON.parse(localStorage.getItem('shopping-cart'));
-    // const thisProduct = shoppingList?.filter(pd => pd?.code === product?.code)
-    // console.log(thisProduct,shoppingList);
+    const [addToCartCount, setAddToCartCount] = useState(0);
 
     const addToCart = (product) => {
+        setAddToCartCount(addToCartCount + 1)
         const newCart = [...cart, product];
         setCart(newCart)
         addToDB(product.code);
+    }
+
+    const handleRemove = (product) => {
+        if (addToCartCount === 0) {
+            removeFromDb(product.code)
+        }
+        if(addToCartCount === 1){
+            setAddToCartCount(0)
+            document.getElementById(`product-${product.code}`).style.display = 'none';
+            document.getElementById(`btn-${product.code}`).style.display = 'block';
+        }
+        else {
+            setAddToCartCount(addToCartCount - 1)
+        }
+        removeFromCart(product.code)
     }
 
     const handleCart = (product) => {
@@ -47,10 +61,9 @@ const ProductCard = ({ product }) => {
 
                 <div id={`product-${product?.code}`} style={{ display: 'none' }}>
                     <div className="d-flex justify-content-center align-items-center mt-1">
-                        <button
-                            // onClick={() => handleRemove(product)} 
+                        <button onClick={() => handleRemove(product)}
                             className='btn btn-sm btn-danger px-4 fw-bold'>-</button>
-                        <h3 className='fs-6 mt-2 px-4 py-1 fw-bold'>Not Implemented</h3>
+                        <h3 className='fs-6 mt-2 px-4 py-1 fw-bold'>{addToCartCount}</h3>
                         <button onClick={() => addToCart(product)} className='btn btn-sm btn-success px-4 fw-bold'>+</button>
                     </div>
                 </div>

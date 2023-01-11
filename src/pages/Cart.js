@@ -14,7 +14,6 @@ const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
     // eslint-disable-next-line
     const [product, setProduct] = useState({});
-    // const [cart, setCart] = useState([]);
 
     // Cart data 
     const savedCart = getStoredCart()
@@ -23,7 +22,7 @@ const Cart = () => {
     let cart = []
 
     useEffect(() => {
-        fetch('https://shwapno.up.railway.app/productsByCodes', {
+        fetch('http://localhost:8000/productsByCodes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,16 +41,19 @@ const Cart = () => {
     }, [productKeys, savedCart])    
 
     useEffect(() => {
-        if (cart.length > 0) {
+        if (cartItems.length > 0) {
             setDisabled(false);
             document.getElementById('btn_checkout').style.cursor = 'pointer';
             document.getElementById('btn_checkout').className = 'btn btn-dark mx-auto d-block p-2';
             document.getElementById('btn_checkout_sm').className = 'btn btn-dark mx-auto d-block p-2';
         }
-    }, [cart.length])
+        else{
+            setDisabled(true);
+        }
+    }, [cartItems.length])
 
     const handleClick = () => {
-        if (cart.length > 0) {
+        if (cartItems.length > 0) {
             navigate('/shipping');
         }
         else {

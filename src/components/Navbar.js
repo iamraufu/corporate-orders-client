@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../images/logo.jpg'
-import products from '../data/products.json';
 import { getStoredCart } from '../utilities/localDB';
 import useAuth from '../hooks/useAuth';
 
 const Navbar = () => {
 
     const { user } = useAuth();
+    const savedCart = getStoredCart()
+    const productKeys = Object.keys(savedCart)
+    const [cart, setCart] = useState([])
 
     const activeStyles = {
         color: '#dc3545',
@@ -15,11 +17,24 @@ const Navbar = () => {
         borderRadius: '5px'
     }
 
-    let savedCart = getStoredCart()
-    let cart = [];
-    for (let key in savedCart) {
-        cart.push({ ...products.find(pd => pd.id === key), quantity: savedCart[key] })
-    }
+    useEffect(() => {
+        fetch('http://localhost:8000/productsByCodes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(productKeys)
+        })
+            .then(res => res.json())
+            .then(data => {
+                let tempCart = []
+                for (let key in savedCart) {
+                    tempCart.push({ ...data.find(pd => pd.code === key), count: savedCart[key] })
+                }
+                setCart(tempCart)
+                localStorage.setItem('shopping-cart', JSON.stringify(tempCart))
+            })
+    }, [productKeys, savedCart])
 
     return (
         <nav style={{ backgroundColor: '#df0100', boxShadow: '0 5px 15px #c4c4c44d' }} className="navbar navbar-expand-md sticky-top">
@@ -46,12 +61,12 @@ const Navbar = () => {
                             className="nav-link text-white fw-bold text-center" to="/products">Products</NavLink> */}
 
                         {
-                            cart.length > 0 ?
+                            cart?.length > 0 ?
                                 <NavLink onClick={() => { window.scrollTo(0, 0); }} style={({ isActive }) => (
                                     isActive ? activeStyles : undefined
                                 )} className="nav-link text-white fw-bold text-center" to="/cart">Cart 
                                 <sup className='fw-bold bg-warning rounded px-1 text-black'>
-                                    {cart.reduce((a, b) => { return a + (b.quantity); }, 0)}
+                                    {cart.reduce((a, b) => { return a + (b.count); }, 0)}
                                 </sup>
                                     </NavLink>
                                 :
