@@ -18,7 +18,7 @@ const Navbar = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:8000/productsByCodes', {
+        fetch('https://shwapno.up.railway.app/productsByCodes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

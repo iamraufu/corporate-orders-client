@@ -8,7 +8,7 @@ const ProductByDivision = ({ category }) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:8000/products/${category?.name}/0/4`)
+        fetch(`https://shwapno.up.railway.app/products/${category?.name}/0/4`)
             .then(response => response.json())
             .then(data => setProducts(data))
     }, [category])

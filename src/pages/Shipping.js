@@ -24,7 +24,7 @@ const Shipping = () => {
             date: data.date
         }
 
-        fetch('http://localhost:8000/order', {
+        fetch('https://shwapno.up.railway.app/order', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(orderDetails)
