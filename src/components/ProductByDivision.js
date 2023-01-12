@@ -8,7 +8,7 @@ const ProductByDivision = ({ category }) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch(`https://shwapno.up.railway.app/products/${category?.name}/0/4`)
+        fetch(`http://localhost:8000/products/${category?.name}/0/4`)
             .then(response => response.json())
             .then(data => setProducts(data))
     }, [category])
@@ -27,7 +27,7 @@ const ProductByDivision = ({ category }) => {
                 {
                     products.length > 0 ?
                         products.map((product, index) =>
-                            <div key={index + 1} className="col-sm-3">
+                            <div key={index + 1} className="col-xl-3 col-lg-4 col-md-4 col-sm-6">
                                 <ProductCard product={product} />
                             </div>
                         )

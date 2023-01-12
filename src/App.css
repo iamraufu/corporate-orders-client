@@ -36,3 +36,26 @@
     padding: 1rem;
     border-radius: 10px;
 }
+
+.cart-btn,
+.cart-btn-success {
+    /* background-color: lightgrey; */
+    background-color: #f0544f;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    border: none;
+    color: #fff;
+}
+
+.cart-btn-success {
+    background-color: #008060;
+}
+
+.cart-btn:hover {
+    background-color: #dd5550;
+}
+
+.cart-btn-success:hover {
+    background-color: #03684f;
+}
