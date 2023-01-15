@@ -67,7 +67,7 @@ const Product = () => {
                         <div className="d-flex justify-content-center align-items-center">
                             <div id={`btn-${product?.code}`}>
                                 {
-                                    product?.name && <button onClick={() => handleCart(product)} className='btn btn-sm btn-primary mt-2 fw-bold'>Add to Cart</button>
+                                    product?.name && <button onClick={() => handleCart(product)} className='btn btn-sm btn-add-to-cart mt-2 fw-bold'>Add to Cart</button>
                                 }
                             </div>
                         </div>

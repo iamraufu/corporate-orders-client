@@ -13,26 +13,11 @@ const Sidebar = () => {
         borderRadius: '5px'
     }
 
-    const handleClick = () => {
-        document.getElementById('categories').style.display = 'block'
-    }
-
     return (
-        <section style={{ boxShadow: '0 5px 5px #c4c4c44d' }} className='bg-white py-1'>
-            <h1 onClick={() => handleClick()} className='fs-5 text-center py-2 fw-bold'>Categories</h1>
+        <section style={{ boxShadow: '0 5px 5px #c4c4c44d' }} className='py-1'>
 
-            <div className="d-md-none">
-                <div className="d-flex flex-wrap">
-                    {
-                        division.map((item, index) =>
-                            <NavLink onClick={() => { window.scrollTo(0, 0); }} key={index + 1} to={`/${item.route}`} className='text-black text-decoration-none col-sm-1'>
-                                <h2 style={{fontSize:'8px'}} className='p-2 sidebar-item'>{item.name}</h2>
-                            </NavLink>
-                        )}
-                </div>
-            </div>
-
-            <div id='categories' className="d-none d-lg-block">
+            <div className="d-none d-lg-block">
+                <h1 className='fs-5 py-2 text-center fw-bold'>Categories</h1>
                 {
                     division.map((item, index) =>
                         <NavLink onClick={() => { window.scrollTo(0, 0); }}
@@ -43,6 +28,30 @@ const Sidebar = () => {
                             <div className="line mx-3"></div>
                         </NavLink>
                     )}
+            </div>
+
+            <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+                <div className="offcanvas-header">
+                    <h5 className="offcanvas-title fw-bold ps-3" id="offcanvasWithBackdropLabel">Categories</h5>
+                    <button type="button" className="btn-close text-reset btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div className="offcanvas-body">
+                    {
+                        division.map((item, index) =>
+                            <a onClick={() => { window.scrollTo(0, 0); }}
+                                key={index + 1} href={`/${item.route}`} className='text-black text-decoration-none '>
+                                <h2 className='p-2 m-2 sidebar-item'>{item.name}</h2>
+                                <div className="line mx-3"></div>
+                            </a>
+                            // <NavLink onClick={() => { window.scrollTo(0, 0); }}
+                            //     style={({ isActive }) => (
+                            //         isActive ? activeStyles : undefined
+                            //     )} key={index + 1} to={`/${item.route}`} className='text-black text-decoration-none '>
+                            //     <h2 className='p-2 m-2 sidebar-item'>{item.name}</h2>
+                            //     <div className="line mx-3"></div>
+                            // </NavLink>
+                        )}
+                </div>
             </div>
 
         </section>

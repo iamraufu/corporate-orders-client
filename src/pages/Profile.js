@@ -1,4 +1,5 @@
 import React from 'react';
+import CartDetails from '../components/CartDetails';
 import Navbar from '../components/Navbar';
 import useAuth from '../hooks/useAuth'
 
@@ -15,7 +16,7 @@ const Profile = () => {
                 <h2 className='fs-5'>Welcome <span>{user.email}</span></h2>
                 <button onClick={()=> logOut()} className='btn btn-danger px-3 mt-3'>Log out</button>
             </div>
-
+            <CartDetails />
         </section>
     );
 };

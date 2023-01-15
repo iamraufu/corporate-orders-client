@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../images/logo.jpg'
 import { getStoredCart } from '../utilities/localDB';
 import useAuth from '../hooks/useAuth';
+import categories from '../images/categories.svg'
+import cartImage from '../images/cart.svg'
 
 const Navbar = () => {
 
@@ -39,36 +41,45 @@ const Navbar = () => {
     return (
         <nav style={{ backgroundColor: '#df0100', boxShadow: '0 5px 15px #c4c4c44d' }} className="navbar navbar-expand-md sticky-top">
             <div className="container">
-                <Link onClick={() => { window.scrollTo(0, 0); }} className="navbar-brand" to="/"><img className='img-fluid' width={85} src={logo} alt="logo" /></Link>
+
+                {/* <div className="form-group p-1">
+                    <input style={{border:'1px solid black'}} className='rounded form-control' type="search" name="" id="" />
+                </div> */}
+
+                <img src={categories} width={30} className='img-fluid d-lg-none' alt="categories" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" />
+
+                <Link onClick={() => { window.scrollTo(0, 0); }} className="navbar-brand d-none d-lg-block" to="/"><img className='img-fluid' width={85} src={logo} alt="logo" /></Link>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
+                <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="d-lg-none">
+                    <img src={cartImage} width={30} className='img-fluid' alt="shopping cart" />
+                    <sup className='fw-bold bg-warning rounded px-1 text-black'>
+                        {cart.reduce((a, b) => { return a + (b.count); }, 0)}
+                    </sup>
+                </div>
+
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="navbar-nav ms-auto">
+
+                    <div className="navbar-nav ms-auto pt-2">
                         <NavLink
                             onClick={() => { window.scrollTo(0, 0); }}
                             style={({ isActive }) => (
                                 isActive ? activeStyles : undefined
                             )}
                             className="nav-link text-white fw-bold text-center" to="/">Home</NavLink>
-                        {/* <NavLink
-                            onClick={() => { window.scrollTo(0, 0); }}
-                            style={({ isActive }) => (
-                                isActive ? activeStyles : undefined
-                            )}
-                            className="nav-link text-white fw-bold text-center" to="/products">Products</NavLink> */}
 
-                        {
+                        {/* {
                             cart?.length > 0 ?
                                 <NavLink onClick={() => { window.scrollTo(0, 0); }} style={({ isActive }) => (
                                     isActive ? activeStyles : undefined
-                                )} className="nav-link text-white fw-bold text-center" to="/cart">Cart 
-                                <sup className='fw-bold bg-warning rounded px-1 text-black'>
-                                    {cart.reduce((a, b) => { return a + (b.count); }, 0)}
-                                </sup>
-                                    </NavLink>
+                                )} className="nav-link text-white fw-bold text-center" to="/cart">Cart
+                                    <sup className='fw-bold bg-warning rounded px-1 text-black'>
+                                        {cart.reduce((a, b) => { return a + (b.count); }, 0)}
+                                    </sup>
+                                </NavLink>
                                 :
                                 <NavLink
                                     onClick={() => { window.scrollTo(0, 0); }}
@@ -76,7 +87,7 @@ const Navbar = () => {
                                         isActive ? activeStyles : undefined
                                     )}
                                     className="nav-link text-white fw-bold text-center" to="/cart">Cart</NavLink>
-                        }
+                        } */}
 
                         {
                             user?.email ?
@@ -87,12 +98,6 @@ const Navbar = () => {
                                             isActive ? activeStyles : undefined
                                         )}
                                         className="nav-link text-white fw-bold text-center" to="/profile">Profile</NavLink>
-                                    {/* <NavLink
-                                        onClick={() => { window.scrollTo(0, 0); }}
-                                        style={({ isActive }) => (
-                                            isActive ? activeStyles : undefined
-                                        )}
-                                        className="nav-link text-white fw-bold text-center" to="/dashboard">Dashboard</NavLink> */}
                                     <NavLink
                                         onClick={() => { window.scrollTo(0, 0); }}
                                         style={({ isActive }) => (
@@ -108,6 +113,14 @@ const Navbar = () => {
                                     )}
                                     className="nav-link text-white fw-bold text-center" to="/login">Login</NavLink>
                         }
+
+                        <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="d-none d-lg-block">
+                            <img src={cartImage} width={25} className='img-fluid mt-2' alt="shopping cart" />
+                            <sup className='fw-bold bg-warning rounded px-1 text-black'>
+                                {cart.reduce((a, b) => { return a + (b.count); }, 0)}
+                            </sup>
+                        </div>
+
                     </div>
                 </div>
             </div>

@@ -59,3 +59,29 @@
 .cart-btn-success:hover {
     background-color: #03684f;
 }
+
+.btn-add-to-cart {
+    background-color: #B50B20;
+    color: white;
+    height: 35px;
+    width: 146px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn-add-to-cart:hover {
+    border: 1px solid #B50B20;
+}
+
+.navbar-toggler {
+    border-color: transparent !important;
+}
+
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url('./images/menu.svg') !important;
+}

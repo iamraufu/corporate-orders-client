@@ -17,21 +17,26 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div style={{padding:'0'}} className="col-lg-10">
-                    <div className="d-flex">
-                        <div className='col-lg-10 pe-2'>
-                            {
-                                divisionData.map((item, index) => <ProductByDivision key={index + 1} category={item} />)
-                            }
-                        </div>
+                <div className="col-lg-10">
+                    {/* <div className="d-flex"> */}
+                    {/* <div className='col-lg-10 pe-2'> */}
+                    {
+                        divisionData.map((item, index) => <ProductByDivision key={index + 1} category={item} />)
+                    }
+                    {/* </div> */}
 
-                        <div style={{ boxShadow: '0 5px 5px #c4c4c44d', borderLeft: '1px solid lightgrey' }} className='col-lg-2'>
-                            <div style={{ top: '69px', maxHeight: '90vh', overflowY: 'auto' }} className="sticky-top">
+                    {/* <div style={{ boxShadow: '0 5px 5px #c4c4c44d', borderLeft: '1px solid lightgrey' }} className='col-lg-2'> */}
+                            {/* <div style={{ top: '69px', maxHeight: '90vh', overflowY: 'auto' }} className="sticky-top"> */}
                                 <CartDetails />
-                            </div>
-                        </div>
-                    </div>
+                            {/* </div> */}
+                        {/* </div> */}
+                    {/* </div> */}
                 </div>
+
+                {/* <div style={{ top: '70vh', opacity: '0.8', }} className="sticky-top float-right bg-white rounded"> 
+                    cart
+                </div> */}
+
             </div>
         </section>
     );

@@ -66,9 +66,7 @@ const Shipping = () => {
 
                         <div className="form-group mt-2">
                             <label htmlFor="date" className='p-1'>Delivery Date</label>
-                            <input min={new Date().toISOString().split('T')[0]} type="date"
-                                // defaultValue={userInfo?.date} 
-                                className="form-control p-2"
+                            <input id='date' min={new Date().toISOString().split('T')[0]} type="date" className="form-control p-2"
                                 {...register("date", { required: true })} />
                             {errors.date && <span className='text-danger'>This Field is required</span>}
                         </div>

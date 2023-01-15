@@ -98,33 +98,42 @@ const CartDetails = () => {
     }
 
     return (
-        <section style={{padding:'0'}} className='container'>
+        <section style={{ padding: '0' }} className='container'>
 
-            <div style={{ borderBottom: '1px solid lightgrey' }} className="sticky-top bg-white mb-2">
-                <h2 style={{ fontSize: '13px' }} className='fw-bold text-center pt-2'>Cart Details</h2>
-                <h2 style={{ fontSize: '13px' }} className='fw-bold text-center pt-2'>Sub Total: {cartItems.reduce((a, b) => { return a + (b.count); }, 0)} Item(s)</h2>
-                <h2 style={{ fontSize: '13px' }} className='fw-bold text-center pt-2'>Grand Price: ৳ {cartItems.reduce((a, b) => a + b.price * b.count, 0)}</h2>
-            </div>
+            <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div style={{ borderBottom: '1px solid lightgrey' }} className="offcanvas-header">
+                    <h5 id="offcanvasRightLabel" className='fw-bold'>Cart Details
+                        <br />
+                        <span style={{ fontSize: '13px' }} className='fw-bold text-center pt-2'>Sub Total: {cartItems.reduce((a, b) => { return a + (b.count); }, 0)} Item(s)</span>
+                        <br />
+                        <span style={{ fontSize: '13px' }} className='fw-bold text-center pt-2'>Grand Price: ৳ {cartItems.reduce((a, b) => a + b.price * b.count, 0)}</span>
+                    </h5>
+                    <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
 
-            {
-                cartItems.map(product =>
-                    <div key={product._id} className="">
-                        <img width={100} className='img-fluid mx-auto d-block rounded' src={product.image || 'https://miro.medium.com/max/600/0*jGmQzOLaEobiNklD'} alt={product.name} />
-                        <h3 style={{ fontSize: '11px' }} className="fw-bold text-center mt-2">{product.name}</h3>
-                        <h4 style={{ fontSize: '12px' }} className="fw-bold text-center">৳ {product?.count * product.price}</h4>
+                <div style={{ margin: '0', padding: '0' }} className="offcanvas-body">
+                    {
+                        cartItems.map(product =>
+                            <div key={product._id} className="mt-3">
+                                <img width={100} className='img-fluid mx-auto d-block rounded' src={product.image || 'https://miro.medium.com/max/600/0*jGmQzOLaEobiNklD'} alt={product.name} />
+                                <h3 style={{ fontSize: '11px' }} className="fw-bold text-center mt-2">{product.name}</h3>
+                                <h4 style={{ fontSize: '12px' }} className="fw-bold text-center">৳ {product?.count * product.price}</h4>
 
-                        <div className="d-flex justify-content-center align-items-center">
-                            <button onClick={() => handleRemove(product)} className='cart-btn fw-bold mx-auto d-block'>-</button>
-                            <h4 style={{ fontSize: '12px' }} className="fw-bold text-center pt-2">{product?.count}</h4>
-                            <button onClick={() => addToCart(product)} className='cart-btn-success fw-bold mx-auto d-block'>+</button>
-                        </div>
-                        <hr />
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <button onClick={() => handleRemove(product)} className='cart-btn fw-bold mx-auto d-block'>-</button>
+                                    <h4 style={{ fontSize: '12px' }} className="fw-bold text-center pt-2">{product?.count}</h4>
+                                    <button onClick={() => addToCart(product)} className='cart-btn-success fw-bold mx-auto d-block'>+</button>
+                                </div>
+                                <hr />
+                            </div>
+                        )
+                    }
+                    <div style={{ boxShadow: '0 5px 15px #c4c4c44d' }} onClick={() => handleClick()} className="sticky-bottom bg-white py-3">
+                        <button disabled={disabled} className='btn btn-dark mx-auto d-block px-5'>Checkout</button>
                     </div>
-                )
-            }
-            <div onClick={() => handleClick()} className="sticky-bottom bg-white">
-                <button disabled={disabled} className='btn btn-dark mx-auto d-block px-5'>Checkout</button>
+                </div>
             </div>
+
         </section>
     );
 };

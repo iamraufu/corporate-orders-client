@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import CartDetails from '../components/CartDetails';
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import Sidebar from '../components/Sidebar';
@@ -13,7 +14,7 @@ const Category = () => {
     // eslint-disable-next-line
     const [skip, setSkip] = useState(0)
     // eslint-disable-next-line
-    const [limit, setLimit] = useState(20)
+    const [limit, setLimit] = useState(48)
     const [products, setProducts] = useState([])
 
     const division = divisionData.find(item => item.route === id)
@@ -31,13 +32,13 @@ const Category = () => {
 
             <div style={{ margin: '0', padding: '0' }} className="container-fluid">
                 <div style={{ margin: '0' }} className="row">
-                    <div style={{ padding: '0' }} className="col-lg-2 col-md-2">
+                    <div style={{ padding: '0' }} className="col-lg-2">
                         <div style={{ top: '70px' }} className="sticky-top">
                             <Sidebar />
                         </div>
                     </div>
 
-                    <div style={{ padding: '0' }} className="col-lg-10 col-md-10">
+                    <div style={{ padding: '0' }} className="col-lg-10 col-md-12">
                         <h1 className='text-center fw-bold my-3 fs-5'>{products[0]?.category}</h1>
                         {
                             division === undefined ?
@@ -46,7 +47,7 @@ const Category = () => {
                                     <div style={{ margin: '0' }} className="row px-3">
                                         {
                                             products.map(product =>
-                                                <div style={{ padding: '0' }} key={product._id} className="col-lg-3 col-md-4 col-sm-6 px-2">
+                                                <div style={{ padding: '0' }} key={product._id} className="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center align-items-center px-2">
                                                     <ProductCard product={product} />
                                                 </div>
                                             )}
@@ -64,6 +65,7 @@ const Category = () => {
                                         </div>
                                     </div>
                         }
+                        <CartDetails />
                     </div>
                 </div>
             </div>

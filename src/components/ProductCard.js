@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { addToDB, removeFromCart, removeFromDb } from '../utilities/localDB';
 
 const ProductCard = ({ product }) => {
@@ -39,28 +38,17 @@ const ProductCard = ({ product }) => {
         <div className="cart-deck my-2">
 
             <div className="cart">
-                <Link to={`/product/${product._id}`} onClick={() => { window.scrollTo(0, 0); }} className='text-decoration-none text-black'>
-                    <img src={product.image || 'https://miro.medium.com/max/600/0*jGmQzOLaEobiNklD'} className="cart-img-top img-fluid mx-auto d-block" alt={product.name} />
-                </Link>
+                {/* <Link to={`/product/${product._id}`} onClick={() => { window.scrollTo(0, 0); }} className='text-decoration-none text-black'> */}
+                    <img src={product.image || 'https://miro.medium.com/max/600/0*jGmQzOLaEobiNklD'} className="cart-img-top mx-auto d-block" alt={product.name} />
+                {/* </Link> */}
 
-                <div className="cart-body">
-                    <h5 className="cart-title px-2">{product.name || 'Name Not Available'}</h5>
-                    <p className="cart-text ps-2">Product Code: <b>{product.code}</b></p>
-                    <p className="cart-text ps-2">Price: <b>{product.price || 'Not uploaded'}</b> Taka</p>
-                    <p className="cart-text ps-2">In Stock: <b>{product.quantity || 'Not uploaded'}</b></p>
+                <div style={{margin:'0'}} className="cart-body">
+                    <p style={{margin:'0', fontSize:'15px'}} className="fw-bold text-center pt-1">{product.price || 'Not uploaded'} Tk</p>
+                    <p style={{fontSize:'13px'}} className="text-center px-2">{product.name || 'Name Not Available'}</p>
                 </div>
 
-                {/* <select className='form-select' id='quantity' onChangeCapture={() => setQuantity(document.getElementById('quantity').querySelector('option:checked').value)}>
-
-                                            {
-                                                product.weight.map((item, index) =>
-                                                    <option key={index + 1} value={item.amount} className='mt-5'>{item.title}</option>)
-                                            }
-
-                </select> */}
-
                 <div id={`product-${product?.code}`} style={{ display: 'none' }}>
-                    <div className="d-flex justify-content-center align-items-center mt-1">
+                    <div className="d-flex justify-content-center align-items-center mt-1 px-1">
                         <button onClick={() => handleRemove(product)}
                             className='btn btn-sm btn-danger px-4 fw-bold'>-</button>
                         <h3 className='fs-6 mt-2 px-4 py-1 fw-bold'>{addToCartCount}</h3>
@@ -71,7 +59,7 @@ const ProductCard = ({ product }) => {
                 <div id={`btn-${product?.code}`}>
                     <button
                         onClick={() => handleCart(product)}
-                        className="btn btn-primary mx-auto d-block cart-text">Add to Cart</button>
+                        className="btn btn-add-to-cart mx-auto d-block mt-1">Add to Cart</button>
                 </div>
             </div>
         </div>

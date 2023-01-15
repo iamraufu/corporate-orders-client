@@ -76,7 +76,7 @@ const Products = () => {
 
                                         </select> */}
 
-                                        <button onClick={() => addToCart(product)} className="btn btn-dark mx-auto d-block my-3">Add to Cart</button>
+                                        <button onClick={() => addToCart(product)} className="btn btn-add-to-cart mx-auto d-block my-3">Add to Cart</button>
                                     </div>
                                 </div>
                             );
