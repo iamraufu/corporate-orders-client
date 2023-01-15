@@ -16,7 +16,7 @@ const CartDetails = () => {
     const savedCart = getStoredCart()
     const productKeys = Object.keys(savedCart)
 
-    let cart = []
+    // let cart = []
 
     useEffect(() => {
         fetch('https://shwapno.up.railway.app/productsByCodes', {
@@ -62,8 +62,13 @@ const CartDetails = () => {
         }
     }
     // eslint-disable-next-line
-    const [cartItemsProducts, setCartItemsProducts] = useState([]);
-    const [cartProduct, setCartProduct] = useState(JSON.parse(localStorage.getItem('shopping-cart')).filter(pd => pd?.code === product?.code))
+    // const [cartItemsProducts, setCartItemsProducts] = useState([]);
+    const [cartProduct, setCartProduct] = useState([])
+    // setCartProduct(localCartItems.filter(pd => pd?.code === product?.code))
+    // useEffect(()=>{
+    //     setCartProduct(localCartItems.filter(pd => pd?.code === product?.code))
+    // },[localCartItems,product?.code])
+    // const [cartProduct, setCartProduct] = useState(JSON.parse(localStorage.getItem('shopping-cart')).filter(pd => pd?.code === product?.code))
     const [cartProductCount, setCartProductCount] = useState(cartProduct.length)
     const shoppingList = JSON.parse(localStorage.getItem('shopping-cart'));
 
@@ -87,8 +92,8 @@ const CartDetails = () => {
     }
 
     const shoppingCart = (product) => {
-        const newCart = [...cart, product];
-        setCartItemsProducts(newCart)
+        // const newCart = [...cart, product];
+        // setCartItemsProducts(newCart)
         addToDB(product.code);
     }
 
