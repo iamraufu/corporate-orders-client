@@ -2,6 +2,12 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.form-control {
+    font-size: 14px;
+    background-color: #F4F4F4;
+    color: #ADADAD;
+}
+
 .form-control:focus,
 .form-select:focus {
     border-color: black;
@@ -64,7 +70,7 @@
     background-color: #B50B20;
     color: white;
     height: 35px;
-    width: 146px;
+    width: 130px;
     border-radius: 5px;
     font-size: 14px;
 }
@@ -84,4 +90,69 @@
 
 .navbar-toggler-icon {
     background-image: url('./images/menu.svg') !important;
+}
+
+.btn-ft {
+    height: 22px;
+    width: 40px;
+    border-radius: 2px;
+    background-color: #D9D9D9;
+    border: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.bg-pm {
+    background-color: #D9D9D9;
+    border-radius: 2px;
+}
+
+.btn-confirm-order {
+    background-color: #F97D49;
+    border: none;
+    height: 50px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn-close:focus {
+    box-shadow: none !important;
+}
+
+::selection {
+    color: white !important;
+    background-color: #B50B20 !important;
+}
+
+.btn-email {
+    background-color: transparent;
+    border: 1px solid #DADADA;
+    border-radius: 7px;
+    width: 162px;
+    height: 46px;
+}
+
+.btn-email:hover {
+    background-color: #1e88e5;
+    color: white;
+    ;
+    /* border: 2px solid #DADADA; */
+}
+
+.btn-message {
+    background-color: transparent;
+    width: 162px;
+    height: 46px;
+    border: 1px solid #70C43F;
+    border-radius: 7px;
+    margin-left: 22px;
+}
+
+.btn-message:hover {
+    background-color: #70C43F;
+    color: white;
 }

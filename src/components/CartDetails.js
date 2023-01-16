@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { getStoredCart, addToDB, removeFromCart } from '../utilities/localDB';
+import { getStoredCart, addToDB, removeFromCart, addFive, addTen } from '../utilities/localDB';
+import vegCartImage from '../images/veg_cart.png';
+import plusImage from '../images/plus.svg';
+import minusImage from '../images/minus.svg';
 
 const CartDetails = () => {
 
@@ -97,44 +100,66 @@ const CartDetails = () => {
         addToDB(product.code);
     }
 
-    return (
-        <section style={{ padding: '0' }} className='container'>
+    const handleFive = (product) => {
+        addFive(product.code)
+    }
 
-            <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div style={{ borderBottom: '1px solid lightgrey' }} className="offcanvas-header">
-                    <h5 id="offcanvasRightLabel" className='fw-bold'>Cart Details
-                        <br />
+    const handleTen = (product) => {
+        addTen(product.code)
+    }
+
+    return (
+        <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div style={{ paddingBottom: '0' }} className="offcanvas-header">
+                <h5 id="offcanvasRightLabel" className='fw-bold text-center'><img src={vegCartImage} alt="cart details" className='img-fluid pb-4' /> Cart Details
+                    {/* <br />
                         <span style={{ fontSize: '13px' }} className='fw-bold text-center pt-2'>Sub Total: {cartItems.reduce((a, b) => { return a + (b.count); }, 0)} Item(s)</span>
                         <br />
-                        <span style={{ fontSize: '13px' }} className='fw-bold text-center pt-2'>Grand Price: ৳ {cartItems.reduce((a, b) => a + b.price * b.count, 0)}</span>
-                    </h5>
-                    <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
+                        <span style={{ fontSize: '13px' }} className='fw-bold text-center pt-2'>Grand Price: ৳ {cartItems.reduce((a, b) => a + b.price * b.count, 0)}</span> */}
+                </h5>
+                <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
 
-                <div style={{ margin: '0', padding: '0' }} className="offcanvas-body">
+            <div style={{ padding: '0' }} className="offcanvas-body">
+                <div style={{ marginBottom: '8rem' }} className="">
                     {
                         cartItems.map(product =>
-                            <div key={product._id} className="mt-3">
-                                <img width={100} className='img-fluid mx-auto d-block rounded' src={product.image || 'https://miro.medium.com/max/600/0*jGmQzOLaEobiNklD'} alt={product.name} />
-                                <h3 style={{ fontSize: '11px' }} className="fw-bold text-center mt-2">{product.name}</h3>
-                                <h4 style={{ fontSize: '12px' }} className="fw-bold text-center">৳ {product?.count * product.price}</h4>
+                            <div key={product._id} style={{ width: '180px', height: 'auto' }} className="mx-auto d-block mt-3">
 
-                                <div className="d-flex justify-content-center align-items-center">
-                                    <button onClick={() => handleRemove(product)} className='cart-btn fw-bold mx-auto d-block'>-</button>
-                                    <h4 style={{ fontSize: '12px' }} className="fw-bold text-center pt-2">{product?.count}</h4>
-                                    <button onClick={() => addToCart(product)} className='cart-btn-success fw-bold mx-auto d-block'>+</button>
+                                <div style={{ border: '1px solid rgba(120, 58, 58, 0.38)' }} className='py-2'>
+                                    <img width={90} className='img-fluid mx-auto d-block rounded' src={product.image || 'https://miro.medium.com/max/600/0*jGmQzOLaEobiNklD'} alt={product.name} />
+                                    <h4 style={{ fontSize: '15px' }} className="fw-bold text-center mt-2">{product.price} Tk</h4>
+                                    <h3 style={{ fontSize: '13px' }} className="fw-bold text-center">{product.name}</h3>
+
+                                    <div className="d-flex justify-content-around align-items-center pt-2">
+                                        <button className='btn-ft' onClick={() => handleFive(product)}>5</button>
+                                        <button className='btn-ft' onClick={() => handleTen(product)}>10</button>
+                                        <div className="d-flex bg-pm">
+                                            <div onClick={() => addToCart(product)} className="px-2"><img className='img-fluid' src={plusImage} alt="add to cart" /></div>
+                                            <div className="vr my-1"></div>
+                                            <div onClick={() => handleRemove(product)} className="px-2"><img className='img-fluid' src={minusImage} alt="remove from cart" /></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <hr />
+
+                                <div className="d-flex justify-content-between align-items-center px-1 mt-2">
+                                    <div className="fw-bold">{product?.count} Kg</div>
+                                    <div className="fw-bold">{product?.count * product.price} Tk</div>
+                                </div>
                             </div>
                         )
                     }
-                    <div style={{ boxShadow: '0 5px 15px #c4c4c44d' }} onClick={() => handleClick()} className="sticky-bottom bg-white py-3">
-                        <button disabled={disabled} className='btn btn-dark mx-auto d-block px-5'>Checkout</button>
+                </div>
+
+                <div style={{ boxShadow: '0 5px 15px #c4c4c44d', bottom: '0' }} onClick={() => handleClick()} className="position-absolute bg-white mx-auto d-block w-100 pt-4">
+                    <div className="d-flex justify-content-around align-items-center pb-2">
+                        <div className=""><h5 className='text-center fw-bold'>Total</h5></div>
+                        <div className=""><h5 className='text-center fw-bold'>{cartItems.reduce((a, b) => a + b.price * b.count, 0)} Taka</h5></div>
                     </div>
+                    <button disabled={disabled} className='btn-confirm-order mx-auto d-block px-5 w-100 fw-bold'>Confirm Order</button>
                 </div>
             </div>
-
-        </section>
+        </div>
     );
 };
 

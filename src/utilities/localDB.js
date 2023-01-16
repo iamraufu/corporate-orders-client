@@ -25,6 +25,54 @@ const addToDB = code => {
     addCartProductsToDB();
 }
 
+const addFive = code => {
+    let cart = {};
+
+    //get the shopping cart from local storage
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        cart = JSON.parse(storedCart);
+    }
+
+    // add quantity
+    const quantity = cart[code];
+    if (quantity) {
+        const newQuantity = quantity + 5;
+        cart[code] = newQuantity;
+    }
+
+    else {
+        cart[code] = 1;
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    addCartProductsToDB();
+}
+
+const addTen = code => {
+    let cart = {};
+
+    //get the shopping cart from local storage
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        cart = JSON.parse(storedCart);
+    }
+
+    // add quantity
+    const quantity = cart[code];
+    if (quantity) {
+        const newQuantity = quantity + 10;
+        cart[code] = newQuantity;
+    }
+
+    else {
+        cart[code] = 1;
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    addCartProductsToDB();
+}
+
 const removeFromCart = code => {
     let cart = {};
     //get the shopping cart from local storage
@@ -102,6 +150,8 @@ const deleteShoppingCart = () => {
 export {
     // addToDB as addToDb,
     addToDB,
+    addFive,
+    addTen,
     addCartProductsToDB,
     removeFromCart,
     getStoredCart,

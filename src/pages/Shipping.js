@@ -4,6 +4,8 @@ import useAuth from '../hooks/useAuth';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import ProductRequest from '../components/ProductRequest';
+import CartDetails from '../components/CartDetails';
 
 const Shipping = () => {
 
@@ -76,6 +78,8 @@ const Shipping = () => {
 
                 </div>
             </div>
+            <ProductRequest />
+            <CartDetails />
         </section>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import CartDetails from '../components/CartDetails';
 import Navbar from '../components/Navbar';
+import ProductRequest from '../components/ProductRequest';
 import useAuth from '../hooks/useAuth'
 
 const Profile = () => {
@@ -17,6 +18,7 @@ const Profile = () => {
                 <button onClick={()=> logOut()} className='btn btn-danger px-3 mt-3'>Log out</button>
             </div>
             <CartDetails />
+            <ProductRequest />
         </section>
     );
 };

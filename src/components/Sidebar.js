@@ -23,9 +23,9 @@ const Sidebar = () => {
                         <NavLink onClick={() => { window.scrollTo(0, 0); }}
                             style={({ isActive }) => (
                                 isActive ? activeStyles : undefined
-                            )} key={index + 1} to={`/${item.route}`} className='text-black text-decoration-none '>
+                            )} key={index + 1} to={`/${item.route}`} className='text-black text-decoration-none'>
                             <h2 className='p-2 m-2 sidebar-item'>{item.name}</h2>
-                            <div className="line mx-3"></div>
+                            {/* <div className="line mx-3"></div> */}
                         </NavLink>
                     )}
             </div>
@@ -38,18 +38,17 @@ const Sidebar = () => {
                 <div className="offcanvas-body">
                     {
                         division.map((item, index) =>
-                            <a onClick={() => { window.scrollTo(0, 0); }}
-                                key={index + 1} href={`/${item.route}`} className='text-black text-decoration-none '>
+                            // <a onClick={() => { window.scrollTo(0, 0); }}
+                            //     key={index + 1} href={`/${item.route}`} className='text-black text-decoration-none '>
+                            //     <h2 className='p-2 m-2 sidebar-item'>{item.name}</h2>
+                            // </a>
+                            <NavLink onClick={() => { window.scrollTo(0, 0); }}
+                                style={({ isActive }) => (
+                                    isActive ? activeStyles : undefined
+                                )} key={index + 1} to={`/${item.route}`} className='text-black text-decoration-none '>
                                 <h2 className='p-2 m-2 sidebar-item'>{item.name}</h2>
                                 <div className="line mx-3"></div>
-                            </a>
-                            // <NavLink onClick={() => { window.scrollTo(0, 0); }}
-                            //     style={({ isActive }) => (
-                            //         isActive ? activeStyles : undefined
-                            //     )} key={index + 1} to={`/${item.route}`} className='text-black text-decoration-none '>
-                            //     <h2 className='p-2 m-2 sidebar-item'>{item.name}</h2>
-                            //     <div className="line mx-3"></div>
-                            // </NavLink>
+                            </NavLink>
                         )}
                 </div>
             </div>

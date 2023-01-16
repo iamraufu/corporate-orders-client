@@ -12,7 +12,7 @@ const Home = () => {
 
             <div style={{ margin: '0', padding: '0' }} className="container-fluid row">
                 <div style={{ padding: '0' }} className="col-lg-2">
-                    <div style={{ top: '70px' }} className="sticky-top">
+                    <div style={{ top: '70px'}} className="sticky-top">
                         <Sidebar />
                     </div>
                 </div>

@@ -114,7 +114,9 @@ const Navbar = () => {
                                     className="nav-link text-white fw-bold text-center" to="/login">Login</NavLink>
                         }
 
-                        <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="d-none d-lg-block">
+                        <button style={{ background: 'transparent', border: 'none' }} className="nav-link text-white fw-bold text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Request Product</button>
+
+                        <div style={{ cursor: 'pointer' }} data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="d-none d-lg-block ps-2">
                             <img src={cartImage} width={25} className='img-fluid mt-2' alt="shopping cart" />
                             <sup className='fw-bold bg-warning rounded px-1 text-black'>
                                 {cart.reduce((a, b) => { return a + (b.count); }, 0)}

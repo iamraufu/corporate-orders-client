@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { addToDB, removeFromCart, removeFromDb } from '../utilities/localDB';
+import ProductRequest from './ProductRequest';
 
 const ProductCard = ({ product }) => {
 
@@ -50,9 +51,9 @@ const ProductCard = ({ product }) => {
                 <div id={`product-${product?.code}`} style={{ display: 'none' }}>
                     <div className="d-flex justify-content-center align-items-center mt-1 px-1">
                         <button onClick={() => handleRemove(product)}
-                            className='btn btn-sm btn-danger px-4 fw-bold'>-</button>
+                            className='btn btn-sm btn-danger px-3 fw-bold'>-</button>
                         <h3 className='fs-6 mt-2 px-4 py-1 fw-bold'>{addToCartCount}</h3>
-                        <button onClick={() => addToCart(product)} className='btn btn-sm btn-success px-4 fw-bold'>+</button>
+                        <button onClick={() => addToCart(product)} className='btn btn-sm btn-success px-3 fw-bold'>+</button>
                     </div>
                 </div>
 
@@ -62,6 +63,7 @@ const ProductCard = ({ product }) => {
                         className="btn btn-add-to-cart mx-auto d-block mt-1">Add to Cart</button>
                 </div>
             </div>
+            <ProductRequest />
         </div>
     );
 };
