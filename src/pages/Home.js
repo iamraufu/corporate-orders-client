@@ -1,5 +1,6 @@
 import React from 'react';
 import CartDetails from '../components/CartDetails';
+import InfinityScroll from '../components/InfinityScroll';
 import Navbar from '../components/Navbar';
 import ProductByDivision from '../components/ProductByDivision';
 import Sidebar from '../components/Sidebar';
@@ -36,6 +37,8 @@ const Home = () => {
                 {/* <div style={{ top: '70vh', opacity: '0.8', }} className="sticky-top float-right bg-white rounded"> 
                     cart
                 </div> */}
+
+                <InfinityScroll />
 
             </div>
         </section>

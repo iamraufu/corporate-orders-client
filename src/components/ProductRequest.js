@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import messageImage from '../images/message.svg'
+import messageIcon from '../images/message.png'
 import whatsappImage from '../images/whatsapp.svg'
 
 const ProductRequest = () => {
@@ -8,9 +8,10 @@ const ProductRequest = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const [unit, setUnit] = useState('')
+    const [flag, setFlag] = useState(0)
 
     const onSubmit = data => {
-
+        
         const requested_product = {
             description: data.description,
             brand: data.brand,
@@ -18,7 +19,16 @@ const ProductRequest = () => {
             number: data.number,
             email: data.email
         }
+
         console.log(requested_product);
+
+        flag === 2 && window.location.replace(`https://wa.me/01611404405?text=Product Request: 
+        Description: ${data.description}, 
+        Brand: ${data.brand}, 
+        Quantity: ${data.quantity} ${unit}, 
+        Corporate Number: ${data.number}, 
+        Email: ${data.email}`)
+        flag === 1 && console.log("Email")
     }
     return (
         <section className='p-2'>
@@ -72,12 +82,12 @@ const ProductRequest = () => {
                                     </div>
                                 </div>
 
-                                <div className="my-3">
-                                    <button className='btn-email'><img className='img-fluid' src={messageImage} alt="send email" /> Send Email</button>
-                                    <button className='btn-message'><img className='img-fluid' src={whatsappImage} alt="send message" /> Send Message</button>
+                                <div className="d-flex ms-1 my-3">
+                                    <button onClick={()=> setFlag(1)} className='btn-email mt-3'><img className='img-fluid' src={messageIcon} alt="send email" /> Send Email</button>
+                                    <button onClick={()=> setFlag(2)} className='btn-message mt-3'><img className='img-fluid' src={whatsappImage} alt="send message" /> Send Message</button>
                                 </div>
 
-                                <input className='btn-confirm-order px-5 my-3 mx-auto d-block text-white fw-bold rounded' type="submit" value='Order Request' />
+                                <input className='btn-confirm-order px-5 my-3 mx-auto d-block text-white fw-bold' type="submit" value='Order Request' />
                             </form>
 
 

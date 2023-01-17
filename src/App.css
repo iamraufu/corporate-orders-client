@@ -28,8 +28,6 @@
     background-color: white;
     color: black;
     font-weight: bold;
-    /* background-color: lightgrey; */
-    /* background: linear-gradient(to left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8)) right; */
     background: linear-gradient(to left, lightgrey 100%, lightgrey 1%) right;
     background-size: 200% 100%;
     border-radius: 5px;
@@ -45,7 +43,6 @@
 
 .cart-btn,
 .cart-btn-success {
-    /* background-color: lightgrey; */
     background-color: #f0544f;
     border-radius: 50%;
     height: 25px;
@@ -134,13 +131,12 @@ input::-webkit-inner-spin-button {
     border-radius: 7px;
     width: 162px;
     height: 46px;
+    font-size: 14px;
 }
 
 .btn-email:hover {
     background-color: #1e88e5;
     color: white;
-    ;
-    /* border: 2px solid #DADADA; */
 }
 
 .btn-message {
@@ -150,9 +146,23 @@ input::-webkit-inner-spin-button {
     border: 1px solid #70C43F;
     border-radius: 7px;
     margin-left: 22px;
+    font-size: 14px;
 }
 
 .btn-message:hover {
     background-color: #70C43F;
     color: white;
+}
+
+.btn-add-add-items-to-bag {
+    width: 197px;
+    height: 32px;
+    background-color: #D9D9D9;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+}
+
+.btn-add-add-items-to-bag:hover {
+    background-color: #c0bcbc;
 }

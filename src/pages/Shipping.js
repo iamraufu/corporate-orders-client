@@ -21,7 +21,12 @@ const Shipping = () => {
     const placeOrder = data => {
 
         const orderDetails = {
-            ...user,
+            user,
+            uId: user._id,
+            email: user.email,
+            client_id:user.client_id,
+            company: user.name,
+            phone: user.phone,
             products: JSON.parse(localStorage.getItem('shopping-cart')),
             date: data.date
         }

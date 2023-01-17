@@ -54,7 +54,7 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="d-lg-none">
+                <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="d-md-none">
                     <img src={cartImage} width={30} className='img-fluid' alt="shopping cart" />
                     <sup className='fw-bold bg-warning rounded px-1 text-black'>
                         {cart.reduce((a, b) => { return a + (b.count); }, 0)}
@@ -97,13 +97,13 @@ const Navbar = () => {
                                         style={({ isActive }) => (
                                             isActive ? activeStyles : undefined
                                         )}
-                                        className="nav-link text-white fw-bold text-center" to="/profile">Profile</NavLink>
+                                        className="nav-link text-white fw-bold text-center" to="/orders">Orders</NavLink>
                                     <NavLink
                                         onClick={() => { window.scrollTo(0, 0); }}
                                         style={({ isActive }) => (
                                             isActive ? activeStyles : undefined
                                         )}
-                                        className="nav-link text-white fw-bold text-center" to="/orders">Orders</NavLink>
+                                        className="nav-link text-white fw-bold text-center" to="/profile">Profile</NavLink>
                                 </>
                                 :
                                 <NavLink
@@ -116,7 +116,7 @@ const Navbar = () => {
 
                         <button style={{ background: 'transparent', border: 'none' }} className="nav-link text-white fw-bold text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Request Product</button>
 
-                        <div style={{ cursor: 'pointer' }} data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="d-none d-lg-block ps-2">
+                        <div style={{ cursor: 'pointer' }} data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="d-none d-md-block ps-2">
                             <img src={cartImage} width={25} className='img-fluid mt-2' alt="shopping cart" />
                             <sup className='fw-bold bg-warning rounded px-1 text-black'>
                                 {cart.reduce((a, b) => { return a + (b.count); }, 0)}
