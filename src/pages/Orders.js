@@ -13,7 +13,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:8000/orders/ordersById/${uId}`)
+        fetch(`https://shwapno.up.railway.app/orders/ordersById/${uId}`)
             .then(response => response.json())
             .then(data => setOrders(data.result))
     }, [uId])

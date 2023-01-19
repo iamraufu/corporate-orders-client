@@ -101,7 +101,7 @@ const removeFromCart = code => {
 const addCartProductsToDB = () => {
     const savedCart = getStoredCart()
     const productKeys = Object.keys(savedCart)
-    fetch('http://localhost:8000/productsByCodes', {
+    fetch('https://shwapno.up.railway.app/productsByCodes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
