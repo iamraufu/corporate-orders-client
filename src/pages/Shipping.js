@@ -32,7 +32,7 @@ const Shipping = () => {
             time: data.time
         }
 
-        fetch('https://shwapno.up.railway.app/order', {
+        fetch('http://localhost:8000/order', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(orderDetails)

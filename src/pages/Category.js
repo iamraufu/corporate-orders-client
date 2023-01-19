@@ -22,7 +22,7 @@ const Category = () => {
     const category = division?.name
 
     useEffect(() => {
-        fetch(`https://shwapno.up.railway.app/products/${category}/${skip}/${limit}`)
+        fetch(`http://localhost:8000/products/${category}/${skip}/${limit}`)
             .then(response => response.json())
             .then(data => setProducts(data))
     }, [category, skip, limit])

@@ -10,7 +10,7 @@ const Product = () => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetch(`https://shwapno.up.railway.app/product/${id}`)
+        fetch(`http://localhost:8000/product/${id}`)
             .then(response => response.json())
             .then(data => setProduct(data))
     }, [id])

@@ -22,7 +22,7 @@ const CartDetails = () => {
     // let cart = []
 
     useEffect(() => {
-        fetch('https://shwapno.up.railway.app/productsByCodes', {
+        fetch('http://localhost:8000/productsByCodes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

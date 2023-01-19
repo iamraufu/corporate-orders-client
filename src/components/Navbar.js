@@ -8,6 +8,7 @@ import useAuth from '../hooks/useAuth';
 import categories from '../images/categories.svg'
 // import cartImage from '../images/cart.svg'
 import ProfileDropDown from './ProfileDropDown';
+import ProfileNameDropDown from './ProfileNameDropDown';
 
 const Navbar = () => {
 
@@ -23,7 +24,7 @@ const Navbar = () => {
     }
 
     useEffect(() => {
-        fetch('https://shwapno.up.railway.app/productsByCodes', {
+        fetch('http://localhost:8000/productsByCodes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -110,6 +111,7 @@ const Navbar = () => {
                                     <button style={{ background: 'transparent', border: 'none' }} className="nav-link text-white fw-bold text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Request Product</button>
                                     
                                     <ProfileDropDown />
+                                    <ProfileNameDropDown />
                                 </>
                                 :
                                 <NavLink
