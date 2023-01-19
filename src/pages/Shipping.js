@@ -24,11 +24,12 @@ const Shipping = () => {
             user,
             uId: user._id,
             email: user.email,
-            client_id:user.client_id,
+            client_id: user.client_id,
             company: user.name,
             phone: user.phone,
             products: JSON.parse(localStorage.getItem('shopping-cart')),
-            date: data.date
+            date: data.date,
+            time: data.time
         }
 
         fetch('https://shwapno.up.railway.app/order', {
@@ -76,6 +77,11 @@ const Shipping = () => {
                             <input id='date' min={new Date().toISOString().split('T')[0]} type="date" className="form-control p-2"
                                 {...register("date", { required: true })} />
                             {errors.date && <span className='text-danger'>This Field is required</span>}
+
+                            <label htmlFor="time" className='p-1'>Delivery Time</label>
+                            <input id='time' type="time" className="form-control p-2"
+                                {...register("time", { required: true })} />
+                            {errors.time && <span className='text-danger'>This Field is required</span>}
                         </div>
 
                         <input className='btn btn-dark px-3 mt-3' type="submit" value='Order Now' />

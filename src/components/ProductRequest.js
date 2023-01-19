@@ -11,7 +11,7 @@ const ProductRequest = () => {
     const [flag, setFlag] = useState(0)
 
     const onSubmit = data => {
-        
+
         const requested_product = {
             description: data.description,
             brand: data.brand,
@@ -83,8 +83,8 @@ const ProductRequest = () => {
                                 </div>
 
                                 <div className="d-flex ms-1 my-3">
-                                    <button onClick={()=> setFlag(1)} className='btn-email mt-3'><img className='img-fluid' src={messageIcon} alt="send email" /> Send Email</button>
-                                    <button onClick={()=> setFlag(2)} className='btn-message mt-3'><img className='img-fluid' src={whatsappImage} alt="send message" /> Send Message</button>
+                                    <button onClick={() => setFlag(1)} className='btn-email mt-3'><img className='img-fluid' src={messageIcon} alt="send email" /> Send Email</button>
+                                    <button onClick={() => setFlag(2)} className='btn-message mt-3'><img className='img-fluid' src={whatsappImage} alt="send message" /> Send Message</button>
                                 </div>
 
                                 <input className='btn-confirm-order px-5 my-3 mx-auto d-block text-white fw-bold' type="submit" value='Order Request' />

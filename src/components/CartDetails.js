@@ -135,9 +135,9 @@ const CartDetails = () => {
                                         <button className='btn-ft' onClick={() => handleFive(product)}>5</button>
                                         <button className='btn-ft' onClick={() => handleTen(product)}>10</button>
                                         <div className="d-flex bg-pm">
-                                            <div onClick={() => addToCart(product)} className="px-2"><img className='img-fluid' src={plusImage} alt="add to cart" /></div>
+                                            <div style={{cursor:'pointer'}} onClick={() => addToCart(product)} className="px-2"><img className='img-fluid' src={plusImage} alt="add to cart" /></div>
                                             <div className="vr my-1"></div>
-                                            <div onClick={() => handleRemove(product)} className="px-2"><img className='img-fluid' src={minusImage} alt="remove from cart" /></div>
+                                            <div style={{cursor:'pointer'}} onClick={() => handleRemove(product)} className="px-2"><img className='img-fluid' src={minusImage} alt="remove from cart" /></div>
                                         </div>
                                     </div>
                                 </div>

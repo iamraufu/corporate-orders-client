@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, 
+    // useState 
+} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../images/logo.jpg'
 import { getStoredCart } from '../utilities/localDB';
 import useAuth from '../hooks/useAuth';
 import categories from '../images/categories.svg'
-import cartImage from '../images/cart.svg'
+// import cartImage from '../images/cart.svg'
+import ProfileDropDown from './ProfileDropDown';
 
 const Navbar = () => {
 
     const { user } = useAuth();
     const savedCart = getStoredCart()
     const productKeys = Object.keys(savedCart)
-    const [cart, setCart] = useState([])
+    // const [cart, setCart] = useState([])
 
     const activeStyles = {
         color: '#dc3545',
@@ -33,7 +36,7 @@ const Navbar = () => {
                 for (let key in savedCart) {
                     tempCart.push({ ...data.find(pd => pd.code === key), count: savedCart[key] })
                 }
-                setCart(tempCart)
+                // setCart(tempCart)
                 localStorage.setItem('shopping-cart', JSON.stringify(tempCart))
             })
     }, [productKeys, savedCart])
@@ -54,12 +57,12 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="d-md-none">
+                {/* <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="d-md-none">
                     <img src={cartImage} width={30} className='img-fluid' alt="shopping cart" />
                     <sup className='fw-bold bg-warning rounded px-1 text-black'>
                         {cart.reduce((a, b) => { return a + (b.count); }, 0)}
                     </sup>
-                </div>
+                </div> */}
 
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 
@@ -104,6 +107,9 @@ const Navbar = () => {
                                             isActive ? activeStyles : undefined
                                         )}
                                         className="nav-link text-white fw-bold text-center" to="/profile">Profile</NavLink>
+                                    <button style={{ background: 'transparent', border: 'none' }} className="nav-link text-white fw-bold text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Request Product</button>
+                                    
+                                    <ProfileDropDown />
                                 </>
                                 :
                                 <NavLink
@@ -114,14 +120,12 @@ const Navbar = () => {
                                     className="nav-link text-white fw-bold text-center" to="/login">Login</NavLink>
                         }
 
-                        <button style={{ background: 'transparent', border: 'none' }} className="nav-link text-white fw-bold text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Request Product</button>
-
-                        <div style={{ cursor: 'pointer' }} data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="d-none d-md-block ps-2">
+                        {/* <div style={{ cursor: 'pointer' }} data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="d-none d-md-block ps-2">
                             <img src={cartImage} width={25} className='img-fluid mt-2' alt="shopping cart" />
                             <sup className='fw-bold bg-warning rounded px-1 text-black'>
                                 {cart.reduce((a, b) => { return a + (b.count); }, 0)}
                             </sup>
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>

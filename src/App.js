@@ -12,9 +12,7 @@ import AuthProvider from './context/AuthProvider';
 import { Suspense } from 'react';
 import logo from './images/logo.jpg';
 import PrivateOutlet from './components/PrivateOutlet';
-// import Dashboard from './pages/Dashboard';
 import Shipping from './pages/Shipping';
-import Payment from './pages/Payment';
 import Product from './pages/Product';
 import Category from './pages/Category';
 
@@ -36,7 +34,6 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
-          {/* <Route path='/products' element={<Products />} /> */}
           <Route path="/product/:id" element={<Product />} />
           <Route path="/:id" element={<Category />} />
           <Route path='/cart' element={<Cart />} />
@@ -44,9 +41,7 @@ function App() {
 
           <Route path='/' element={<PrivateOutlet />}>
             <Route path="profile" element={<Profile />} />
-            {/* <Route path="dashboard" element={<Dashboard />} /> */}
             <Route path="shipping" element={<Shipping />} />
-            <Route path="payment" element={<Payment />} />
             <Route path='orders' element={<Orders />} />
           </Route>
 

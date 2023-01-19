@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import CartDetails from '../components/CartDetails';
 import Navbar from '../components/Navbar';
 import ProductRequest from '../components/ProductRequest';
+import Sidebar from '../components/Sidebar';
+import VegCart from '../components/VegCart';
 import useAuth from '../hooks/useAuth'
 import down from '../images/down.svg'
 
 const Profile = () => {
 
-    const { user, logOut } = useAuth();
-    console.log(logOut);
+    const { user } = useAuth();
 
     const [orders, setOrders] = useState([])
 
@@ -18,11 +19,15 @@ const Profile = () => {
             .then(data => setOrders(data.result))
     }, [user._id])
 
-    console.log(orders);
-
     return (
-        <section>
+        <section style={{}} className='container-fluid p-0'>
             <Navbar />
+            <div className="d-md-none"><Sidebar /></div>
+           
+            <div className="row">
+                <VegCart />
+            </div>
+            
             <h1 className='mt-5 fs-4 text-center'>Profile</h1>
 
             <div className="container mt-5">
@@ -58,27 +63,6 @@ const Profile = () => {
 
                     <h4 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>{user?.secondary_client_email}</h4>
                 </div>
-
-
-
-                {/* <button onClick={()=> logOut()} className='btn btn-danger px-3 mt-3'>Log out</button> */}
-
-                {/* {
-                    orders.length > 0 ?
-                        orders.map((order, index) =>
-                            <div className="">
-                                {order.products.map(product =>
-                                    <>
-                                    
-                                    <li>{product?.name} - {product?.count} {product.price*product.count}</li>
-                                    
-                                    </>
-                                )}
-                            </div>)
-                        :
-                        <p>Loading...</p>
-                } */}
-
             </div>
             <CartDetails />
             <ProductRequest />

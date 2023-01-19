@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import Sidebar from '../components/Sidebar';
 import Skeleton from '../components/Skeleton';
+import VegCart from '../components/VegCart';
 import divisionData from '../data/division.json'
 import NotFound from './NotFound';
 
@@ -65,9 +66,10 @@ const Category = () => {
                                         </div>
                                     </div>
                         }
-                        <CartDetails />
                     </div>
+                    <VegCart />
                 </div>
+                <CartDetails />
             </div>
 
         </section>

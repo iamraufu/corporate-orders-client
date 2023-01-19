@@ -1,0 +1,52 @@
+#profile-dropdown {
+    /* height: 350px; */
+    height: 250px;
+    width: 250px;
+    /* border-radius: 15px; */
+    border-radius: 5px;
+    /* background-color: #18113c; */
+    background-color: white;
+    color: black;
+    /* opacity: 0.75; */
+    position: absolute;
+    right: 0;
+    display: none;
+    /* margin-top: 30px; */
+    margin-top: 0px;
+    margin-right: 7rem;
+    border: 1px solid lightgray;
+    box-shadow: 0 1px 5px #ccc;
+}
+
+.profile-image:hover>#profile-dropdown {
+    display: block;
+}
+
+.profile-dropdown-button,
+.profile-dropdown-logout-button {
+    background-color: #ca4570;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px auto;
+    display: block;
+    background-color: #ff686e;
+    color: #fff;
+    box-shadow: 0 1px 5px #ccc;
+}
+
+.profile-dropdown-button:hover,
+.profile-dropdown-logout-button:hover {
+    /* background-color: #f1316e; */
+    background-color: #ec5f64;
+}
+
+.profile-dropdown-logout-button {
+    /* background-color: transparent;
+    border: 1px solid #f1316e; */
+    background-color: #ff686e;
+    color: #fff;
+    box-shadow: 0 1px 5px #ccc;
+}
