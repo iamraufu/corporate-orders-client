@@ -7,6 +7,7 @@ import rightArrow from '../images/right_arrow.svg';
 const ProductByDivision = ({ category }) => {
 
     const [products, setProducts] = useState([])
+    const skeleton = [0, 1, 2, 3, 4, 5]
 
     useEffect(() => {
         fetch(`https://shwapno.up.railway.app/products/${category?.name}/0/6`)
@@ -21,7 +22,7 @@ const ProductByDivision = ({ category }) => {
                     <h2 className='cart-title p-2 fw-bold'>{category?.name}</h2>
                 </Link>
 
-                <Link onClick={() => { window.scrollTo(0, 0); }} style={{fontSize:'14px', color:'#595353'}} to={`${category?.route}`} className='text-black text-decoration-none'>View More <img className='img-fluid p-0' src={rightArrow} alt="view more" />
+                <Link onClick={() => { window.scrollTo(0, 0); }} style={{ fontSize: '14px', color: '#595353' }} to={`${category?.route}`} className='text-black text-decoration-none'>View More <img className='img-fluid p-0' src={rightArrow} alt="view more" />
                 </Link>
             </div>
 
@@ -34,17 +35,14 @@ const ProductByDivision = ({ category }) => {
                             </div>
                         )
                         :
-                        <>
-                            <div className='skeleton-deck col-lg-3 col-md-5 col-sm-8 mb-5 mx-1'>
-                                <Skeleton />
-                            </div>
-                            <div className='skeleton-deck col-lg-3 col-md-5 col-sm-8 mb-5 mx-1'>
-                                <Skeleton />
-                            </div>
-                            <div className='skeleton-deck col-lg-3 col-md-5 col-sm-8 mb-5 mx-1'>
-                                <Skeleton />
-                            </div>
-                        </>
+                        <div style={{ margin: '0' }} className="row justify-content-center align-items-center px-3">
+                            {
+                                skeleton.map(item =>
+                                    <div key={item} className='skeleton-deck col-lg-2 col-md-3 col-sm-4 col-6 px-2 m-1'>
+                                        <Skeleton />
+                                    </div>
+                                )}
+                        </div>
                 }
             </div>
         </div>

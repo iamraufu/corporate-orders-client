@@ -15,6 +15,7 @@ import PrivateOutlet from './components/PrivateOutlet';
 import Shipping from './pages/Shipping';
 import Product from './pages/Product';
 import Category from './pages/Category';
+import Search from './pages/Search';
 
 function App() {
 
@@ -35,6 +36,8 @@ function App() {
           <Route exact path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path="/product/:id" element={<Product />} />
+          <Route path="/search/:id" element={<Search />} />
+          <Route path="/search/" element={<Search />} />
           <Route path="/:id" element={<Category />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/login' element={<Login />} />

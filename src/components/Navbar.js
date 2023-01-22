@@ -1,18 +1,22 @@
-import React, { useEffect, 
+import React, {
+    useEffect,
     // useState 
 } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import '../styles/ProfileDropDown.css'
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../images/logo.jpg'
 import { getStoredCart } from '../utilities/localDB';
 import useAuth from '../hooks/useAuth';
 import categories from '../images/categories.svg'
 // import cartImage from '../images/cart.svg'
-import ProfileDropDown from './ProfileDropDown';
+// import ProfileDropDown from './ProfileDropDown';
 import ProfileNameDropDown from './ProfileNameDropDown';
+import searchIcon from '../images/search.svg'
 
-const Navbar = () => {
+const Navbar = ({ searchKey }) => {
 
     const { user } = useAuth();
+    const navigate = useNavigate()
     const savedCart = getStoredCart()
     const productKeys = Object.keys(savedCart)
     // const [cart, setCart] = useState([])
@@ -42,17 +46,23 @@ const Navbar = () => {
             })
     }, [productKeys, savedCart])
 
+    const handleChange = data => {
+        // document.getElementById('search_icon').style.display = 'none'
+        navigate(`/search/${data}`)
+    }
+
     return (
         <nav style={{ backgroundColor: '#df0100', boxShadow: '0 5px 15px #c4c4c44d' }} className="navbar navbar-expand-md sticky-top">
             <div className="container">
 
-                {/* <div className="form-group p-1">
-                    <input style={{border:'1px solid black'}} className='rounded form-control' type="search" name="" id="" />
-                </div> */}
-
                 <img src={categories} width={30} className='img-fluid d-lg-none' alt="categories" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" />
 
                 <Link onClick={() => { window.scrollTo(0, 0); }} className="navbar-brand d-none d-lg-block" to="/"><img className='img-fluid' width={85} src={logo} alt="logo" /></Link>
+
+                <div className="form-group p-1 w-50 d-flex">
+                    <input style={{ border: '1px solid black' }} onChange={(e) => handleChange(e.target.value)} className='rounded form-control' type="search" name="" id="" defaultValue={searchKey} autoFocus />
+                    <img id='search_icon' style={{ marginLeft: '-1.5rem' }} className='img-fluid' src={searchIcon} alt="search" />
+                </div>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -109,8 +119,8 @@ const Navbar = () => {
                                         )}
                                         className="nav-link text-white fw-bold text-center" to="/profile">Profile</NavLink>
                                     <button style={{ background: 'transparent', border: 'none' }} className="nav-link text-white fw-bold text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Request Product</button>
-                                    
-                                    <ProfileDropDown />
+
+                                    {/* <ProfileDropDown /> */}
                                     <ProfileNameDropDown />
                                 </>
                                 :

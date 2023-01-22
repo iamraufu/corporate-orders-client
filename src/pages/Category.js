@@ -12,6 +12,7 @@ import NotFound from './NotFound';
 const Category = () => {
 
     const { id } = useParams();
+    const skeleton = [0, 1, 2, 3, 4, 5]
     // eslint-disable-next-line
     const [skip, setSkip] = useState(0)
     // eslint-disable-next-line
@@ -55,15 +56,12 @@ const Category = () => {
                                     </div>
                                     :
                                     <div style={{ margin: '0' }} className="row justify-content-center align-items-center px-3">
-                                        <div className='skeleton-deck col-lg-3 col-md-5 col-sm-8 my-5 mx-1'>
-                                            <Skeleton />
-                                        </div>
-                                        <div className='skeleton-deck col-lg-3 col-md-5 col-sm-8 my-5 mx-1'>
-                                            <Skeleton />
-                                        </div>
-                                        <div className='skeleton-deck col-lg-3 col-md-5 col-sm-8 my-5 mx-1'>
-                                            <Skeleton />
-                                        </div>
+                                        {
+                                            skeleton.map(item =>
+                                                <div key={item} className='skeleton-deck col-lg-2 col-md-3 col-sm-4 col-6 px-2 m-1'>
+                                                    <Skeleton />
+                                                </div>
+                                            )}
                                     </div>
                         }
                     </div>

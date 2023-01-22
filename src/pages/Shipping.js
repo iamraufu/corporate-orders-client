@@ -63,7 +63,7 @@ const Shipping = () => {
             <Navbar />
             <div className="container">
                 <h1 className='mt-5 fs-4 text-center'>Shipping Details</h1>
-                <p>Client Name: <b>{user?.name}</b></p>
+                <p>Client Name: <b>{user?.company_name}</b></p>
                 <p>Email: <b>{user?.email}</b></p>
                 <p>Password: <b>{user?.password}</b></p>
                 <p>Address: <b>{user?.address}</b></p>
@@ -74,12 +74,12 @@ const Shipping = () => {
 
                         <div className="form-group mt-2">
                             <label htmlFor="date" className='p-1'>Delivery Date</label>
-                            <input id='date' min={new Date().toISOString().split('T')[0]} type="date" className="form-control p-2"
+                            <input id='date' min={new Date().toISOString().split('T')[0]} type="date" name='date' className="form-control p-2"
                                 {...register("date", { required: true })} />
                             {errors.date && <span className='text-danger'>This Field is required</span>}
 
                             <label htmlFor="time" className='p-1'>Delivery Time</label>
-                            <input id='time' type="time" className="form-control p-2"
+                            <input id='time' type="time" name='time' className="form-control p-2"
                                 {...register("time", { required: true })} />
                             {errors.time && <span className='text-danger'>This Field is required</span>}
                         </div>

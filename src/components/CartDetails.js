@@ -109,7 +109,7 @@ const CartDetails = () => {
     }
 
     return (
-        <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div className="offcanvas offcanvas-end p-0" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div style={{ paddingBottom: '0' }} className="offcanvas-header">
                 <h5 id="offcanvasRightLabel" className='fw-bold text-center'><img src={vegCartImage} alt="cart details" className='img-fluid pb-4' /> Cart Details
                     {/* <br />

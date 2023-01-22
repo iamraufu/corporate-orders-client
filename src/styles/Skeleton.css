@@ -4,16 +4,20 @@
 
 .skeleton-deck {
     background-color: white;
-    min-width: 200px;
-    height: 350px;
+    /* min-width: 200px; */
+    /* height: 350px; */
+    width: 200px;
+    height: 260px;
     border: 2px solid #f2f2f2;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     box-shadow: 0 5px 15px #f2f2f2;
 }
 
 .cart-img-top_skeleton {
-    max-width: 180px;
-    height: 220px;
+    /* max-width: 180px; */
+    /* height: 220px; */
+    width: 93px;
+    height: 100px;
     margin: 0 auto;
     padding: 10px 0;
 }

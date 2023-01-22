@@ -83,7 +83,7 @@ const Orders = () => {
                                     <div className="col-md-3 fw-bold text-center">Sub Total</div>
                                 </div>
                                 {order.products.map(product =>
-                                    <div style={{ backgroundColor: 'lightgrey' }} className="d-flex justify-content-between align-items-center px-2 pb-2">
+                                    <div key={product._id} style={{ backgroundColor: 'lightgrey' }} className="d-flex justify-content-between align-items-center px-2 pb-2">
                                         <div className="col-md-3"><small>{product.price}</small></div>
                                         <div className="col-md-3"><small>{product.name}</small></div>
                                         <div className="col-md-3 text-center"><small>{product.count}</small></div>

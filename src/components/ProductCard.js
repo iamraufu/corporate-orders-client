@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useReducer, useState } from 'react';
+import { useEffect } from 'react';
 import { addToDB, removeFromCart, removeFromDb } from '../utilities/localDB';
 import ProductRequest from './ProductRequest';
 
 const ProductCard = ({ product }) => {
-
+    
+    const count = JSON.parse(localStorage.getItem('shopping-cart')).find(pd => pd.code === product?.code)?.count || 0;
+    
     const [cart, setCart] = useState([]);
-    const [addToCartCount, setAddToCartCount] = useState(0);
+    const [addToCartCount, setAddToCartCount] = useState(count)
+    const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
+
+    useEffect(()=> {
+        setAddToCartCount(count)
+        forceUpdate()
+        
+    },[count,reducerValue])
 
     const addToCart = (product) => {
+        document.getElementById('view_cart').click()
         setAddToCartCount(addToCartCount + 1)
         const newCart = [...cart, product];
         setCart(newCart)
@@ -20,10 +31,12 @@ const ProductCard = ({ product }) => {
         }
         if (addToCartCount === 1) {
             setAddToCartCount(0)
+            document.getElementById('view_cart').click()
             document.getElementById(`product-${product.code}`).style.display = 'none';
             document.getElementById(`btn-${product.code}`).style.display = 'block';
         }
         else {
+            document.getElementById('view_cart').click()
             setAddToCartCount(addToCartCount - 1)
         }
         removeFromCart(product.code)
