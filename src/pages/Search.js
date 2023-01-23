@@ -44,7 +44,8 @@ const Search = () => {
                         {
                             products.length > 0 ?
                                 products.map((product, index) =>
-                                    <div key={index + 1} className="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center align-items-center">
+                                    // col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center align-items-center 
+                                    <div key={index + 1} className="col-md-3 col-sm-4 col-6 d-flex align-items-center">
                                         <ProductCard product={product} />
                                     </div>
                                 )

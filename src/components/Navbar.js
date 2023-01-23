@@ -60,7 +60,7 @@ const Navbar = ({ searchKey }) => {
                 <Link onClick={() => { window.scrollTo(0, 0); }} className="navbar-brand d-none d-lg-block" to="/"><img className='img-fluid' width={85} src={logo} alt="logo" /></Link>
 
                 <div className="form-group p-1 w-50 d-flex">
-                    <input style={{ border: '1px solid black' }} onChange={(e) => handleChange(e.target.value)} className='rounded form-control' type="search" name="" id="" defaultValue={searchKey} autoFocus />
+                    <input placeholder='Search for Alu, shak by typing' onChange={(e) => handleChange(e.target.value)} className='rounded form-control' type="search" name="" id="" defaultValue={searchKey} autoFocus />
                     <img id='search_icon' style={{ marginLeft: '-1.5rem' }} className='img-fluid' src={searchIcon} alt="search" />
                 </div>
 

@@ -26,6 +26,7 @@ const Orders = () => {
             cart[product.code] = product.count;
             localStorage.setItem('cart', JSON.stringify(cart));
         })
+        document.getElementById('view_cart').click()
     }
 
     const handleClick = (id) => {

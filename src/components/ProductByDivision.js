@@ -10,7 +10,7 @@ const ProductByDivision = ({ category }) => {
     const skeleton = [0, 1, 2, 3, 4, 5]
 
     useEffect(() => {
-        fetch(`https://shwapno.up.railway.app/products/${category?.name}/0/6`)
+        fetch(`https://shwapno.up.railway.app/products/${category?.name}/0/8`)
             .then(response => response.json())
             .then(data => setProducts(data))
     }, [category])
@@ -26,11 +26,12 @@ const ProductByDivision = ({ category }) => {
                 </Link>
             </div>
 
-            <div className="row justify-content-center align-items-center mt-3">
+            <div className="row align-items-center mt-3">
                 {
                     products.length > 0 ?
                         products.map((product, index) =>
-                            <div key={index + 1} className="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center align-items-center">
+                            // col-lg-2 col-md-3 col-sm-4 col-6 justify-content-center
+                            <div key={index + 1} className="col-lg-3 col-sm-4 col-12 d-flex align-items-center">
                                 <ProductCard product={product} />
                             </div>
                         )
