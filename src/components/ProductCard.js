@@ -60,7 +60,8 @@ const ProductCard = ({ product }) => {
                     <img width={36} className='mx-auto d-block' src={box} alt={product?.name} />
                 </div>
 
-                <div className="col-md-9">
+                {/* col-md-9 */}
+                <div className="">
                     <p style={{ fontSize: '13px', minHeight:'35px' }} className="px-2">{product.name || 'Name Not Available'}</p>
 
                     <div className="d-flex justify-content-between align-items-center px-2">

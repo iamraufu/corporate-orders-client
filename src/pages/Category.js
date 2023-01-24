@@ -50,7 +50,7 @@ const Category = () => {
                                         {
                                             products.map(product =>
                                                 // col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center align-items-center px-2
-                                                <div style={{ padding: '0' }} key={product._id} className="col-md-3 col-sm-4 col-6 d-flex align-items-center px-2">
+                                                <div style={{ padding: '0' }} key={product._id} className="col-lg-3 col-sm-4 col-12 d-flex align-items-center px-2">
                                                     <ProductCard product={product} />
                                                 </div>
                                             )}

@@ -53,13 +53,14 @@ const Navbar = ({ searchKey }) => {
 
     return (
         <nav style={{ backgroundColor: '#df0100', boxShadow: '0 5px 15px #c4c4c44d' }} className="navbar navbar-expand-md sticky-top">
-            <div className="container">
+            <div className="container-fluid">
+
+                {/* d-none d-lg-block */}
+                <Link onClick={() => { window.scrollTo(0, 0); }} className="navbar-brand" to="/"><img className='img-fluid' width={70} src={logo} alt="logo" /></Link>
 
                 <img src={categories} width={30} className='img-fluid d-lg-none' alt="categories" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" />
 
-                <Link onClick={() => { window.scrollTo(0, 0); }} className="navbar-brand d-none d-lg-block" to="/"><img className='img-fluid' width={85} src={logo} alt="logo" /></Link>
-
-                <div className="form-group p-1 w-50 d-flex">
+                <div className="form-group p-1 w-50 d-flex justify-content-center">
                     <input placeholder='Search for Alu, shak by typing' onChange={(e) => handleChange(e.target.value)} className='rounded form-control' type="search" name="" id="" defaultValue={searchKey} autoFocus />
                     <img id='search_icon' style={{ marginLeft: '-1.5rem' }} className='img-fluid' src={searchIcon} alt="search" />
                 </div>
