@@ -31,7 +31,7 @@ const ProductByDivision = ({ category }) => {
                     products.length > 0 ?
                         products.map((product, index) =>
                             // col-lg-2 col-md-3 col-sm-4 col-6 justify-content-center
-                            <div key={index + 1} className="col-lg-3 col-sm-4 col-12 d-flex align-items-center">
+                            <div key={index + 1} className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center">
                                 <ProductCard product={product} />
                             </div>
                         )

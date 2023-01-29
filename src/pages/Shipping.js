@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import ProductRequest from '../components/ProductRequest';
 import CartDetails from '../components/CartDetails';
+import VegCart from '../components/VegCart';
 
 const Shipping = () => {
 
@@ -13,6 +14,8 @@ const Shipping = () => {
     const navigate = useNavigate()
 
     const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const requestedProducts = JSON.parse(localStorage.getItem('requested-product')) || []
 
     const onSubmit = data => {
         placeOrder(data);
@@ -28,6 +31,7 @@ const Shipping = () => {
             company: user.name,
             phone: user.phone,
             products: JSON.parse(localStorage.getItem('shopping-cart')),
+            requested_products: requestedProducts,
             date: data.date,
             time: data.time
         }
@@ -46,6 +50,7 @@ const Shipping = () => {
                         text: `${data.message}`,
                     })
                     localStorage.removeItem('cart');
+                    localStorage.removeItem('requested-product');
                     navigate('/orders')
                 }
                 else {
@@ -59,8 +64,13 @@ const Shipping = () => {
     }
 
     return (
-        <section>
+        <section className='container-fluid p-0'>
             <Navbar />
+
+            <div className="row">
+                <VegCart />
+            </div>
+
             <div className="container">
                 <h1 className='mt-5 fs-4 text-center'>Shipping Details</h1>
                 <p>Client Name: <b>{user?.company_name}</b></p>
@@ -73,15 +83,19 @@ const Shipping = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-group mt-2">
-                            <label htmlFor="date" className='p-1'>Delivery Date</label>
-                            <input id='date' min={new Date().toISOString().split('T')[0]} type="date" name='date' className="form-control p-2"
-                                {...register("date", { required: true })} />
-                            {errors.date && <span className='text-danger'>This Field is required</span>}
+                            <div className="">
+                                <label htmlFor="date" className='p-1'>Delivery Date</label>
+                                <input id='date' min={new Date().toISOString().split('T')[0]} type="date" name='date' className="form-control p-2"
+                                    {...register("date", { required: true })} />
+                                {errors.date && <span className='text-danger'>Date is required</span>}
+                            </div>
 
-                            <label htmlFor="time" className='p-1'>Delivery Time</label>
-                            <input id='time' type="time" name='time' className="form-control p-2"
-                                {...register("time", { required: true })} />
-                            {errors.time && <span className='text-danger'>This Field is required</span>}
+                            <div className="">
+                                <label htmlFor="time" className='p-1'>Delivery Time</label>
+                                <input id='time' type="time" name='time' className="form-control p-2"
+                                    {...register("time", { required: true })} />
+                                {errors.time && <span className='text-danger'>Time is required</span>}
+                            </div>
                         </div>
 
                         <input className='btn btn-dark px-3 mt-3' type="submit" value='Order Now' />

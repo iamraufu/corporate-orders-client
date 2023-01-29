@@ -6,6 +6,7 @@ import ProductCard from '../components/ProductCard';
 import Sidebar from '../components/Sidebar';
 import Skeleton from '../components/Skeleton';
 import VegCart from '../components/VegCart';
+import WhatsApp from '../components/WhatsApp';
 import divisionData from '../data/division.json'
 import NotFound from './NotFound';
 
@@ -50,7 +51,7 @@ const Category = () => {
                                         {
                                             products.map(product =>
                                                 // col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center align-items-center px-2
-                                                <div style={{ padding: '0' }} key={product._id} className="col-lg-3 col-sm-4 col-12 d-flex align-items-center px-2">
+                                                <div style={{ padding: '0' }} key={product._id} className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center px-2">
                                                     <ProductCard product={product} />
                                                 </div>
                                             )}
@@ -69,6 +70,7 @@ const Category = () => {
                     <VegCart />
                 </div>
                 <CartDetails />
+                <WhatsApp />
             </div>
 
         </section>

@@ -174,3 +174,85 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
     -webkit-appearance: none;
 }
+
+.search-bar {
+    min-width: 800px;
+}
+
+@media (max-width: 1400px) {
+    .search-bar {
+        min-width: 700px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .search-bar {
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .search-bar {
+        min-width: 500px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .search-bar {
+        min-width: 350px;
+    }
+}
+
+@media (max-width: 855px) {
+    .search-bar {
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 785px) {
+    .search-bar {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 767px) {
+    .search-bar {
+        min-width: 450px;
+    }
+}
+
+@media (max-width: 646px) {
+    .search-bar {
+        min-width: 400px;
+    }
+}
+
+@media (max-width: 596px) {
+    .search-bar {
+        min-width: 350px;
+    }
+}
+
+@media (max-width: 546px) {
+    .search-bar {
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 496px) {
+    .search-bar {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 446px) {
+    .search-bar {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 396px) {
+    .search-bar {
+        width: 150px;
+    }
+}

@@ -30,7 +30,7 @@ const Sidebar = () => {
                     )}
             </div>
 
-            <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+            <div className="offcanvas offcanvas-start" tabIndex={-1} id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
                 <div className="offcanvas-header">
                     <h5 className="offcanvas-title fw-bold ps-3" id="offcanvasWithBackdropLabel">Categories</h5>
                     <button type="button" className="btn-close text-reset btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>

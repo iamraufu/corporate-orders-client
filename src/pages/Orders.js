@@ -6,6 +6,7 @@ import tickImage from '../images/tick.svg'
 import down from '../images/down.svg'
 import Sidebar from '../components/Sidebar';
 import VegCart from '../components/VegCart';
+import WhatsApp from '../components/WhatsApp';
 
 const Orders = () => {
 
@@ -96,11 +97,9 @@ const Orders = () => {
                     )
                 }
             </div>
-
-
-
             <CartDetails />
             <ProductRequest />
+            <WhatsApp />
         </section>
     );
 };

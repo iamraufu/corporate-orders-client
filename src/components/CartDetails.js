@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { getStoredCart, addToDB, removeFromCart, addFive, addTen } from '../utilities/localDB';
+import { getStoredCart } from '../utilities/localDB';
 import vegCartImage from '../images/veg_cart.png';
+import CartProducts from './CartProducts';
 // import plusImage from '../images/plus.svg';
 // import minusImage from '../images/minus.svg';
 
@@ -18,6 +19,8 @@ const CartDetails = () => {
     // Cart data 
     const savedCart = getStoredCart()
     const productKeys = Object.keys(savedCart)
+
+    const requestedProducts = JSON.parse(localStorage.getItem('requested-product')) || []
 
     // let cart = []
 
@@ -41,7 +44,7 @@ const CartDetails = () => {
     }, [productKeys, savedCart])
 
     useEffect(() => {
-        if (cartItems.length > 0) {
+        if (cartItems.length + requestedProducts?.length > 0) {
             setDisabled(false);
             // document.getElementById('btn_checkout').style.cursor = 'pointer';
             // document.getElementById('btn_checkout').className = 'btn btn-dark mx-auto d-block p-2';
@@ -50,10 +53,10 @@ const CartDetails = () => {
         else {
             setDisabled(true);
         }
-    }, [cartItems.length])
+    }, [cartItems.length, requestedProducts?.length])
 
     const handleClick = () => {
-        if (cartItems.length > 0) {
+        if (cartItems.length + requestedProducts?.length > 0) {
             navigate('/shipping');
         }
         else {
@@ -64,52 +67,23 @@ const CartDetails = () => {
             )
         }
     }
+
     // eslint-disable-next-line
     // const [cartItemsProducts, setCartItemsProducts] = useState([]);
-    const [cartProduct, setCartProduct] = useState([])
+
     // setCartProduct(localCartItems.filter(pd => pd?.code === product?.code))
     // useEffect(()=>{
     //     setCartProduct(localCartItems.filter(pd => pd?.code === product?.code))
     // },[localCartItems,product?.code])
     // const [cartProduct, setCartProduct] = useState(JSON.parse(localStorage.getItem('shopping-cart')).filter(pd => pd?.code === product?.code))
-    const [cartProductCount, setCartProductCount] = useState(cartProduct.length)
-    const shoppingList = JSON.parse(localStorage.getItem('shopping-cart'));
 
-    useEffect(() => {
-        setCartProduct(shoppingList.filter(pd => pd?.code === product?.code))
-        // eslint-disable-next-line
-    }, [product.code])
 
-    useEffect(() => {
-        setCartProductCount(cartProduct[0]?.count)
-    }, [cartProduct])
 
-    const addToCart = (product) => {
-        setCartProductCount(cartProductCount + 1)
-        shoppingCart(product);
-    }
 
-    const handleRemove = (product) => {
-        cartProductCount === 1 ? setCartProductCount(1) : setCartProductCount(cartProductCount - 1)
-        removeFromCart(product.code)
-    }
 
-    const shoppingCart = (product) => {
-        // const newCart = [...cart, product];
-        // setCartItemsProducts(newCart)
-        addToDB(product.code);
-    }
-
-    const handleFive = (product) => {
-        addFive(product.code)
-    }
-
-    const handleTen = (product) => {
-        addTen(product.code)
-    }
 
     return (
-        <div className="offcanvas offcanvas-end p-0" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div className="offcanvas offcanvas-end p-0" tabIndex={-1} id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div style={{ paddingBottom: '0' }} className="offcanvas-header">
                 <h5 id="offcanvasRightLabel" className='fw-bold text-center fs-6'><img width={30} src={vegCartImage} alt="cart details" className='img-fluid pb-3 me-1' /> Total Order
                     {/* <br />
@@ -124,21 +98,24 @@ const CartDetails = () => {
                 <div style={{ marginBottom: '8rem' }} className="">
                     {
                         cartItems.map(product =>
-                            <div key={product._id} style={{ borderBottom: '1px solid #E4DADA' }} className="py-2">
-                                <div className="d-flex justify-content-between align-item-center px-2">
-                                    <div onClick={() => addToCart(product)} style={{ width: '18px', height: '18px', backgroundColor: '#D9D9D9', cursor: 'pointer' }} className="col-md-2 fw-bold d-flex justify-content-center align-items-center">+</div>
-                                    <div className="col-md-8 fs-6"><h2 style={{ fontSize: '13px' }} className="">{product.name}</h2></div>
-                                    <div onClick={() => handleFive(product)} style={{ fontSize: '10px', height: '28px', width: '28px', backgroundColor: '#D9D9D9', borderRadius: '50%', cursor: 'pointer' }} className="col-md-1 d-flex justify-content-center align-items-center fw-bold">5Kg</div>
-                                    <div onClick={() => handleTen(product)} style={{ fontSize: '10px', height: '28px', width: '28px', backgroundColor: '#D9D9D9', borderRadius: '50%', cursor: 'pointer' }} className="col-md-1 d-flex justify-content-center align-items-center fw-bold">10Kg</div>
-                                </div>
+                            <CartProducts key={product._id} product={product} />
+                            // Eikhan theke
+                            // <div key={product._id} style={{ borderBottom: '1px solid #E4DADA' }} className="py-2">
+                            //     <div className="d-flex justify-content-between align-item-center px-2">
+                            //         <div onClick={() => addToCart(product)} style={{ width: '18px', height: '18px', backgroundColor: '#D9D9D9', cursor: 'pointer' }} className="col-md-2 fw-bold d-flex justify-content-center align-items-center">+</div>
+                            //         <div className="col-md-8 fs-6"><h2 style={{ fontSize: '13px' }} className="">{product.name}</h2></div>
+                            //         <div onClick={() => handleFive(product)} style={{ fontSize: '10px', height: '28px', width: '28px', backgroundColor: '#D9D9D9', borderRadius: '50%', cursor: 'pointer' }} className="col-md-1 d-flex justify-content-center align-items-center fw-bold">5Kg</div>
+                            //         <div onClick={() => handleTen(product)} style={{ fontSize: '10px', height: '28px', width: '28px', backgroundColor: '#D9D9D9', borderRadius: '50%', cursor: 'pointer' }} className="col-md-1 d-flex justify-content-center align-items-center fw-bold">10Kg</div>
+                            //     </div>
 
-                                <div className="d-flex justify-content-between align-item-center px-2 mt-2">
-                                    <div onClick={() => handleRemove(product)} style={{ width: '18px', height: '18px', backgroundColor: '#D9D9D9', cursor: 'pointer' }} className="col-md-2 fw-bold d-flex justify-content-center align-items-center">-</div>
-                                    <div className="col-md-6"></div>
-                                    <div className="col-md-2"><h4 style={{ fontSize: '15px' }} className="fw-bold float-end">{product.price} Tk</h4></div>
-                                    <div className="col-md-2"><h4 style={{ fontSize: '15px' }} className="float-end">{product?.count} Kg</h4></div>
-                                </div>
-                            </div>
+                            //     <div className="d-flex justify-content-between align-item-center px-2 mt-2">
+                            //         <div onClick={() => handleRemove(product)} style={{ width: '18px', height: '18px', backgroundColor: '#D9D9D9', cursor: 'pointer' }} className="col-md-2 fw-bold d-flex justify-content-center align-items-center">-</div>
+                            //         <div className="col-md-6"></div>
+                            //         {/* <div className="col-md-2"><h4 style={{ fontSize: '15px' }} className="fw-bold float-end">{product.price} Tk</h4></div> */}
+                            //         <div className="col-md-2"><h4 style={{ fontSize: '15px' }} className="float-end">{product?.count} Kg</h4></div>
+                            //     </div>
+                            // </div>
+                            // Eituk
 
                             // <div key={product._id} style={{ width: '180px', height: 'auto' }} className="mx-auto d-block mt-3">
 
@@ -165,23 +142,38 @@ const CartDetails = () => {
                             // </div>
                         )
                     }
+
+                    {
+                        requestedProducts.length > 0 &&
+                        <div className="">
+                            <h2 style={{ fontSize: '13px' }} className='fw-bold ps-2 pt-2'>Requested Products</h2>
+                            {
+                                requestedProducts.map((product, index) =>
+                                    <div style={{ borderBottom: '1px solid #E4DADA' }} key={index} className="ps-2 py-1">
+                                        <div className="col-md-8 fs-6"><h2 style={{ fontSize: '13px' }} className="">{product.description}</h2></div>
+                                        <div className="col-md-8 fs-6"><h2 style={{ fontSize: '13px' }} className=""><small>{product.brand}</small></h2></div>
+                                        <div className="col-md-8 fs-6"><h2 style={{ fontSize: '13px' }} className=""><small>{product.quantity} {product.unit}</small></h2></div>
+                                    </div>
+                                )}
+                        </div>
+                    }
                 </div>
 
                 <div style={{ boxShadow: '0 5px 15px #c4c4c44d', bottom: '0', backgroundColor: '#F9E3E3' }} onClick={() => handleClick()} className="position-absolute mx-auto d-block w-100 p-2">
                     <div className="d-flex justify-content-between align-items-center p-2">
                         <div className="">
-                         {
-                            cartItems.length === 0 && <h5 style={{ fontSize: '12px' }} className='text-center fw-bold'>No Product</h5>
-                         }
+                            {
+                                cartItems.length + requestedProducts?.length === 0 && <h5 style={{ fontSize: '12px' }} className='text-center fw-bold'>No Product</h5>
+                            }
 
-                         {
-                            cartItems.length === 1 && <h5 style={{ fontSize: '12px' }} className='text-center fw-bold'>1 Product</h5>
-                         }
-                         {
-                            cartItems.length > 1 && <h5 style={{ fontSize: '12px' }} className='text-center fw-bold'>{cartItems.length} Products</h5>
-                         }
-                         </div>
-                        <div className=""><h5 style={{ fontSize: '14px' }} className='text-center fw-bold'>{cartItems.reduce((a, b) => a + b.price * b.count, 0)} Taka</h5></div>
+                            {
+                                cartItems.length + requestedProducts?.length === 1 && <h5 style={{ fontSize: '12px' }} className='text-center fw-bold'>1 Product</h5>
+                            }
+                            {
+                                cartItems.length + requestedProducts?.length > 1 && <h5 style={{ fontSize: '12px' }} className='text-center fw-bold'>{cartItems.length + requestedProducts?.length} Products</h5>
+                            }
+                        </div>
+                        {/* <div className=""><h5 style={{ fontSize: '14px' }} className='text-center fw-bold'>{cartItems.reduce((a, b) => a + b.price * b.count, 0)} Taka</h5></div> */}
                     </div>
                     {/* <button disabled={disabled} className='btn-confirm-order mx-auto d-block px-5 w-100 fw-bold'>Confirm Order</button> */}
                     <button disabled={disabled} className='float-end btn-confirm-order'>Confirm Order</button>

@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import ProductByDivision from '../components/ProductByDivision';
 import Sidebar from '../components/Sidebar';
 import VegCart from '../components/VegCart';
+import WhatsApp from '../components/WhatsApp';
 import divisionData from '../data/division.json'
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
                 <VegCart />
                 <CartDetails />
             </div>
+            <WhatsApp />
         </section>
     );
 };

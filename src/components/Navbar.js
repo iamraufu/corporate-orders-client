@@ -60,8 +60,8 @@ const Navbar = ({ searchKey }) => {
 
                 <img src={categories} width={30} className='img-fluid d-lg-none' alt="categories" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" />
 
-                <div className="form-group p-1 w-50 d-flex justify-content-center">
-                    <input placeholder='Search for Alu, shak by typing' onChange={(e) => handleChange(e.target.value)} className='rounded form-control' type="search" name="" id="" defaultValue={searchKey} autoFocus />
+                <div className="search-bar form-group p-1 d-flex justify-content-center align-items-center">
+                    <input placeholder='Search for Alu, shak by typing' onChange={(e) => handleChange(e.target.value)} className='form-control mx-auto d-block' type="search" name="" id="" defaultValue={searchKey} autoFocus />
                     <img id='search_icon' style={{ marginLeft: '-1.5rem' }} className='img-fluid' src={searchIcon} alt="search" />
                 </div>
 
@@ -76,7 +76,14 @@ const Navbar = ({ searchKey }) => {
                     </sup>
                 </div> */}
 
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div 
+                style={{maxWidth:'400px'}} 
+                className="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+                {/* <div className="form-group p-1 w-50 d-flex justify-content-center mx-auto d-block">
+                    <input placeholder='Search for Alu, shak by typing' onChange={(e) => handleChange(e.target.value)} className='rounded form-control' type="search" name="" id="" defaultValue={searchKey} autoFocus />
+                    <img id='search_icon' style={{ marginLeft: '-1.5rem' }} className='img-fluid' src={searchIcon} alt="search" />
+                </div> */}
 
                     <div className="navbar-nav ms-auto pt-2">
                         <NavLink

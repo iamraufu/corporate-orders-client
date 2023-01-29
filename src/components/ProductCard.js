@@ -55,24 +55,24 @@ const ProductCard = ({ product }) => {
     return (
         <div className="cart-deck my-2">
 
-            <div className="d-flex justify-content-between align-items-center pt-2">
+            <div className="cart-body d-flex align-items-center">
                 <div style={{ height: '48px', width: '46px', backgroundColor: '#F6F9FC' }} className="col-md-3 d-flex justify-content-center align-items-center ms-2">
                     <img width={36} className='mx-auto d-block' src={box} alt={product?.name} />
                 </div>
 
                 {/* col-md-9 */}
-                <div className="">
-                    <p style={{ fontSize: '13px', minHeight:'35px' }} className="px-2">{product.name || 'Name Not Available'}</p>
+                <div className="p-2">
+                    <p style={{ fontSize: '12px', minHeight:'35px' }} className="ps-2 m-0">{product.name || 'Name Not Available'}</p>
 
-                    <div className="d-flex justify-content-between align-items-center px-2">
-                        <div className="">
+                    <div className="d-flex justify-content-between align-items-center ps-2">
+                        {/* <div className="">
                             <p style={{ margin: '0', fontSize: '14px' }} className="fw-bold text-center">{product.price || 'Not uploaded'} Tk</p>
-                        </div>
+                        </div> */}
 
                         <div id={`btn-${product?.code}`}>
                             <button
                                 onClick={() => handleCart(product)}
-                                className="btn btn-add-to-cart mx-auto d-block d-flex justify-content-center align-items-center">Add Item</button>
+                                className="btn btn-add-to-cart d-flex justify-content-center align-items-center mt-1">Add Item</button>
                         </div>
                         
                         {/* <div id={`product-${product?.code}`} style={{ display: 'none' }}>

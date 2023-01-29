@@ -20,7 +20,7 @@ const Profile = () => {
     }, [user._id])
 
     return (
-        <section style={{}} className='container-fluid p-0'>
+        <section className='container-fluid p-0'>
             <Navbar />
             <div className="d-md-none"><Sidebar /></div>
            
