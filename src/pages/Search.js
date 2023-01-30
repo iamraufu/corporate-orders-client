@@ -22,7 +22,7 @@ const Search = () => {
     const [limit, setLimit] = useState(102)
 
     useEffect(() => {
-        fetch(`https://shwapno.up.railway.app/products/${skip}/${limit}?search=${id}`)
+        fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${id}`)
             .then(response => response.json())
             .then(data => setProducts(data.products))
     }, [id, skip, limit])

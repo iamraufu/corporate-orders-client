@@ -14,7 +14,7 @@ const Profile = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`https://shwapno.up.railway.app/orders/ordersById/${user._id}`)
+        fetch(`https://corporateorders.herokuapp.com/orders/ordersById/${user._id}`)
             .then(response => response.json())
             .then(data => setOrders(data.result))
     }, [user._id])

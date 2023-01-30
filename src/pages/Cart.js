@@ -22,7 +22,7 @@ const Cart = () => {
     let cart = []
 
     useEffect(() => {
-        fetch('https://shwapno.up.railway.app/productsByCodes', {
+        fetch('https://corporateorders.herokuapp.com/productsByCodes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

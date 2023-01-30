@@ -14,7 +14,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`https://shwapno.up.railway.app/orders/ordersById/${uId}`)
+        fetch(`https://corporateorders.herokuapp.com/orders/ordersById/${uId}`)
             .then(response => response.json())
             .then(data => setOrders(data.result))
     }, [uId])
