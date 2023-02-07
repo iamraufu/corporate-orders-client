@@ -13,7 +13,8 @@ import NotFound from './NotFound';
 const Category = () => {
 
     const { id } = useParams();
-    const skeleton = [0, 1, 2, 3, 4, 5]
+    // const skeleton = [0, 1, 2, 3, 4, 5, 6, 7]
+    const skeleton = Array.from({ length: 16 }, (_, i) => i);
     // eslint-disable-next-line
     const [skip, setSkip] = useState(0)
     // eslint-disable-next-line
@@ -60,7 +61,7 @@ const Category = () => {
                                     <div style={{ margin: '0' }} className="row justify-content-center align-items-center px-3">
                                         {
                                             skeleton.map(item =>
-                                                <div key={item} className='skeleton-deck col-lg-2 col-md-3 col-sm-4 col-6 px-2 m-1'>
+                                                <div key={item} className='col-lg-3 col-md-4 col-sm-6 col-12'>
                                                     <Skeleton />
                                                 </div>
                                             )}

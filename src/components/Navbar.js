@@ -28,23 +28,46 @@ const Navbar = ({ searchKey }) => {
     }
 
     useEffect(() => {
-        fetch('https://corporateorders.herokuapp.com/productsByCodes', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(productKeys)
-        })
-            .then(res => res.json())
-            .then(data => {
+        const fetchData = async () => {
+            if (Object.keys(getStoredCart()).length > 0) {
+
+                const response = await fetch('https://corporateorders.herokuapp.com/productsByCodes', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(productKeys)
+                })
+                const data = await response.json();
+                // setData(data);
                 let tempCart = []
                 for (let key in savedCart) {
                     tempCart.push({ ...data.find(pd => pd.code === key), count: savedCart[key] })
                 }
                 // setCart(tempCart)
                 localStorage.setItem('shopping-cart', JSON.stringify(tempCart))
-            })
-    }, [productKeys, savedCart])
+            }
+        };
+        fetchData();
+        // fetch('https://corporateorders.herokuapp.com/productsByCodes', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(productKeys)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         let tempCart = []
+        //         for (let key in savedCart) {
+        //             tempCart.push({ ...data.find(pd => pd.code === key), count: savedCart[key] })
+        //         }
+        //         // setCart(tempCart)
+        //         localStorage.setItem('shopping-cart', JSON.stringify(tempCart))
+        //     })
+        // }, [productKeys, savedCart])
+        // eslint-disable-next-line
+    }, [])
 
     const handleChange = data => {
         // document.getElementById('search_icon').style.display = 'none'
@@ -76,11 +99,11 @@ const Navbar = ({ searchKey }) => {
                     </sup>
                 </div> */}
 
-                <div 
-                style={{maxWidth:'400px'}} 
-                className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div
+                    style={{ maxWidth: '400px' }}
+                    className="collapse navbar-collapse" id="navbarNavAltMarkup">
 
-                {/* <div className="form-group p-1 w-50 d-flex justify-content-center mx-auto d-block">
+                    {/* <div className="form-group p-1 w-50 d-flex justify-content-center mx-auto d-block">
                     <input placeholder='Search for Alu, shak by typing' onChange={(e) => handleChange(e.target.value)} className='rounded form-control' type="search" name="" id="" defaultValue={searchKey} autoFocus />
                     <img id='search_icon' style={{ marginLeft: '-1.5rem' }} className='img-fluid' src={searchIcon} alt="search" />
                 </div> */}

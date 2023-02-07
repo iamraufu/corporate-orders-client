@@ -25,23 +25,27 @@ const CartDetails = () => {
     // let cart = []
 
     useEffect(() => {
-        fetch('https://corporateorders.herokuapp.com/productsByCodes', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(productKeys)
-        })
-            .then(res => res.json())
-            .then(data => {
-                let tempCart = []
-                for (let key in savedCart) {
-                    tempCart.push({ ...data.find(pd => pd.code === key), count: savedCart[key] })
-                }
-                setCartItems(tempCart)
-                localStorage.setItem('shopping-cart', JSON.stringify(tempCart))
+        if (Object.keys(getStoredCart()).length > 0) {
+            fetch('https://corporateorders.herokuapp.com/productsByCodes', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(productKeys)
             })
-    }, [productKeys, savedCart])
+                .then(res => res.json())
+                .then(data => {
+                    let tempCart = []
+                    for (let key in savedCart) {
+                        tempCart.push({ ...data.find(pd => pd.code === key), count: savedCart[key] })
+                    }
+                    setCartItems(tempCart)
+                    localStorage.setItem('shopping-cart', JSON.stringify(tempCart))
+                })
+        }
+        // }, [productKeys, savedCart])
+        // eslint-disable-next-line
+    }, [])
 
     useEffect(() => {
         if (cartItems.length + requestedProducts?.length > 0) {
@@ -76,10 +80,6 @@ const CartDetails = () => {
     //     setCartProduct(localCartItems.filter(pd => pd?.code === product?.code))
     // },[localCartItems,product?.code])
     // const [cartProduct, setCartProduct] = useState(JSON.parse(localStorage.getItem('shopping-cart')).filter(pd => pd?.code === product?.code))
-
-
-
-
 
 
     return (

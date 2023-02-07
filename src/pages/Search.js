@@ -19,12 +19,20 @@ const Search = () => {
     // eslint-disable-next-line
     const [skip, setSkip] = useState(0)
     // eslint-disable-next-line
-    const [limit, setLimit] = useState(102)
+    const [limit, setLimit] = useState(104)
 
     useEffect(() => {
-        fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${id}`)
+        const handler = setTimeout(()=>{
+            fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${id}`)
             .then(response => response.json())
             .then(data => setProducts(data.products))
+        },600)
+        return () => {
+            clearTimeout(handler);
+          };
+        // fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${id}`)
+        //     .then(response => response.json())
+        //     .then(data => setProducts(data.products))
     }, [id, skip, limit])
 
     return (

@@ -7,7 +7,7 @@ import rightArrow from '../images/right_arrow.svg';
 const ProductByDivision = ({ category }) => {
 
     const [products, setProducts] = useState([])
-    const skeleton = [0, 1, 2, 3, 4, 5]
+    const skeleton = [0, 1, 2, 3, 4, 5,6,7]
 
     useEffect(() => {
         fetch(`https://corporateorders.herokuapp.com/products/${category?.name}/0/8`)
@@ -36,10 +36,10 @@ const ProductByDivision = ({ category }) => {
                             </div>
                         )
                         :
-                        <div style={{ margin: '0' }} className="row justify-content-center align-items-center px-3">
+                        <div style={{ margin: '0' }} className="row align-items-center">
                             {
                                 skeleton.map(item =>
-                                    <div key={item} className='skeleton-deck col-lg-2 col-md-3 col-sm-4 col-6 px-2 m-1'>
+                                    <div key={item} className='col-lg-3 col-md-4 col-sm-6 col-12'>
                                         <Skeleton />
                                     </div>
                                 )}

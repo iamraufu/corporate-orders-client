@@ -86,7 +86,7 @@ const removeFromCart = code => {
     if (quantity) {
         const newQuantity = quantity - 1;
 
-        if (newQuantity === 0){
+        if (newQuantity === 0) {
             removeFromDb(code)
         }
         else {
@@ -101,7 +101,10 @@ const removeFromCart = code => {
 const addCartProductsToDB = () => {
     const savedCart = getStoredCart()
     const productKeys = Object.keys(savedCart)
-    fetch('https://corporateorders.herokuapp.com/productsByCodes', {
+
+    if (Object.keys(getStoredCart()).length > 0) {
+        
+        fetch('https://corporateorders.herokuapp.com/productsByCodes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -117,6 +120,8 @@ const addCartProductsToDB = () => {
                 // setCartItems(tempCart)
                 localStorage.setItem('shopping-cart', JSON.stringify(tempCart))
             })
+    }
+
 }
 
 const getStoredCart = () => {
