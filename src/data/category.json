@@ -1,117 +1,3410 @@
-[{
-        "name": "Great Savings",
-        "route": "great-savings"
+[
+    {
+        "category": "BEEF"
     },
     {
-        "name": "Winter Care Collection",
-        "route": "winter-care-collection"
+        "category": "CHICKEN"
     },
     {
-        "name": "Deals On Unilever",
-        "route": "deals-on-unilever"
+        "category": "REGULAR RICE"
     },
     {
-        "name": "Buy More Save More",
-        "route": "buy-more-save-more"
+        "category": "SOYABEAN OIL"
     },
     {
-        "name": "Half Price Offers",
-        "route": "half-price-offers"
+        "category": "BIRD"
     },
     {
-        "name": "Buy1 Get1 Offers",
-        "route": "buy1-get1-offers"
+        "category": "NOODLES"
     },
     {
-        "name": "Voucher Offers",
-        "route": "voucher-offers"
+        "category": "FISH"
     },
     {
-        "name": "Our Own Products",
-        "route": "our-own-products"
+        "category": "MIXED SPREAD"
     },
     {
-        "name": "Fruits and Vegetables",
-        "route": "fruits-and-vegetables"
+        "category": "MUTTON"
     },
     {
-        "name": "Meat & Fish",
-        "route": "meat-and-fish"
+        "category": "FRUITS"
     },
     {
-        "name": "Cooking Essentials",
-        "route": "cooking-essentials"
+        "category": "DETERGENT"
     },
     {
-        "name": "Sauces & Pickles",
-        "route": "sauces-and-pickles"
+        "category": "FROZEN FOOD ROTI/PARATHA"
     },
     {
-        "name": "Snacks & Instant Foods",
-        "route": "snacks-and-instant-foods"
+        "category": "EGG"
     },
     {
-        "name": "Chocolates & Candies",
-        "route": "chocolates-and-candies"
+        "category": "FROZEN FOOD NUGGET"
     },
     {
-        "name": "Breads, Biscuits & Cakes",
-        "route": "breads-biscuits-cakes"
+        "category": "AROMATIC RICE"
     },
     {
-        "name": "Spreads",
-        "route": "spreads"
+        "category": "BLACK TEA"
     },
     {
-        "name": "Dairy",
-        "route": "dairy"
+        "category": "PASTA"
     },
     {
-        "name": "Beverages",
-        "route": "beverages"
+        "category": "RICE BRAN OIL"
     },
     {
-        "name": "Baby Food & Care",
-        "route": "baby-food-care"
+        "category": "TOILET CLEANER"
     },
     {
-        "name": "Home Care & Cleaning",
-        "route": "home-care-cleaning"
+        "category": "WAFER"
     },
     {
-        "name": "Personal Care",
-        "route": "personal-care"
+        "category": "ADULT POWDER MILK"
     },
     {
-        "name": "Home & Living",
-        "route": "home-living"
+        "category": "PIYAJ"
     },
     {
-        "name": "Home Appliances",
-        "route": "hone-appliances"
+        "category": "VEGETABLE"
     },
     {
-        "name": "Stationery",
-        "route": "stationery"
+        "category": "FROZEN FOOD SAUSAGE"
     },
     {
-        "name": "Gift & Toys",
-        "route": "gift-and-toys"
+        "category": "WATER PURIFICATION"
     },
     {
-        "name": "Pet Care",
-        "route": "pet-care"
+        "category": "FROZEN FOOD BALLS"
     },
     {
-        "name": "Fashion / Life Style",
-        "route": "fashion-life-style"
+        "category": "SUGAR REFINED"
     },
     {
-        "name": "Sports",
-        "route": "sports"
+        "category": "CHOCOLATE"
     },
     {
-        "name": "Office Products",
-        "route": "office-products"
+        "category": "SALT"
+    },
+    {
+        "category": "ROSHUN"
+    },
+    {
+        "category": "ELECTRIC KETTLE"
+    },
+    {
+        "category": "COOKIES"
+    },
+    {
+        "category": "YOGURT"
+    },
+    {
+        "category": "DIPPING SAUCE"
+    },
+    {
+        "category": "ATTA"
+    },
+    {
+        "category": "CREAM & MOISTURIZER"
+    },
+    {
+        "category": "COMFORTER"
+    },
+    {
+        "category": "CHEESE"
+    },
+    {
+        "category": "TOILET TISSUE"
+    },
+    {
+        "category": "SUNFLOWER OIL"
+    },
+    {
+        "category": "HAND WASH & SANITIZER"
+    },
+    {
+        "category": "NAPKIN TISSUE"
+    },
+    {
+        "category": "ADA"
+    },
+    {
+        "category": "WHOLE SPICE"
+    },
+    {
+        "category": "FROZEN FOOD SPRING ROLL"
+    },
+    {
+        "category": "MASK"
+    },
+    {
+        "category": "FROZEN FOOD KABAB"
+    },
+    {
+        "category": "FROZEN FOOD SAMOSA"
+    },
+    {
+        "category": "CORNFLAKES"
+    },
+    {
+        "category": "FROZEN FOOD STRIPS"
+    },
+    {
+        "category": "DISH CLEANER"
+    },
+    {
+        "category": "PILLOW"
+    },
+    {
+        "category": "MOSQUITO COIL"
+    },
+    {
+        "category": "FROZEN FOOD WINGS"
+    },
+    {
+        "category": "MOSHUR DAL"
+    },
+    {
+        "category": "DRY CAKE"
+    },
+    {
+        "category": "TRADITIONAL SNACKS"
+    },
+    {
+        "category": "PASTEURIZED MILK"
+    },
+    {
+        "category": "SOFT DRINKS"
+    },
+    {
+        "category": "MEN'S"
+    },
+    {
+        "category": "MOOG DAL"
+    },
+    {
+        "category": "ALU"
+    },
+    {
+        "category": "CHIPS"
+    },
+    {
+        "category": "FROZEN FOOD FRIES"
+    },
+    {
+        "category": "INSTANT DAIRY DRINK"
+    },
+    {
+        "category": "OATS & MUESLI"
+    },
+    {
+        "category": "LACHA SHEMAI"
+    },
+    {
+        "category": "STOOL"
+    },
+    {
+        "category": "INSECT SPRAY"
+    },
+    {
+        "category": "SYRUP"
+    },
+    {
+        "category": "PICKLE"
+    },
+    {
+        "category": "BUTTER"
+    },
+    {
+        "category": "LOTION & TONER"
+    },
+    {
+        "category": "BREAD"
+    },
+    {
+        "category": "SANITARY NAPKINS"
+    },
+    {
+        "category": "BOTTLE"
+    },
+    {
+        "category": "FACE WASH & SCRUB"
+    },
+    {
+        "category": "BHUSHI"
+    },
+    {
+        "category": "CANDY"
+    },
+    {
+        "category": "JELLY POWDER"
+    },
+    {
+        "category": "MUSTARD OIL"
+    },
+    {
+        "category": "BLENDER"
+    },
+    {
+        "category": "KITCHEN TISSUE"
+    },
+    {
+        "category": "COOKING SAUCE"
+    },
+    {
+        "category": "BROWN SUGAR"
+    },
+    {
+        "category": "CRACKERS"
+    },
+    {
+        "category": "TOOTH BRUSH"
+    },
+    {
+        "category": "FROZEN FOOD POPCORN"
+    },
+    {
+        "category": "LIQUID UHT MILK"
+    },
+    {
+        "category": "BOOT DAL"
+    },
+    {
+        "category": "FROZEN FOOD KEBAB"
+    },
+    {
+        "category": "SHAMPOO"
+    },
+    {
+        "category": "MIXED SPICE"
+    },
+    {
+        "category": "STICK ICE CREAM"
+    },
+    {
+        "category": "MAIDA"
+    },
+    {
+        "category": "SOAP"
+    },
+    {
+        "category": "CHANACHUR"
+    },
+    {
+        "category": "AUTO CAR"
+    },
+    {
+        "category": "MIXED DAL"
+    },
+    {
+        "category": "JUICE FRUIT"
+    },
+    {
+        "category": "COLOUR COSMETICS"
+    },
+    {
+        "category": "AIR FRESHENER"
+    },
+    {
+        "category": "TOOTH PASTE"
+    },
+    {
+        "category": "OLIVE OIL"
+    },
+    {
+        "category": "ICE CREAM CONTAINER/ PARTY BOX"
+    },
+    {
+        "category": "BREAD CRUMB"
+    },
+    {
+        "category": "GHEE"
+    },
+    {
+        "category": "CHIA SEED"
+    },
+    {
+        "category": "BASIC SPICE"
+    },
+    {
+        "category": "FACIAL TISSUE"
+    },
+    {
+        "category": "YEAST"
+    },
+    {
+        "category": "ESSENCE"
+    },
+    {
+        "category": "BODY SPRAY"
+    },
+    {
+        "category": "COFFEE INSTANT"
+    },
+    {
+        "category": "BED SHEET"
+    },
+    {
+        "category": "NUTS"
+    },
+    {
+        "category": "MAYONNAISE"
+    },
+    {
+        "category": "BAKING FLOUR"
+    },
+    {
+        "category": "PERFUME"
+    },
+    {
+        "category": "DESSERT MIX"
+    },
+    {
+        "category": "CANNED VEGETABLE"
+    },
+    {
+        "category": "SOANPAPDI"
+    },
+    {
+        "category": "CAKE"
+    },
+    {
+        "category": "FROZEN FOOD LOLLIPOP"
+    },
+    {
+        "category": "DEO STICK AND ROLL ON"
+    },
+    {
+        "category": "CAR AIR FRESHNER"
+    },
+    {
+        "category": "MOSQIOTO ROLL ON"
+    },
+    {
+        "category": "BABY SKIN CARE"
+    },
+    {
+        "category": "GLASS CLEANER"
+    },
+    {
+        "category": "FROZEN FOOD PURI"
+    },
+    {
+        "category": "GREEN TEA"
+    },
+    {
+        "category": "TOAST BISCUIT"
+    },
+    {
+        "category": "VERMICELLI"
+    },
+    {
+        "category": "POP IT"
+    },
+    {
+        "category": "CHOLA"
+    },
+    {
+        "category": "44-HOME DELIVERY"
+    },
+    {
+        "category": "VEGETABLE OIL"
+    },
+    {
+        "category": "HAIR OIL"
+    },
+    {
+        "category": "GROOMING ACCESSORIES"
+    },
+    {
+        "category": "MASKS & PACKS"
+    },
+    {
+        "category": "RICE FLOUR"
+    },
+    {
+        "category": "MANGO BAR"
+    },
+    {
+        "category": "SOFT DOLL"
+    },
+    {
+        "category": "FROZEN FOOD SHINGARA"
+    },
+    {
+        "category": "TEA SPOON SET"
+    },
+    {
+        "category": "CREAM"
+    },
+    {
+        "category": "INSTANT DRINK POWDER"
+    },
+    {
+        "category": "COCOA POWDER"
+    },
+    {
+        "category": "SEASONING SALT"
+    },
+    {
+        "category": "CHOPPING BOARD"
+    },
+    {
+        "category": "BATHROOM CLEANER"
+    },
+    {
+        "category": "DRY FRUIT"
+    },
+    {
+        "category": "PROCESSED MILK"
+    },
+    {
+        "category": "MINERAL WATER"
+    },
+    {
+        "category": "MOSQUITO VAPORISER"
+    },
+    {
+        "category": "HAIR STYLING"
+    },
+    {
+        "category": "WIPES"
+    },
+    {
+        "category": "FROZEN FOOD BURGER PATTY"
+    },
+    {
+        "category": "GUM"
+    },
+    {
+        "category": "ARTIFICIAL SWEETENER"
+    },
+    {
+        "category": "REMOTE CONTROL CAR"
+    },
+    {
+        "category": "BAKING POWDER"
+    },
+    {
+        "category": "BABY DIAPER PANT"
+    },
+    {
+        "category": "FLOOR CLEANER"
+    },
+    {
+        "category": "HELICOPTER"
+    },
+    {
+        "category": "KITCHEN ACCESSORIES"
+    },
+    {
+        "category": "JUICE CONCENTRATED"
+    },
+    {
+        "category": "SOUP"
+    },
+    {
+        "category": "BODY WASH & SHOWER GEL"
+    },
+    {
+        "category": "PILLOW COVER"
+    },
+    {
+        "category": "DABLI DAL"
+    },
+    {
+        "category": "EARPHONE"
+    },
+    {
+        "category": "TOWEL"
+    },
+    {
+        "category": "KARAI"
+    },
+    {
+        "category": "SPOON"
+    },
+    {
+        "category": "JUICE"
+    },
+    {
+        "category": "FROZEN FOOD CRUMBLY"
+    },
+    {
+        "category": "IRON"
+    },
+    {
+        "category": "MALT DRINK POWDER"
+    },
+    {
+        "category": "CORNFLOUR"
+    },
+    {
+        "category": "MOUTH WASH"
+    },
+    {
+        "category": "DRINKING WATER"
+    },
+    {
+        "category": "MOSQUITO SPRAY"
+    },
+    {
+        "category": "HONEY"
+    },
+    {
+        "category": "ICE CREAM CUP"
+    },
+    {
+        "category": "BABY HAIR CARE"
+    },
+    {
+        "category": "WHOLE SPICE LOOSE"
+    },
+    {
+        "category": "WOOD CLEANER"
+    },
+    {
+        "category": "HAIR CONDITIONER"
+    },
+    {
+        "category": "CANNED FISH"
+    },
+    {
+        "category": "STOCK"
+    },
+    {
+        "category": "BABY DIAPER SNAP-ON"
+    },
+    {
+        "category": "FROZEN FOOD FINGER"
+    },
+    {
+        "category": "LIP CARE"
+    },
+    {
+        "category": "FROZEN FOOD DRIZZLY"
+    },
+    {
+        "category": "FROZEN FOOD MOMO"
+    },
+    {
+        "category": "FROZEN FOOD PATTIES"
+    },
+    {
+        "category": "COFFEE MIX"
+    },
+    {
+        "category": "BABY FULL CREAM MILK"
+    },
+    {
+        "category": "MOSQUITO NET"
+    },
+    {
+        "category": "TOILET CLEANER LIQUID"
+    },
+    {
+        "category": "LIGHT"
+    },
+    {
+        "category": "BUBBLE STICK"
+    },
+    {
+        "category": "BABY FEEDER AND FEEDING ACCESSORIES"
+    },
+    {
+        "category": "COFFEE CREAMER"
+    },
+    {
+        "category": "LIFESTYLE ACCESSORIES"
+    },
+    {
+        "category": "CHILDREN'S"
+    },
+    {
+        "category": "FROZEN FOOD STIPS"
+    },
+    {
+        "category": "PLATE"
+    },
+    {
+        "category": "BAKERKHANI"
+    },
+    {
+        "category": "SODA WATER"
+    },
+    {
+        "category": "POWDER"
+    },
+    {
+        "category": "BABY GIFT SET"
+    },
+    {
+        "category": "PLAY DOH"
+    },
+    {
+        "category": "FLAVOR TEA"
+    },
+    {
+        "category": "BATTERY"
+    },
+    {
+        "category": "BABY ORAL CARE"
+    },
+    {
+        "category": "NAPTHALENE"
+    },
+    {
+        "category": "BABY CLEANING ACCESSORIES"
+    },
+    {
+        "category": "GARBAGE BAG"
+    },
+    {
+        "category": "STORAGE JAR"
+    },
+    {
+        "category": "MOSQUITO REPELLENT"
+    },
+    {
+        "category": "POPCORN"
+    },
+    {
+        "category": "SHAVING CARE"
+    },
+    {
+        "category": "BABY CLOTHING"
+    },
+    {
+        "category": "BABY CEREAL FRUIT"
+    },
+    {
+        "category": "UMBRELLA"
+    },
+    {
+        "category": "TRIMMER"
+    },
+    {
+        "category": "CUSTARD POWDER"
+    },
+    {
+        "category": "MEHEDI"
+    },
+    {
+        "category": "DOLL"
+    },
+    {
+        "category": "SOYABEAN"
+    },
+    {
+        "category": "DIGESTIVES"
+    },
+    {
+        "category": "HAIR REMOVAL"
+    },
+    {
+        "category": "KITCHEN SET"
+    },
+    {
+        "category": "JUG"
+    },
+    {
+        "category": "TRAY"
+    },
+    {
+        "category": "JELLY"
+    },
+    {
+        "category": "JAM"
+    },
+    {
+        "category": "MOSQUITO KILLING BAT"
+    },
+    {
+        "category": "BASKET"
+    },
+    {
+        "category": "WOMEN'S"
+    },
+    {
+        "category": "TAWA"
+    },
+    {
+        "category": "FRYPAN"
+    },
+    {
+        "category": "SCOURER"
+    },
+    {
+        "category": "FROZEN KOFTA"
+    },
+    {
+        "category": "WIPES & TISSUES"
+    },
+    {
+        "category": "INFANT FORMULA"
+    },
+    {
+        "category": "MUSICAL TOYS"
+    },
+    {
+        "category": "BROOM"
+    },
+    {
+        "category": "FISHING GAME"
+    },
+    {
+        "category": "FOOD COLOR"
+    },
+    {
+        "category": "COCONUT OIL"
+    },
+    {
+        "category": "SUJI"
+    },
+    {
+        "category": "PENCIL BOX"
+    },
+    {
+        "category": "MOTOR DAL"
+    },
+    {
+        "category": "BOWL"
+    },
+    {
+        "category": "HOTPOT"
+    },
+    {
+        "category": "MARGARINE"
+    },
+    {
+        "category": "PARTY ITEMS"
+    },
+    {
+        "category": "SLIME"
+    },
+    {
+        "category": "NOTE BOOK"
+    },
+    {
+        "category": "FLOOR MAT"
+    },
+    {
+        "category": "RAJMA DAL"
+    },
+    {
+        "category": "ORGANIC RICE"
+    },
+    {
+        "category": "SWEETS & CURDS"
+    },
+    {
+        "category": "DISH COVER"
+    },
+    {
+        "category": "ANCHOR DAL"
+    },
+    {
+        "category": "FABRIC IMPROVEMENT"
+    },
+    {
+        "category": "FROZEN FOOD STICK"
+    },
+    {
+        "category": "CHINA GRASS"
+    },
+    {
+        "category": "CORN"
+    },
+    {
+        "category": "BBQ ITEMS"
+    },
+    {
+        "category": "FROZEN FOOD FRANK"
+    },
+    {
+        "category": "FROZEN FOOD KIEVS"
+    },
+    {
+        "category": "DISINFECTANT"
+    },
+    {
+        "category": "TONIC WATER"
+    },
+    {
+        "category": "MOSQUITO ROLL ON"
+    },
+    {
+        "category": "PLASTIC BALL"
+    },
+    {
+        "category": "MASHKALAI DAL"
+    },
+    {
+        "category": "HAIR TREATMENT"
+    },
+    {
+        "category": "MAKE UP REMOVER"
+    },
+    {
+        "category": "CANNED FRUIT"
+    },
+    {
+        "category": "HAIR MASK"
+    },
+    {
+        "category": "PRESSURE COOKER"
+    },
+    {
+        "category": "CASSEROLE"
+    },
+    {
+        "category": "GIFT SET"
+    },
+    {
+        "category": "COLORING BOOK"
+    },
+    {
+        "category": "SANITIZER BOTTLE"
+    },
+    {
+        "category": "BABY CEREAL CROP"
+    },
+    {
+        "category": "FLASK"
+    },
+    {
+        "category": "ASSORTED BISCUIT"
+    },
+    {
+        "category": "SPRAY GUN"
+    },
+    {
+        "category": "ADULT MALT DRINK POWDER"
+    },
+    {
+        "category": "BLOCK SET"
+    },
+    {
+        "category": "DRINKING GLASS"
+    },
+    {
+        "category": "ICE CREAM"
+    },
+    {
+        "category": "FAN"
+    },
+    {
+        "category": "TRICYCLE"
+    },
+    {
+        "category": "MUG"
+    },
+    {
+        "category": "FROZEN FOOD DUMPLING"
+    },
+    {
+        "category": "JUNIOR MALT DRINK POWDER"
+    },
+    {
+        "category": "HAIR COLOR"
+    },
+    {
+        "category": "CANOLA OIL"
+    },
+    {
+        "category": "SHOE CARE"
+    },
+    {
+        "category": "MASSAGE OIL"
+    },
+    {
+        "category": "GUN"
+    },
+    {
+        "category": "GLOVES"
+    },
+    {
+        "category": "MULTIPLUG"
+    },
+    {
+        "category": "MEDICATED OIL"
+    },
+    {
+        "category": "LUDO"
+    },
+    {
+        "category": "CHUTNEY"
+    },
+    {
+        "category": "EXCLUSIVE RICE"
+    },
+    {
+        "category": "MALT DRINK LIQUID"
+    },
+    {
+        "category": "AKHER ROSH"
+    },
+    {
+        "category": "ILLUMINATOR"
+    },
+    {
+        "category": "CAR SHAMPOO"
+    },
+    {
+        "category": "ACTION FIGURES"
+    },
+    {
+        "category": "FROZEN FOOD TOFU"
+    },
+    {
+        "category": "BARBIE DOLL"
+    },
+    {
+        "category": "CLEANING BRUSH"
+    },
+    {
+        "category": "ORAL ACCESSORIES"
+    },
+    {
+        "category": "GARBAGE BAGS"
+    },
+    {
+        "category": "PARTY SPRAY"
+    },
+    {
+        "category": "TIFFIN BOX"
+    },
+    {
+        "category": "LIQUID COFFEE"
+    },
+    {
+        "category": "INSECT POWDER"
+    },
+    {
+        "category": "FROZEN FOOD FILO SHEET"
+    },
+    {
+        "category": "FACIAL TREATMENT"
+    },
+    {
+        "category": "DRAWING BOOK"
+    },
+    {
+        "category": "KHESHARI DAL"
+    },
+    {
+        "category": "WATER COLOR"
+    },
+    {
+        "category": "GRINDER"
+    },
+    {
+        "category": "HOT WATER BAG"
+    },
+    {
+        "category": "WHITE BOARD"
+    },
+    {
+        "category": "INSECT GLUE"
+    },
+    {
+        "category": "BIN"
+    },
+    {
+        "category": "CLEANING SPONGE"
+    },
+    {
+        "category": "COOKING MILK"
+    },
+    {
+        "category": "FROZEN FOOD SHRIMP"
+    },
+    {
+        "category": "ENERGY DRINK"
+    },
+    {
+        "category": "STORAGE CONTAINER"
+    },
+    {
+        "category": "GUITER"
+    },
+    {
+        "category": "LACCHA SHEMAI"
+    },
+    {
+        "category": "COOKING BRUSH"
+    },
+    {
+        "category": "COLOR PENCIL"
+    },
+    {
+        "category": "TAL MISRI"
+    },
+    {
+        "category": "POT"
+    },
+    {
+        "category": "FOOD CARRIER"
+    },
+    {
+        "category": "DOCTOR SET"
+    },
+    {
+        "category": "UNO CARD"
+    },
+    {
+        "category": "PRAYER MAT"
+    },
+    {
+        "category": "BUTTER OIL"
+    },
+    {
+        "category": "HANGER"
+    },
+    {
+        "category": "ICE CREAM POWDER"
+    },
+    {
+        "category": "IMPULSE TOYS"
+    },
+    {
+        "category": "MOP"
+    },
+    {
+        "category": "BALACHAW"
+    },
+    {
+        "category": "BATH MAT"
+    },
+    {
+        "category": "OIL PASTELS"
+    },
+    {
+        "category": "TROLLEY BAG"
+    },
+    {
+        "category": "RUBIC CUBE"
+    },
+    {
+        "category": "STORAGE BOX"
+    },
+    {
+        "category": "ADULT DIAPER"
+    },
+    {
+        "category": "MOSQUITO KILLING JAR"
+    },
+    {
+        "category": "CLOTH CLIP"
+    },
+    {
+        "category": "FOIL BOX"
+    },
+    {
+        "category": "BUCKET"
+    },
+    {
+        "category": "BINOCULAR"
+    },
+    {
+        "category": "MIRROR"
+    },
+    {
+        "category": "FABRIC COLOR"
+    },
+    {
+        "category": "FILES"
+    },
+    {
+        "category": "CEREAL BAR"
+    },
+    {
+        "category": "FROZEN FOOD CHICKEN SLAMI"
+    },
+    {
+        "category": "COAL"
+    },
+    {
+        "category": "PUZZLE"
+    },
+    {
+        "category": "FOOTBALL"
+    },
+    {
+        "category": "KHICHURI MIX"
+    },
+    {
+        "category": "RATTELS"
+    },
+    {
+        "category": "WATER POT"
+    },
+    {
+        "category": "HAND WRITING BOOK"
+    },
+    {
+        "category": "SPICE BOX"
+    },
+    {
+        "category": "FROZEN FOOD CUTLET"
+    },
+    {
+        "category": "WRAPPING PAPER"
+    },
+    {
+        "category": "KEYRING"
+    },
+    {
+        "category": "FROZEN FOOD SINGARA"
+    },
+    {
+        "category": "DISH"
+    },
+    {
+        "category": "CUSHION"
+    },
+    {
+        "category": "KNIFE"
+    },
+    {
+        "category": "HAIR DRYER"
+    },
+    {
+        "category": "READY MEAL"
+    },
+    {
+        "category": "CHOPSTICK"
+    },
+    {
+        "category": "BABY CEREAL MIXED"
+    },
+    {
+        "category": "SEED OIL"
+    },
+    {
+        "category": "ICING SUGAR"
+    },
+    {
+        "category": "PEELER"
+    },
+    {
+        "category": "TOILEN CLEANER"
+    },
+    {
+        "category": "FROZEN FOOD CURRY"
+    },
+    {
+        "category": "HOOK"
+    },
+    {
+        "category": "TABLE MAT"
+    },
+    {
+        "category": "NAIL CLIPPER"
+    },
+    {
+        "category": "STATIONERIES"
+    },
+    {
+        "category": "SCOTCH TAPE"
+    },
+    {
+        "category": "CAKE DECORATION"
+    },
+    {
+        "category": "BARLEY FLAKES"
+    },
+    {
+        "category": "KITCHEN APRON"
+    },
+    {
+        "category": "DOLL HOUSE"
+    },
+    {
+        "category": "FROZEN FOOD WONTHON"
+    },
+    {
+        "category": "PEANUT BAR"
+    },
+    {
+        "category": "MEASURING SCALE"
+    },
+    {
+        "category": "TOY FAN"
+    },
+    {
+        "category": "COPY"
+    },
+    {
+        "category": "COTTON BUD"
+    },
+    {
+        "category": "TABLE CLOTH"
+    },
+    {
+        "category": "RIBBONS"
+    },
+    {
+        "category": "MOUNTH WASH"
+    },
+    {
+        "category": "RICE COOKER"
+    },
+    {
+        "category": "HOLDER"
+    },
+    {
+        "category": "KHUNTI"
+    },
+    {
+        "category": "BISCUIT"
+    },
+    {
+        "category": "ERASER"
+    },
+    {
+        "category": "PREMIUM BREAD"
+    },
+    {
+        "category": "FROZEN FOOD TEHERI"
+    },
+    {
+        "category": "PENCIL COLOR"
+    },
+    {
+        "category": "WEIGHT MACHINE"
+    },
+    {
+        "category": "CANDLE"
+    },
+    {
+        "category": "BRUSH"
+    },
+    {
+        "category": "PEN"
+    },
+    {
+        "category": "FLUSH CLEANER"
+    },
+    {
+        "category": "CUTTER"
+    },
+    {
+        "category": "ORHOR DAL"
+    },
+    {
+        "category": "SPICE PASTE"
+    },
+    {
+        "category": "DUST PAN"
+    },
+    {
+        "category": "PENCIL"
+    },
+    {
+        "category": "CURTAIN"
+    },
+    {
+        "category": "FURNITURE CLEANER"
+    },
+    {
+        "category": "STICKER BOOK"
+    },
+    {
+        "category": "BABY MASK"
+    },
+    {
+        "category": "PASTEL COLOR"
+    },
+    {
+        "category": "ROTI MAKER"
+    },
+    {
+        "category": "MILK PAN"
+    },
+    {
+        "category": "GRATER"
+    },
+    {
+        "category": "KITCHEN CLEANER"
+    },
+    {
+        "category": "WATER FILTER"
+    },
+    {
+        "category": "PARTY POPPER"
+    },
+    {
+        "category": "KIDS TABLE"
+    },
+    {
+        "category": "SOCKET"
+    },
+    {
+        "category": "MARKER"
+    },
+    {
+        "category": "CHICK PEAS HALWA"
+    },
+    {
+        "category": "GAS LIGHTER"
+    },
+    {
+        "category": "STRAINER(SAKNI)"
+    },
+    {
+        "category": "DOI"
+    },
+    {
+        "category": "TT BAT"
+    },
+    {
+        "category": "MAOWA"
+    },
+    {
+        "category": "HALWA"
+    },
+    {
+        "category": "DRINKING STRAW"
+    },
+    {
+        "category": "SHARPENER"
+    },
+    {
+        "category": "SCIENTIFIC TOY"
+    },
+    {
+        "category": "FROZEN FOOD EMOTIBITES"
+    },
+    {
+        "category": "FRESHNESS BAG"
+    },
+    {
+        "category": "HANDWRITTING BOOK"
+    },
+    {
+        "category": "TONG"
+    },
+    {
+        "category": "SCRABBLE"
+    },
+    {
+        "category": "XYLOPHONE"
+    },
+    {
+        "category": "PAN"
+    },
+    {
+        "category": "CUP"
+    },
+    {
+        "category": "GEOMETRY BOX"
+    },
+    {
+        "category": "CAT FOOD"
+    },
+    {
+        "category": "SHEMAI"
+    },
+    {
+        "category": "MEASUREMENT CUP"
+    },
+    {
+        "category": "LUNCH BOX"
+    },
+    {
+        "category": "WRITING BOARD"
+    },
+    {
+        "category": "HIGHLIGHTER"
+    },
+    {
+        "category": "SCISSOR"
+    },
+    {
+        "category": "SCHOOL BAG"
+    },
+    {
+        "category": "SUGAR"
+    },
+    {
+        "category": "SINK CLEANER"
+    },
+    {
+        "category": "CAP"
+    },
+    {
+        "category": "PENCIL BAG"
+    },
+    {
+        "category": "LANTERN"
+    },
+    {
+        "category": "POT HOLDER"
+    },
+    {
+        "category": "STRAINER"
+    },
+    {
+        "category": "FROZEN FOOD DRUMSTICK"
+    },
+    {
+        "category": "CLAY"
+    },
+    {
+        "category": "POLAO"
+    },
+    {
+        "category": "BADMINTON"
+    },
+    {
+        "category": "COFFEE FOAMER"
+    },
+    {
+        "category": "FABRIC BLEACH"
+    },
+    {
+        "category": "TOOTH PICK"
+    },
+    {
+        "category": "STICKERS"
+    },
+    {
+        "category": "TURNER"
+    },
+    {
+        "category": "TOOTH POWDER"
+    },
+    {
+        "category": "MEAT HAMMER"
+    },
+    {
+        "category": "KEY RING"
+    },
+    {
+        "category": "COVER"
+    },
+    {
+        "category": "HEATER JUG"
+    },
+    {
+        "category": "NOTEBOOK"
+    },
+    {
+        "category": "BEATER"
+    },
+    {
+        "category": "OTHER HOME ACCESSORIES"
+    },
+    {
+        "category": "MARBLE"
+    },
+    {
+        "category": "REYANSH"
+    },
+    {
+        "category": "HAND GLOVES"
+    },
+    {
+        "category": "GLUE"
+    },
+    {
+        "category": "CARROM BOARD"
+    },
+    {
+        "category": "GLUE GUN"
+    },
+    {
+        "category": "CEILLING FAN"
+    },
+    {
+        "category": "LEMON CHIPPER"
+    },
+    {
+        "category": "BRUSH SET"
+    },
+    {
+        "category": "GLUE STICK"
+    },
+    {
+        "category": "FROZEN FOOD TIKKA"
+    },
+    {
+        "category": "CRICKET BAT"
+    },
+    {
+        "category": "ELECTRONICS CLEANER"
+    },
+    {
+        "category": "CHESS"
+    },
+    {
+        "category": "GLASS"
+    },
+    {
+        "category": "FROZEN FOOD POLAU"
+    },
+    {
+        "category": "BOWLING SET"
+    },
+    {
+        "category": "ACRYLIC COLOR"
+    },
+    {
+        "category": "FOOD WRAPPING"
+    },
+    {
+        "category": "NON STICK SET"
+    },
+    {
+        "category": "FROZEN FOOD FISH CAKE"
+    },
+    {
+        "category": "SEOSONING OIL"
+    },
+    {
+        "category": "NAIL CUTTER"
+    },
+    {
+        "category": "CARD GAME"
+    },
+    {
+        "category": "ZIP BAG"
+    },
+    {
+        "category": "FEVER PATCH"
+    },
+    {
+        "category": "CMC"
+    },
+    {
+        "category": "COSMETICS ACCESSORIES"
+    },
+    {
+        "category": "SEWING BOX"
+    },
+    {
+        "category": "DISPENSER"
+    },
+    {
+        "category": "RUNNER"
+    },
+    {
+        "category": "BEYBLADE"
+    },
+    {
+        "category": "MOULD"
+    },
+    {
+        "category": "SNACKS"
+    },
+    {
+        "category": "BADAM"
+    },
+    {
+        "category": "PLANE"
+    },
+    {
+        "category": "CRUSHER"
+    },
+    {
+        "category": "BAG"
+    },
+    {
+        "category": "JUMPING ROPE"
+    },
+    {
+        "category": "HIGHLIGHTER PEN"
+    },
+    {
+        "category": "OIL POT"
+    },
+    {
+        "category": "SNOW SPRAY"
+    },
+    {
+        "category": "LID"
+    },
+    {
+        "category": "MOUSE"
+    },
+    {
+        "category": "TARITIONAL SNACKS"
+    },
+    {
+        "category": "SALT POT"
+    },
+    {
+        "category": "ROSHOGOLLA"
+    },
+    {
+        "category": "LASER LIGHT"
+    },
+    {
+        "category": "BAKING TOOLS"
+    },
+    {
+        "category": "AIR ESSENCE"
+    },
+    {
+        "category": "TABLE CLOCK"
+    },
+    {
+        "category": "MOSQUITO CHALK"
+    },
+    {
+        "category": "FROZEN FOOD FILLET"
+    },
+    {
+        "category": "LEGO"
+    },
+    {
+        "category": "SCRUBBER"
+    },
+    {
+        "category": "COFFEE MIXER"
+    },
+    {
+        "category": "SMASHER"
+    },
+    {
+        "category": "NAPKIN"
+    },
+    {
+        "category": "HEADPHONE"
+    },
+    {
+        "category": "MUSICAL TOY"
+    },
+    {
+        "category": "TRAIN SET"
+    },
+    {
+        "category": "SWEET"
+    },
+    {
+        "category": "BIKE"
+    },
+    {
+        "category": "OPENER"
+    },
+    {
+        "category": "YOGURT MAKER"
+    },
+    {
+        "category": "STORMY FAN"
+    },
+    {
+        "category": "ARROWROOT"
+    },
+    {
+        "category": "TILL"
+    },
+    {
+        "category": "CUSHION COVER"
+    },
+    {
+        "category": "EGG BITTER"
+    },
+    {
+        "category": "BABY DOLL"
+    },
+    {
+        "category": "INFRARED COOKER"
+    },
+    {
+        "category": "STICKY NOTE"
+    },
+    {
+        "category": "LADLE"
+    },
+    {
+        "category": "YOYO BALL"
+    },
+    {
+        "category": "TALKING TOM"
+    },
+    {
+        "category": "MOTHER'S ACCESSORIES"
+    },
+    {
+        "category": "SESAME OIL"
+    },
+    {
+        "category": "ROPE"
+    },
+    {
+        "category": "GAS LIGHT"
+    },
+    {
+        "category": "MOSQUITO POWDER"
+    },
+    {
+        "category": "CANNED MEAT"
+    },
+    {
+        "category": "SOAP CASE"
+    },
+    {
+        "category": "KALOJAM"
+    },
+    {
+        "category": "FROZEN FOOD NABOSHI"
+    },
+    {
+        "category": "CRAYONS"
+    },
+    {
+        "category": "MIXER"
+    },
+    {
+        "category": "OIL COLOR"
+    },
+    {
+        "category": "SHUE SHE"
+    },
+    {
+        "category": "READY MIX SNACKS"
+    },
+    {
+        "category": "PAPER"
+    },
+    {
+        "category": "SHUTTEL COCK"
+    },
+    {
+        "category": "POKEMON CARD"
+    },
+    {
+        "category": "0"
+    },
+    {
+        "category": "WASHING NET"
+    },
+    {
+        "category": "FROZEN FOOD MEAT BALL"
+    },
+    {
+        "category": "HEATER"
+    },
+    {
+        "category": "CANVAS FRAME"
+    },
+    {
+        "category": "SLICER"
+    },
+    {
+        "category": "HAIR STRAIGHTENER"
+    },
+    {
+        "category": "ALL PURPOSE CLEANER"
+    },
+    {
+        "category": "SHRAPNER"
+    },
+    {
+        "category": "JUICE VEGETABLE"
+    },
+    {
+        "category": "FROZEN FOOD FISH FINGERS"
+    },
+    {
+        "category": "FOOD COVER"
+    },
+    {
+        "category": "REMOTE CONTROL"
+    },
+    {
+        "category": "CHILDRENS BOOK"
+    },
+    {
+        "category": "FEEDER"
+    },
+    {
+        "category": "WIPER"
+    },
+    {
+        "category": "LEATHER CLEANER"
+    },
+    {
+        "category": "GAS STOVE"
+    },
+    {
+        "category": "BALLOON "
+    },
+    {
+        "category": "CARTON TAPE"
+    },
+    {
+        "category": "TENT"
+    },
+    {
+        "category": "CLOTH ROPE"
+    },
+    {
+        "category": "DUSTER"
+    },
+    {
+        "category": "OTHER CLEANING ACCESSORIES"
+    },
+    {
+        "category": "FOOT CARE"
+    },
+    {
+        "category": "SANDWICH MAKER"
+    },
+    {
+        "category": "MONOPOLY"
+    },
+    {
+        "category": "GAJAR HALWA"
+    },
+    {
+        "category": "ACCESSORIES"
+    },
+    {
+        "category": "MASALA JAR"
+    },
+    {
+        "category": "CALCULATOR"
+    },
+    {
+        "category": "FABRICK COLOR"
+    },
+    {
+        "category": "SWORD"
+    },
+    {
+        "category": "WALKER"
+    },
+    {
+        "category": "SPONGE"
+    },
+    {
+        "category": "CORRECTORS"
+    },
+    {
+        "category": "ELECTRIC BBQ"
+    },
+    {
+        "category": "ENERGY DRINK-HEALTH"
+    },
+    {
+        "category": "CUTTERS"
+    },
+    {
+        "category": "TRAIN TOY"
+    },
+    {
+        "category": "MASHKALAI BESON"
+    },
+    {
+        "category": "REMOTE CONTROL PLANE"
+    },
+    {
+        "category": "PITHA"
+    },
+    {
+        "category": "KALAKAND"
+    },
+    {
+        "category": "TAPE"
+    },
+    {
+        "category": "ITCHING STICK"
+    },
+    {
+        "category": "SEALER"
+    },
+    {
+        "category": "INSTANT TEA"
+    },
+    {
+        "category": "CREAM & LOTION"
+    },
+    {
+        "category": "TOAST"
+    },
+    {
+        "category": "AIR FRYER"
+    },
+    {
+        "category": "JHARU"
+    },
+    {
+        "category": "ICE CREAM MAKER"
+    },
+    {
+        "category": "BABY DIAPER BELT"
+    },
+    {
+        "category": "FRIDGE MAGNET"
+    },
+    {
+        "category": "BALLOON PUMPER"
+    },
+    {
+        "category": "COOKING POT"
+    },
+    {
+        "category": "CAKE MIX"
+    },
+    {
+        "category": "DRONE"
+    },
+    {
+        "category": "COOKING CHOCOLATE"
+    },
+    {
+        "category": "FEMALE JEWELLERY"
+    },
+    {
+        "category": "RICE FLAKES"
+    },
+    {
+        "category": "MEDICINE BOX"
+    },
+    {
+        "category": "JUICER"
+    },
+    {
+        "category": "ANIMAL SET"
+    },
+    {
+        "category": "FROZEN FOOD BURGER"
+    },
+    {
+        "category": "MUSICAL CAR"
+    },
+    {
+        "category": "WATER GUN"
+    },
+    {
+        "category": "DATA CABLE"
+    },
+    {
+        "category": "SPRAY"
+    },
+    {
+        "category": "FUNNEL"
+    },
+    {
+        "category": "BUBBLE GUN"
+    },
+    {
+        "category": "RULER"
+    },
+    {
+        "category": "KITCHEN SCALE"
+    },
+    {
+        "category": "CURRY COOKER"
+    },
+    {
+        "category": "CLEANING CLOTH"
+    },
+    {
+        "category": "SHIMMER"
+    },
+    {
+        "category": "CLEANING TOWEL"
+    },
+    {
+        "category": "COFFEE MAKER"
+    },
+    {
+        "category": "TOASTER"
+    },
+    {
+        "category": "BARFI"
+    },
+    {
+        "category": "FOOD WASH"
+    },
+    {
+        "category": "FRY PAN"
+    },
+    {
+        "category": "ICE SCOOP"
+    },
+    {
+        "category": "MOBILE HANGER"
+    },
+    {
+        "category": "BACKUP LIGHT"
+    },
+    {
+        "category": "SPRAY BOTTLE"
+    },
+    {
+        "category": "FROZEN FOOD PIZZA"
+    },
+    {
+        "category": "ROBOT"
+    },
+    {
+        "category": "BIRD FOOD"
+    },
+    {
+        "category": "HOME DECORATION"
+    },
+    {
+        "category": "TABLE TENNIS"
+    },
+    {
+        "category": "CREATIVE TOYS"
+    },
+    {
+        "category": "OVEN CLEANER"
+    },
+    {
+        "category": "COASTER"
+    },
+    {
+        "category": "STEEL CLEANER"
+    },
+    {
+        "category": "SCOOTY"
+    },
+    {
+        "category": "HEALTH & SAFETY"
+    },
+    {
+        "category": "MARMALADE"
+    },
+    {
+        "category": "RACK"
+    },
+    {
+        "category": "ICE TRAY"
+    },
+    {
+        "category": "SCOTCHTAPE"
+    },
+    {
+        "category": "COMPASS"
+    },
+    {
+        "category": "GIFT"
+    },
+    {
+        "category": "SPEAKER"
+    },
+    {
+        "category": "AIR TOYS"
+    },
+    {
+        "category": "STAPLER"
+    },
+    {
+        "category": "SEASONAL"
+    },
+    {
+        "category": "COMB"
+    },
+    {
+        "category": "VIDEO GAME"
+    },
+    {
+        "category": "INSTAND DRINK POWDER"
+    },
+    {
+        "category": "BOARD"
+    },
+    {
+        "category": "PROMO ITEM"
+    },
+    {
+        "category": "BABY ROCKER"
+    },
+    {
+        "category": "TENNIS BALL"
+    },
+    {
+        "category": "PEN HOLDER"
+    },
+    {
+        "category": "FROZEN FOOD BIRYANI"
+    },
+    {
+        "category": "BABY MEAL"
+    },
+    {
+        "category": "CHOPPER"
+    },
+    {
+        "category": "PIANO"
+    },
+    {
+        "category": "ROOM HEATER"
+    },
+    {
+        "category": "RC CAR"
+    },
+    {
+        "category": "DRY IRON"
+    },
+    {
+        "category": "KEW RING"
+    },
+    {
+        "category": "NARIKEL HALWA"
+    },
+    {
+        "category": "WHEAT FLAKES"
+    },
+    {
+        "category": "BANNER"
+    },
+    {
+        "category": "OIL PASTEL"
+    },
+    {
+        "category": "FLOWER SOAP"
+    },
+    {
+        "category": "ADAPTER"
+    },
+    {
+        "category": "ELECTRIC FRYPAN"
+    },
+    {
+        "category": "GUESS GAME"
+    },
+    {
+        "category": "RIDER"
+    },
+    {
+        "category": "PIE FILLING"
+    },
+    {
+        "category": "STATIONERY SET"
+    },
+    {
+        "category": "INDUCTION COOKER"
+    },
+    {
+        "category": "PLANNER"
+    },
+    {
+        "category": "NOTE PAPER"
+    },
+    {
+        "category": "CHAIR"
+    },
+    {
+        "category": "FILE"
+    },
+    {
+        "category": "FROZEN FOOD BUTTERFLY SHRIMPS"
+    },
+    {
+        "category": "COCONUT HOLE MAKER"
+    },
+    {
+        "category": "RUBBER BAND"
+    },
+    {
+        "category": "COFFEE BEAN"
+    },
+    {
+        "category": "SHEEM BICHI"
+    },
+    {
+        "category": "PUSH PIN"
+    },
+    {
+        "category": "PANI"
+    },
+    {
+        "category": "SPARKLING WATER"
+    },
+    {
+        "category": "TESTER"
+    },
+    {
+        "category": "CHARGER"
+    },
+    {
+        "category": "MEASURING TAPE"
+    },
+    {
+        "category": "BABY DESSERT"
+    },
+    {
+        "category": "HAIR STRAIGHTNER"
+    },
+    {
+        "category": "STONE"
+    },
+    {
+        "category": "GELATINE POWDER"
+    },
+    {
+        "category": "ICE BOX"
+    },
+    {
+        "category": "POTTY"
+    },
+    {
+        "category": "FREEZER BAG"
+    },
+    {
+        "category": "FROZEN FOOD SHRIMP REMPURA"
+    },
+    {
+        "category": "EGG SEPERATOR"
+    },
+    {
+        "category": "VASE"
+    },
+    {
+        "category": "SPADE"
+    },
+    {
+        "category": "FROZEN FOOD NUGGETS"
+    },
+    {
+        "category": "ELECTRONICS"
+    },
+    {
+        "category": "DOG FOOD"
+    },
+    {
+        "category": "STRAIGHTENER"
+    },
+    {
+        "category": "ONE TIME NAPKIN"
+    },
+    {
+        "category": "MACADAMIA OIL"
+    },
+    {
+        "category": "PEDICURE SET"
+    },
+    {
+        "category": "COFFEE GROUND"
+    },
+    {
+        "category": "GENERAL"
+    },
+    {
+        "category": "FLAX SEED OIL"
+    },
+    {
+        "category": "EGG HALWA"
+    },
+    {
+        "category": "ALCOHOL PAD"
+    },
+    {
+        "category": "TOY WEAPON"
+    },
+    {
+        "category": "CRAFT SET"
+    },
+    {
+        "category": "ONE TIME USE PLATE"
+    },
+    {
+        "category": "FROZEN FOOD FISH STICK"
+    },
+    {
+        "category": "JUTE BAG"
+    },
+    {
+        "category": "ALARM CLOCK"
+    },
+    {
+        "category": "BABY TOOTH PASTE"
+    },
+    {
+        "category": "HOME APPLIANCE"
+    },
+    {
+        "category": "POSTER COLOR"
+    },
+    {
+        "category": "COCONUT MILK"
+    },
+    {
+        "category": "VIRGIN OIL"
+    },
+    {
+        "category": "KITCHEN FAN"
+    },
+    {
+        "category": "FROZEN FOOD CALMARI BITES"
+    },
+    {
+        "category": "SCISSORS"
+    },
+    {
+        "category": "BLOCK"
+    },
+    {
+        "category": "BABY PORRIDGE FRUIT"
+    },
+    {
+        "category": "WATER SPRAY"
+    },
+    {
+        "category": "FROZEN FOOD SHRIMP STICK"
+    },
+    {
+        "category": "POWER BANK"
+    },
+    {
+        "category": "GYM ITEMS"
+    },
+    {
+        "category": "RECHARGEABLE FAN"
+    },
+    {
+        "category": "SCALE"
+    },
+    {
+        "category": "ASH TRAY"
+    },
+    {
+        "category": "ANGEL WINGS"
+    },
+    {
+        "category": "HOT SHOWER "
+    },
+    {
+        "category": "FACE MASK"
+    },
+    {
+        "category": "TUB"
+    },
+    {
+        "category": "FROZEN FOOD FISH KIVES"
+    },
+    {
+        "category": "RABBIT FOOD"
+    },
+    {
+        "category": "TOOLS SET"
+    },
+    {
+        "category": "TWEEZER"
+    },
+    {
+        "category": "SWING"
+    },
+    {
+        "category": "JHORNA"
+    },
+    {
+        "category": "ELECTRIC LUNCH BOX"
+    },
+    {
+        "category": "QUILT"
+    },
+    {
+        "category": "RUTI"
+    },
+    {
+        "category": "FROZEN FOOD SEAFOOD POPCORN"
+    },
+    {
+        "category": "KETTLE"
+    },
+    {
+        "category": "INTELLIGENT GAME"
+    },
+    {
+        "category": "VACUAM CLEANER"
+    },
+    {
+        "category": "DAYLIGHT LED"
+    },
+    {
+        "category": "TEA CUP"
+    },
+    {
+        "category": "PAPAYA HALWA"
+    },
+    {
+        "category": "COLOR"
+    },
+    {
+        "category": "BATTERY AA"
+    },
+    {
+        "category": "BALL SET"
+    },
+    {
+        "category": "KID'S TOY"
+    },
+    {
+        "category": "WEIGHT SCALE"
+    },
+    {
+        "category": "SHOWPIECE"
+    },
+    {
+        "category": "LEGEND"
+    },
+    {
+        "category": "ORGANIZER"
+    },
+    {
+        "category": "DRINKKIT FILTER"
+    },
+    {
+        "category": "WASHING MACHINE CLEANER"
+    },
+    {
+        "category": "BELCHA"
+    },
+    {
+        "category": "ADHESIVE"
+    },
+    {
+        "category": "BARBIE ACCESSORIES"
+    },
+    {
+        "category": "FROZEN FOOD WEDGES"
+    },
+    {
+        "category": "MASSANGER"
+    },
+    {
+        "category": "SILKINA"
+    },
+    {
+        "category": "GLITTER PAPER"
+    },
+    {
+        "category": "MODHU POWDER"
+    },
+    {
+        "category": "ONE TIME GLASS"
+    },
+    {
+        "category": "KITCHEN APPLIANCE"
+    },
+    {
+        "category": "BABY SNACK"
+    },
+    {
+        "category": "MAGIC BOARD"
+    },
+    {
+        "category": "GARDEN KIT"
+    },
+    {
+        "category": "DIY TOY"
+    },
+    {
+        "category": "PAPRI"
+    },
+    {
+        "category": "MUSIC BOX"
+    },
+    {
+        "category": "JEWELRY"
+    },
+    {
+        "category": "CRAYON"
+    },
+    {
+        "category": "BALL"
+    },
+    {
+        "category": "EDUCATIONAL TOY"
+    },
+    {
+        "category": "PENCIL BOX/BAG"
+    },
+    {
+        "category": "T SHAPE LIGHT"
+    },
+    {
+        "category": "BATTERY AAA"
+    },
+    {
+        "category": "RAIN CARD"
+    },
+    {
+        "category": "GARDENING-FERTILIZER"
+    },
+    {
+        "category": "BATTERY VOLT"
+    },
+    {
+        "category": "ACRYLIC PAINT"
+    },
+    {
+        "category": "MAGAZINE"
+    },
+    {
+        "category": "EGG CASE"
+    },
+    {
+        "category": "STAPLER REMOVER"
+    },
+    {
+        "category": "AIR PURIFIER"
+    },
+    {
+        "category": "BAT"
+    },
+    {
+        "category": "DINNER SET"
+    },
+    {
+        "category": "BRUSHES"
+    },
+    {
+        "category": "READING TABLE"
+    },
+    {
+        "category": "BUT HALWA"
+    },
+    {
+        "category": "COMFORTER COVER"
+    },
+    {
+        "category": "BODY ART"
+    },
+    {
+        "category": "NARIKEL BORFI"
+    },
+    {
+        "category": "WATER BOTTLE"
+    },
+    {
+        "category": "SALSA SAUCE"
+    },
+    {
+        "category": "PUSH SHOWER"
+    },
+    {
+        "category": "APPLE LED"
+    },
+    {
+        "category": "STERILIZER BOX"
+    },
+    {
+        "category": "LIVING ROOM DECORS"
+    },
+    {
+        "category": "BIRTHDAY WHISTEL"
+    },
+    {
+        "category": "RAW MILK"
+    },
+    {
+        "category": "HORSE RIDER"
+    },
+    {
+        "category": "TASBIH"
+    },
+    {
+        "category": "TABLE"
+    },
+    {
+        "category": "SINGING DOLL"
+    },
+    {
+        "category": "STICK"
+    },
+    {
+        "category": "FERTILIZER"
+    },
+    {
+        "category": "GARDEN SCISSORS"
+    },
+    {
+        "category": "CRICKET BALL"
+    },
+    {
+        "category": "HOME DECOR"
+    },
+    {
+        "category": "FROZEN FOOD SHASHLIK"
+    },
+    {
+        "category": "LADDU"
+    },
+    {
+        "category": "PLAYING CARD"
+    },
+    {
+        "category": "KEYBOARD"
+    },
+    {
+        "category": "BALIS SWEET"
+    },
+    {
+        "category": "TALKING DOLL"
+    },
+    {
+        "category": "KACHA BADAM"
+    },
+    {
+        "category": "FROZEN FOOD LUCHI"
+    },
+    {
+        "category": "BINDING MACHINE"
+    },
+    {
+        "category": "GEOMETRY"
+    },
+    {
+        "category": "GARLIC CHIPPER"
+    },
+    {
+        "category": "BOARD GAME"
+    },
+    {
+        "category": "STAMP PAD"
+    },
+    {
+        "category": "MILK/CREAM(BAKING)"
+    },
+    {
+        "category": "PLUGS & SOCKETS"
+    },
+    {
+        "category": "DINING DECORS"
+    },
+    {
+        "category": "INDOOR"
+    },
+    {
+        "category": "COMPUTER ACCESSORIES"
+    },
+    {
+        "category": "DAIRY PRODUCT"
+    },
+    {
+        "category": "SAFETY ITEMS"
+    },
+    {
+        "category": "SHOW PIECE"
+    },
+    {
+        "category": "SHOE STICK"
+    },
+    {
+        "category": "SOIL"
+    },
+    {
+        "category": "DAYLIGHT"
+    },
+    {
+        "category": "OUTDOOR TOYS"
+    },
+    {
+        "category": "SCREWDRIVER"
+    },
+    {
+        "category": "SAUCE & KETCHUP"
+    },
+    {
+        "category": "TIFFIN BOX AND WATER BOTTLE COMBO"
+    },
+    {
+        "category": "SHOVEL"
+    },
+    {
+        "category": "PEANUT OIL"
+    },
+    {
+        "category": "LAPTOP BAG"
+    },
+    {
+        "category": "KHAJA"
+    },
+    {
+        "category": "POWERBANK"
+    },
+    {
+        "category": "COTTON BALL"
+    },
+    {
+        "category": "STOVE"
+    },
+    {
+        "category": "GARDEN KORAT"
+    },
+    {
+        "category": "KITCHEN"
+    },
+    {
+        "category": "AIR CARE"
+    },
+    {
+        "category": "FROZEN FOOD POTATO BITES"
+    },
+    {
+        "category": "WASHROOM ACCESSORIES"
+    },
+    {
+        "category": "ENERGY SAVERS"
+    },
+    {
+        "category": "CAKE PREMIX"
+    },
+    {
+        "category": "TRAVEL BAG"
+    },
+    {
+        "category": "EDUCATIONAL"
+    },
+    {
+        "category": "ELECTRICIAN`S KNIFE"
+    },
+    {
+        "category": "MOBILE ACCESSORIES"
+    },
+    {
+        "category": "RELIGIOUS"
+    },
+    {
+        "category": "ROSHMALAI"
+    },
+    {
+        "category": "ECO LED LIGHT"
+    },
+    {
+        "category": "FROZEN FOOD MIXED PACK"
+    },
+    {
+        "category": "STORY BOOK"
+    },
+    {
+        "category": "EDUCATIONAL BOOK"
+    },
+    {
+        "category": "PUNCH MECHINE"
+    },
+    {
+        "category": "DINNING ROOM"
+    },
+    {
+        "category": "SATCHARA"
+    },
+    {
+        "category": "NIRANI"
+    },
+    {
+        "category": "INFRARED THERMOMETER"
+    },
+    {
+        "category": "LAPTOP"
+    },
+    {
+        "category": "PHOTO FRAME"
+    },
+    {
+        "category": "PHOTO ALBUM"
+    },
+    {
+        "category": "PREMIX"
+    },
+    {
+        "category": "HELMET"
+    },
+    {
+        "category": "TASTE ENHANCER"
+    },
+    {
+        "category": "MITER"
+    },
+    {
+        "category": "JEWELRY BOX"
+    },
+    {
+        "category": "MEAT SNANCK"
+    },
+    {
+        "category": "PRAYER ROOM"
+    },
+    {
+        "category": "DRIVER"
+    },
+    {
+        "category": "BACKPACK"
+    },
+    {
+        "category": "NUMBER MECHINE"
+    },
+    {
+        "category": "MORICH"
+    },
+    {
+        "category": "STAPLER PIN"
+    },
+    {
+        "category": "OFFICE BAG"
+    },
+    {
+        "category": "MEAT MINCER"
+    },
+    {
+        "category": "TOOLS"
+    },
+    {
+        "category": "SAUCER"
+    },
+    {
+        "category": "TAP"
+    },
+    {
+        "category": "BELT"
+    },
+    {
+        "category": "MAGIC EGGS"
+    },
+    {
+        "category": "HANDSAW"
+    },
+    {
+        "category": "BORFI"
+    },
+    {
+        "category": "COLOR COPY"
+    },
+    {
+        "category": "REGULAR LIGHT"
+    },
+    {
+        "category": "CARD HOLDER"
+    },
+    {
+        "category": "FUSE"
+    },
+    {
+        "category": "ROOM DÉCOR"
+    },
+    {
+        "category": "POPCORN MAKER"
+    },
+    {
+        "category": "PLIER INCH"
+    },
+    {
+        "category": "DUCK"
+    },
+    {
+        "category": "COFFEE HEATER"
+    },
+    {
+        "category": "CORN OIL"
+    },
+    {
+        "category": "INSECT REPELLENT"
+    },
+    {
+        "category": "LENTIL FLOUR"
+    },
+    {
+        "category": "GUR"
+    },
+    {
+        "category": "CONDOMS"
+    },
+    {
+        "category": "CLIP BOARD"
+    },
+    {
+        "category": "PEN BOX"
+    },
+    {
+        "category": "SHAKER"
+    },
+    {
+        "category": "BOOKS"
+    },
+    {
+        "category": "HANDWRITING BOOK"
+    },
+    {
+        "category": "EATING SODA"
+    },
+    {
+        "category": "KHATA"
+    },
+    {
+        "category": "MEDICATED GEL"
+    },
+    {
+        "category": "BOOK"
+    },
+    {
+        "category": "TABLET"
+    },
+    {
+        "category": "BREATHING EXERCISER"
+    },
+    {
+        "category": "SOAN PAPDI"
+    },
+    {
+        "category": "ICE BAG"
+    },
+    {
+        "category": "REPELLER"
+    },
+    {
+        "category": "SHOWER CUTTING"
+    },
+    {
+        "category": "TOWELS"
+    },
+    {
+        "category": "FRIZBEE"
+    },
+    {
+        "category": "LOCK"
+    },
+    {
+        "category": "BASKETBALL"
+    },
+    {
+        "category": "GARDENING"
+    },
+    {
+        "category": "MOMO"
+    },
+    {
+        "category": "SAW"
+    },
+    {
+        "category": "FLV"
+    },
+    {
+        "category": "WRAPPING MATERIAL"
+    },
+    {
+        "category": "INTIMATE WASH"
+    },
+    {
+        "category": "SHOWER CAP"
+    },
+    {
+        "category": "NARIKEL PURI"
+    },
+    {
+        "category": "CONTAINER"
+    },
+    {
+        "category": "BABY INSTANT DRINK"
+    },
+    {
+        "category": "BEDROOM"
+    },
+    {
+        "category": "WHITE BORD"
+    },
+    {
+        "category": "BLANKET"
+    },
+    {
+        "category": "CANDEL SET"
+    },
+    {
+        "category": "SAFETY & HYGIENE"
+    },
+    {
+        "category": "HOMEMADE"
+    },
+    {
+        "category": "STAPLE REMOVER"
+    },
+    {
+        "category": "MODHUPULI"
+    },
+    {
+        "category": "MONPHURA"
+    },
+    {
+        "category": "FROZEN FOOD VUJIA"
+    },
+    {
+        "category": "HAND SPINNER"
+    },
+    {
+        "category": "TUBE LIGHT"
+    },
+    {
+        "category": "PIN"
+    },
+    {
+        "category": "GLOBE"
+    },
+    {
+        "category": "EGG SET"
+    },
+    {
+        "category": "KHEJURER GUR"
+    },
+    {
+        "category": "NEWS PAPER"
+    },
+    {
+        "category": "KNOBS"
+    },
+    {
+        "category": "BATHING ACCESSORIES"
+    },
+    {
+        "category": "COCONUT SCRAPPER"
+    },
+    {
+        "category": "COCO DUST"
+    },
+    {
+        "category": "FROZEN FOOD POTATO CHOP"
+    },
+    {
+        "category": "ARTIFICIAL FLOWER"
+    },
+    {
+        "category": "BINDING PIN"
+    },
+    {
+        "category": "FISH FOOD"
+    },
+    {
+        "category": "COPIES"
+    },
+    {
+        "category": "44-E-COM HOME DELIVERY"
+    },
+    {
+        "category": "FROZEN FOOD WIENERS"
+    },
+    {
+        "category": "PUFF PASTRY"
+    },
+    {
+        "category": "SPINNER"
+    },
+    {
+        "category": "LOBONGO"
+    },
+    {
+        "category": "COIN BOX"
+    },
+    {
+        "category": "FRUIT STICK"
+    },
+    {
+        "category": "MAL POA"
+    },
+    {
+        "category": "PANEER"
+    },
+    {
+        "category": "NETS"
+    },
+    {
+        "category": "OVEN GLOVES"
+    },
+    {
+        "category": "SWING COOL"
+    },
+    {
+        "category": "CLEAR BAG"
+    },
+    {
+        "category": "INSTANT RICE"
+    },
+    {
+        "category": "CUTLERY SET"
+    },
+    {
+        "category": "FRIDGE HANDLE COVER"
+    },
+    {
+        "category": "TRIFALA"
+    },
+    {
+        "category": "DINOSOUR EGG"
+    },
+    {
+        "category": "SEED"
+    },
+    {
+        "category": "METAL CLEANER"
+    },
+    {
+        "category": "PUFFED RICE"
+    },
+    {
+        "category": "SANDAL"
+    },
+    {
+        "category": "TALKTIME"
+    },
+    {
+        "category": "BULB"
+    },
+    {
+        "category": "DAY LIGHT"
+    },
+    {
+        "category": "SCREW DRIVER"
+    },
+    {
+        "category": "MEASUREMENT TAPE"
+    },
+    {
+        "category": "TISSUE"
+    },
+    {
+        "category": "FLOUR"
+    },
+    {
+        "category": "CHICKEN TIKKA"
+    },
+    {
+        "category": "SELFIE STICK"
+    },
+    {
+        "category": "ATAR"
+    },
+    {
+        "category": "CELLULAR RECHARGER VOUCHER"
+    },
+    {
+        "category": "FROZEN FOOD THIGH"
+    },
+    {
+        "category": "RUBBER SHEET"
+    },
+    {
+        "category": "EGG DIVIDER"
+    },
+    {
+        "category": "PLANTER"
+    },
+    {
+        "category": "COMPUTER CLEANER"
+    },
+    {
+        "category": "ANTISEPTIC BANDAGES"
+    },
+    {
+        "category": "SHAIE"
+    },
+    {
+        "category": "SHAVING ACCESSORIES"
+    },
+    {
+        "category": "BEAN"
+    },
+    {
+        "category": "GHUTNI"
+    },
+    {
+        "category": "BATH TUB"
+    },
+    {
+        "category": "SPOUT"
+    },
+    {
+        "category": "NASAL CARE"
+    },
+    {
+        "category": "FLIES KILLER"
+    },
+    {
+        "category": "POWDER CASE"
+    },
+    {
+        "category": "MONAKKA"
+    },
+    {
+        "category": "TORCH"
+    },
+    {
+        "category": "SAGUDANA"
+    },
+    {
+        "category": "DISPOSABLE UTENSILS"
+    },
+    {
+        "category": "PLASTIC BAG"
+    },
+    {
+        "category": "CLIP FILE"
+    },
+    {
+        "category": "WATER TAP"
+    },
+    {
+        "category": "DESICCATED COCONUT"
+    },
+    {
+        "category": "OTHER"
+    },
+    {
+        "category": "MOUTH SPRAY"
+    },
+    {
+        "category": "SHONDESH"
+    },
+    {
+        "category": "SLIPPER"
+    },
+    {
+        "category": "WRONG CATEGORY"
+    },
+    {
+        "category": "PLIER"
+    },
+    {
+        "category": "BOX FILE"
+    },
+    {
+        "category": "ANTI CUTTER"
+    },
+    {
+        "category": "CHICKEN POTATO PIE"
+    },
+    {
+        "category": "BABY CEREAL MUESLI"
+    },
+    {
+        "category": "SPICE JAR"
+    },
+    {
+        "category": "NARU"
+    },
+    {
+        "category": "CUTTING BOARD"
+    },
+    {
+        "category": "SINK FAUCET"
+    },
+    {
+        "category": "VESSEL"
+    },
+    {
+        "category": "PEN STAND"
+    },
+    {
+        "category": "EGG CHOP"
+    },
+    {
+        "category": "DOCUMENT TRAY"
+    },
+    {
+        "category": "STICKY PAD"
+    },
+    {
+        "category": "SHANJ"
+    },
+    {
+        "category": "KITCHEN WARE"
+    },
+    {
+        "category": "FROZEN FOOD NIMKI"
+    },
+    {
+        "category": "SANDALS"
+    },
+    {
+        "category": "DAL MAKANI"
+    },
+    {
+        "category": "VEGETABLE SAMOSA"
+    },
+    {
+        "category": "OVEN COVER"
+    },
+    {
+        "category": "POLY BAG"
+    },
+    {
+        "category": "TOYS"
+    },
+    {
+        "category": "PROMO"
+    },
+    {
+        "category": "HALIM"
+    },
+    {
+        "category": "COMMODE FLASH"
+    },
+    {
+        "category": "DUSTBIN"
+    },
+    {
+        "category": "TRAVEL KIT"
+    },
+    {
+        "category": "BEACH TOY"
+    },
+    {
+        "category": "BBQ STICKS"
+    },
+    {
+        "category": "MEASUREMENT"
+    },
+    {
+        "category": "FLAXI LOAD"
+    },
+    {
+        "category": "FROZEN FOOD ROLL"
+    },
+    {
+        "category": "NOT ASSIGNED"
+    },
+    {
+        "category": "FROZEN FOOD FRIED"
+    },
+    {
+        "category": "COLOUR"
+    },
+    {
+        "category": "KACHI"
+    },
+    {
+        "category": "DIM HALWA"
+    },
+    {
+        "category": "KHIRMOHON"
+    },
+    {
+        "category": "AC"
+    },
+    {
+        "category": "EGG KHICHURI"
+    },
+    {
+        "category": "MOVIE,DRAMA & GAMES"
+    },
+    {
+        "category": "PIZZA PAN"
+    },
+    {
+        "category": "HOUSEHOLD"
+    },
+    {
+        "category": "TOBACCO"
+    },
+    {
+        "category": "BUN"
+    },
+    {
+        "category": "DAL PURI"
+    },
+    {
+        "category": "ROLL"
+    },
+    {
+        "category": "RUBIK CUBE"
+    },
+    {
+        "category": "IFTAR"
     }
 ]

@@ -43,7 +43,7 @@ const Category = () => {
                     </div>
 
                     <div style={{ padding: '0' }} className="col-lg-10 col-md-12">
-                        <h1 className='text-center fw-bold my-3 fs-5'>{products[0]?.category}</h1>
+                        <h1 style={{fontSize:'14px'}} className='text-center fw-bold my-3'>{category}</h1>
                         {
                             division === undefined ?
                                 <NotFound /> :

@@ -22,14 +22,14 @@ const Search = () => {
     const [limit, setLimit] = useState(104)
 
     useEffect(() => {
-        const handler = setTimeout(()=>{
+        const handler = setTimeout(() => {
             fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${id}`)
-            .then(response => response.json())
-            .then(data => setProducts(data.products))
-        },600)
+                .then(response => response.json())
+                .then(data => setProducts(data.products))
+        }, 500)
         return () => {
             clearTimeout(handler);
-          };
+        };
         // fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${id}`)
         //     .then(response => response.json())
         //     .then(data => setProducts(data.products))
@@ -51,17 +51,17 @@ const Search = () => {
                     <div className="row justify-content-center align-items-center mt-3">
                         {
                             products.length > 0 &&
-                                products.map((product, index) =>
-                                    // col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center align-items-center 
-                                    <div key={index + 1} className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center px-2">
-                                        <ProductCard product={product} />
-                                    </div>
-                                )
-                                // :
-                                // <div className="mt-5">
-                                //     <h2 className='fs-6 text-center'>Your search <span className="text-danger">{id}</span> did not match any products</h2>
-                                //     <button className='btn-confirm-order mx-auto d-block text-white fw-bold' data-bs-toggle="modal" data-bs-target="#staticBackdrop">REQUEST ITEM</button>
-                                // </div>
+                            products.map((product, index) =>
+                                // col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center align-items-center 
+                                <div key={index + 1} className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center px-2">
+                                    <ProductCard product={product} />
+                                </div>
+                            )
+                            // :
+                            // <div className="mt-5">
+                            //     <h2 className='fs-6 text-center'>Your search <span className="text-danger">{id}</span> did not match any products</h2>
+                            //     <button className='btn-confirm-order mx-auto d-block text-white fw-bold' data-bs-toggle="modal" data-bs-target="#staticBackdrop">REQUEST ITEM</button>
+                            // </div>
                         }
                     </div>
                 </div>

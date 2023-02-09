@@ -17,7 +17,7 @@ const Sidebar = () => {
         <section style={{ boxShadow: '0 5px 5px #c4c4c44d' }} className='py-1'>
 
             <div className="d-none d-lg-block">
-                <h1 className='fs-5 py-2 text-center fw-bold'>Categories</h1>
+                <h1 style={{fontSize:'14px'}} className='py-2 text-center fw-bold'>Categories</h1>
                 {
                     division.map((item, index) =>
                         <NavLink onClick={() => { window.scrollTo(0, 0); }}

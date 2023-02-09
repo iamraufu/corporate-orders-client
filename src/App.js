@@ -3,8 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
-// eslint-disable-next-line
-import Products from './pages/Products';
 import Orders from './pages/Orders';
 import Cart from './pages/Cart';
 import Profile from './pages/Profile';
@@ -24,7 +22,7 @@ function App() {
       {/* <div className="spinner-grow text-dark" role="status">
         <span className="sr-only">Loading...</span>
       </div> */}
-      <img src={logo} id='breathing' width={100} height={100} className='img-fluid' alt="logo of Skill Shikhun" />
+      <img src={logo} id='breathing' width={100} height={100} className='img-fluid' alt="logo of Shwapno Corporate Orders" />
       {/* <p>Shwapno Corporate Orders are Loading...</p> */}
       <p className='text-center'>Loading...</p>
     </div>

@@ -1,4 +1,5 @@
-[{
+[
+    {
         "name": "COMPANY GOODS",
         "route": "company-goods"
     },
@@ -11,12 +12,16 @@
         "route": "general-merchandise"
     },
     {
-        "name": "PACKED COMMODITY",
-        "route": "packed-commodity"
-    },
-    {
         "name": "LIFESTYLE",
         "route": "lifestyle"
+    },
+    {
+        "name": "LOOSE COMMODITY",
+        "route": "loose-commodity"
+    },
+    {
+        "name": "PACKED COMMODITY",
+        "route": "packed-commodity"
     },
     {
         "name": "44-E-COM HOME DELIVERY",
@@ -25,13 +30,5 @@
     {
         "name": "44-HOME DELIVERY",
         "route": "44-home-delivery"
-    },
-    {
-        "name": "60-HOME DELIVERY",
-        "route": "60-home-delivery"
-    },
-    {
-        "name": "LOOSE COMMODITY",
-        "route": "loose-commodity"
     }
 ]
