@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 import CartDetails from '../components/CartDetails';
 import Navbar from '../components/Navbar';
 import ProductRequest from '../components/ProductRequest';
@@ -19,20 +21,57 @@ const Profile = () => {
             .then(data => setOrders(data.result))
     }, [user._id])
 
+    const handleClick = () => {
+        document.getElementById('update_form').style.display === 'none' ?
+            document.getElementById('update_form').style.display = 'block' :
+            document.getElementById('update_form').style.display = 'none'
+    }
+
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => {
+        fetch(`https://corporateorders.herokuapp.com/user/${user._id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                data.status === true ?
+                    Swal.fire({
+                        icon: 'success',
+                        text: `${data.message}`,
+                    }) :
+                    Swal.fire({
+                        icon: 'error',
+                        text: `${data.message}`,
+                    })
+            }).catch(err => Swal.fire({
+                icon: 'error',
+                text: `${err}!`,
+            }))
+        document.getElementById('update_form').style.display = 'none';
+        setTimeout(() => {
+            window.location.reload()
+        }, 1500)
+    }
+
+
     return (
         <section className='container-fluid p-0'>
             <Navbar />
             <div className="d-md-none"><Sidebar /></div>
-           
+
             <div className="row">
                 <VegCart />
             </div>
-            
+
             <h1 className='mt-5 fs-4 text-center'>Profile</h1>
 
             <div className="container mt-5">
 
-                <h2 style={{ cursor: 'pointer' }} data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" className='fs-5 fw-bold'>Business Profile <img src={down} alt="click for details" /></h2>
+                <h2 style={{ cursor: 'pointer', maxWidth: '500px' }} data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" className='fs-5 fw-bold d-flex justify-content-between align-items-center'>Business Profile <img src={down} alt="click for details" /></h2>
 
                 <div id="multiCollapseExample1" style={{
                     backgroundColor: '#FFF7E1', maxWidth: '500px',
@@ -45,7 +84,11 @@ const Profile = () => {
                     <h4 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>Total <span style={{ color: '#F97D48' }}>{orders.length}</span> Orders</h4>
                 </div>
 
-                <h2 style={{ cursor: 'pointer' }} type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-controls="multiCollapseExample2" className='fs-5 fw-bold mt-5 pt-5'>Personal Profile <img src={down} alt="click for details" /></h2>
+                <div style={{ maxWidth: '500px' }} className="d-flex justify-content-between align-items-center mt-5 pt-5">
+                    <div style={{ cursor: 'pointer' }} data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-controls="multiCollapseExample2"><h2 className='fs-5 fw-bold'>Personal Profile <img className='' src={down} alt="click for details" /></h2></div>
+                    {/* <div type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-controls="multiCollapseExample2" className=""><img className='pb-2' src={down} alt="click for details" /></div> */}
+                    <div onClick={() => handleClick(user._id)} style={{ cursor: 'pointer', color: '#F1833E', fontSize: '20px', fontWeight: '600' }} className="pb-2">Edit</div>
+                </div>
 
                 <div id="multiCollapseExample2" style={{
                     backgroundColor: '#E9F9E8', maxWidth: '500px',
@@ -63,6 +106,74 @@ const Profile = () => {
 
                     <h4 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>{user?.secondary_client_email}</h4>
                 </div>
+
+                {
+                    user?.email && <div id='update_form' style={{ display: 'none', maxWidth: '500px' }} className="p-3 mt-3">
+
+                        <form onSubmit={handleSubmit(onSubmit)}>
+
+                            <div className="form-group mt-2">
+                                <input type="text" placeholder='Company Name' defaultValue={user?.company_name} className="form-control p-2" {...register("company_name")} />
+                            </div>
+
+                            <div className="form-group mt-2">
+                                <input type="text" placeholder='Company Address' defaultValue={user?.address} className="form-control p-2" {...register("address")} />
+                            </div>
+
+                            <div className="form-group mt-2">
+                                <input type="email" placeholder='Email' defaultValue={user?.email} className="form-control p-2" {...register("email")} disabled />
+                            </div>
+
+                            <div className="form-group mt-2">
+                                <input type="phone" placeholder='Phone' defaultValue={user?.phone} className="form-control p-2" {...register("phone")} />
+                            </div>
+
+                            <div className="form-group mt-2">
+                                <input type="text" placeholder='Primary Client Name'
+                                    defaultValue={user?.primary_client_name} 
+                                    className="form-control p-2" {...register("primary_client_name")} />
+                            </div>
+
+                            <div className="form-group mt-2">
+                                <input type="phone" placeholder='Primary Client Number'
+                                    defaultValue={user?.primary_client_number} 
+                                    className="form-control p-2" {...register("primary_client_number")} />
+                            </div>
+
+                            <div className="form-group mt-2">
+                                <input type="email" placeholder='Primary Client Email Address'
+                                    defaultValue={user?.primary_client_email} 
+                                    className="form-control p-2" {...register("primary_client_email")} />
+                            </div>
+
+                            <div className="form-group mt-2">
+                                <input type="text" placeholder='Secondary Client Name'
+                                    defaultValue={user?.secondary_client_name} 
+                                    className="form-control p-2" {...register("secondary_client_name")} />
+                            </div>
+
+                            <div className="form-group mt-2">
+                                <input type="phone" placeholder='Secondary Client Number'
+                                    defaultValue={user?.secondary_client_number} 
+                                    className="form-control p-2" {...register("secondary_client_number")} />
+                            </div>
+
+                            <div className="form-group mt-2">
+                                <input type="email" placeholder='Secondary Client Email Address'
+                                    defaultValue={user?.secondary_client_email} 
+                                    className="form-control p-2" {...register("secondary_client_email")} />
+                            </div>
+
+                            <div className="form-group mt-2">
+                                <input type="password" placeholder='Password'
+                                    defaultValue={user?.password} 
+                                    className="form-control p-2" {...register("password")} />
+                            </div>
+
+                            <input className='btn btn-dark p-2 mt-2 mx-auto d-block' type="submit" value='Submit' />
+                        </form>
+                    </div>
+                }
             </div>
             <CartDetails />
             <ProductRequest />
