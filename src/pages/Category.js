@@ -87,7 +87,7 @@ const Category = () => {
                                                 </div>
                                             )}
                                         {
-                                            products.length > 24 &&
+                                            products.length > 23 &&
                                                 hasMore ?
                                                 <div style={{ margin: '0' }} className="row justify-content-center align-items-center ps-0">
                                                     {
