@@ -27,6 +27,7 @@ const Search = () => {
                 .then(response => response.json())
                 .then(data => setProducts(data.products))
         }, 500)
+        window.scrollTo(0, 0);
         return () => {
             clearTimeout(handler);
         };

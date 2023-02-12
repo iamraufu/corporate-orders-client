@@ -32,8 +32,7 @@ const Shipping = () => {
             phone: user.phone,
             products: JSON.parse(localStorage.getItem('shopping-cart')),
             requested_products: requestedProducts,
-            date: data.date,
-            time: data.time
+            date: data.date
         }
 
         fetch('https://corporateorders.herokuapp.com/order', {
@@ -88,13 +87,6 @@ const Shipping = () => {
                                 <input id='date' min={new Date().toISOString().split('T')[0]} type="date" name='date' className="form-control p-2"
                                     {...register("date", { required: true })} />
                                 {errors.date && <span className='text-danger'>Date is required</span>}
-                            </div>
-
-                            <div className="">
-                                <label htmlFor="time" className='p-1'>Delivery Time</label>
-                                <input id='time' type="time" name='time' className="form-control p-2"
-                                    {...register("time", { required: true })} />
-                                {errors.time && <span className='text-danger'>Time is required</span>}
                             </div>
                         </div>
 

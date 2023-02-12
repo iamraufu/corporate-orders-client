@@ -13,22 +13,58 @@ import NotFound from './NotFound';
 const Category = () => {
 
     const { id } = useParams();
-    // const skeleton = [0, 1, 2, 3, 4, 5, 6, 7]
-    const skeleton = Array.from({ length: 16 }, (_, i) => i);
+    const skeleton = Array.from({ length: 4 }, (_, i) => i);
     // eslint-disable-next-line
     const [skip, setSkip] = useState(0)
     // eslint-disable-next-line
-    const [limit, setLimit] = useState(48)
+    const [limit, setLimit] = useState(24)
     const [products, setProducts] = useState([])
+    const [hasMore, setHasMore] = useState(true);
 
     const division = divisionData.find(item => item.route === id)
     const category = division?.name
 
     useEffect(() => {
-        fetch(`https://corporateorders.herokuapp.com/products/${category}/${skip}/${limit}`)
-            .then(response => response.json())
-            .then(data => setProducts(data))
-    }, [category, skip, limit])
+        hasMore && fetchData();
+        // eslint-disable-next-line
+    }, [category, skip, limit]);
+
+    const fetchData = async () => {
+        const data = await fetch(`https://corporateorders.herokuapp.com/products/${category}/${skip}/${limit}`)
+            .then(response => response.json());
+
+        if (data.length === 0) {
+            setHasMore(false);
+            return;
+        }
+        setProducts([...products, ...data]);
+    };
+
+    const handleScroll = () => {
+        const { innerHeight } = window;
+        const { scrollHeight } = document.body;
+        const scrollTop =
+            (document.documentElement && document.documentElement.scrollTop) ||
+            document.body.scrollTop;
+
+        if (hasMore === true) {
+            if (scrollHeight - innerHeight - scrollTop <= 50) {
+                setSkip(prevSkip => prevSkip + limit)
+            }
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+        // eslint-disable-next-line
+    }, []);
+
+    // useEffect(() => {
+    //     fetch(`https://corporateorders.herokuapp.com/products/${category}/${skip}/${limit}`)
+    //         .then(response => response.json())
+    //         .then(data => setProducts(data))
+    // }, [category, skip, limit])
 
     return (
         <section>
@@ -43,7 +79,7 @@ const Category = () => {
                     </div>
 
                     <div style={{ padding: '0' }} className="col-lg-10 col-md-12">
-                        <h1 style={{fontSize:'14px'}} className='text-center fw-bold my-3'>{category}</h1>
+                        <h1 style={{ fontSize: '14px' }} className='text-center fw-bold my-3'>{products[0]?.division}</h1>
                         {
                             division === undefined ?
                                 <NotFound /> :
@@ -56,6 +92,19 @@ const Category = () => {
                                                     <ProductCard product={product} />
                                                 </div>
                                             )}
+                                        {
+                                            products.length > 24 &&
+                                                hasMore ?
+                                                <div style={{ margin: '0' }} className="row justify-content-center align-items-center ps-0">
+                                                    {
+                                                        skeleton.map(item =>
+                                                            <div key={item} className='col-lg-3 col-md-4 col-sm-6 col-12'>
+                                                                <Skeleton />
+                                                            </div>
+                                                        )}
+                                                </div> :
+                                                <div className='text-center fw-bold my-3'>No more data to display.</div>
+                                        }
                                     </div>
                                     :
                                     <div style={{ margin: '0' }} className="row justify-content-center align-items-center px-3">
