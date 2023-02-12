@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import { useParams } from 'react-router-dom';
 import { addToDB, removeFromCart, removeFromDb } from '../utilities/localDB';
-// import Review from '../Review/Review';
 
 const Product = () => {
 
@@ -84,8 +83,6 @@ const Product = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* <Review /> */}
 
             </div>
         </section>

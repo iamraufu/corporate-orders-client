@@ -19,11 +19,7 @@ function App() {
 
   const renderLoader = () =>
     <div style={{ position: 'absolute', height: '100px', width: '100px', top: '50%', left: '50%', marginLeft: '-50px', marginTop: '-50px' }}>
-      {/* <div className="spinner-grow text-dark" role="status">
-        <span className="sr-only">Loading...</span>
-      </div> */}
       <img src={logo} id='breathing' width={100} height={100} className='img-fluid' alt="logo of Shwapno Corporate Orders" />
-      {/* <p>Shwapno Corporate Orders are Loading...</p> */}
       <p className='text-center'>Loading...</p>
     </div>
 

@@ -13,8 +13,8 @@ import NotFound from './NotFound';
 const Category = () => {
 
     const { id } = useParams();
-    const skeleton = Array.from({ length: 4 }, (_, i) => i);
-    // eslint-disable-next-line
+    const skeleton = Array.from({ length: 16 }, (_, i) => i);
+    const skeleton2 = Array.from({ length: 4 }, (_, i) => i);
     const [skip, setSkip] = useState(0)
     // eslint-disable-next-line
     const [limit, setLimit] = useState(24)
@@ -60,12 +60,6 @@ const Category = () => {
         // eslint-disable-next-line
     }, []);
 
-    // useEffect(() => {
-    //     fetch(`https://corporateorders.herokuapp.com/products/${category}/${skip}/${limit}`)
-    //         .then(response => response.json())
-    //         .then(data => setProducts(data))
-    // }, [category, skip, limit])
-
     return (
         <section>
             <Navbar />
@@ -97,13 +91,13 @@ const Category = () => {
                                                 hasMore ?
                                                 <div style={{ margin: '0' }} className="row justify-content-center align-items-center ps-0">
                                                     {
-                                                        skeleton.map(item =>
+                                                        skeleton2.map(item =>
                                                             <div key={item} className='col-lg-3 col-md-4 col-sm-6 col-12'>
                                                                 <Skeleton />
                                                             </div>
                                                         )}
                                                 </div> :
-                                                <div className='text-center fw-bold my-3'>No more data to display.</div>
+                                                <div className='text-center fw-bold my-3'>No more products to display.</div>
                                         }
                                     </div>
                                     :

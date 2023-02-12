@@ -6,7 +6,6 @@ import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import ProductRequest from '../components/ProductRequest';
 import Sidebar from '../components/Sidebar';
-// import Skeleton from '../components/Skeleton';
 import VegCart from '../components/VegCart';
 
 const Search = () => {
@@ -25,15 +24,14 @@ const Search = () => {
         const handler = setTimeout(() => {
             fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${id}`)
                 .then(response => response.json())
-                .then(data => setProducts(data.products))
+                .then(data => {
+                    window.scrollTo(0, 0);
+                    setProducts(data.products)
+                })
         }, 500)
-        window.scrollTo(0, 0);
         return () => {
             clearTimeout(handler);
         };
-        // fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${id}`)
-        //     .then(response => response.json())
-        //     .then(data => setProducts(data.products))
     }, [id, skip, limit])
 
     return (
@@ -53,16 +51,10 @@ const Search = () => {
                         {
                             products.length > 0 &&
                             products.map((product, index) =>
-                                // col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center align-items-center 
                                 <div key={index + 1} className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center px-2">
                                     <ProductCard product={product} />
                                 </div>
                             )
-                            // :
-                            // <div className="mt-5">
-                            //     <h2 className='fs-6 text-center'>Your search <span className="text-danger">{id}</span> did not match any products</h2>
-                            //     <button className='btn-confirm-order mx-auto d-block text-white fw-bold' data-bs-toggle="modal" data-bs-target="#staticBackdrop">REQUEST ITEM</button>
-                            // </div>
                         }
                     </div>
                 </div>
