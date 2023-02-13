@@ -14,9 +14,9 @@ const Login = () => {
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    const { user, setUser } = useAuth();
+    const { credential } = useAuth();
 
-    user?.email && navigate(from, { replace: true })
+    credential.user?.email && navigate(from, { replace: true })
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => processLogin(data);
@@ -34,7 +34,7 @@ const Login = () => {
                     setLoginError(result.message)
                 }
                 else {
-                    setUser(result.user)
+                    credential.setUser(result.user)
                     setLoginError('')
                     localStorage.setItem('uId', result.user._id)
                 }

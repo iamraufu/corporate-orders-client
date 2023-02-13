@@ -3,21 +3,24 @@ import Navbar from '../components/Navbar'
 import useAuth from '../hooks/useAuth';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
 import ProductRequest from '../components/ProductRequest';
 import CartDetails from '../components/CartDetails';
 import VegCart from '../components/VegCart';
+import { useNavigate } from 'react-router-dom';
 
 const Shipping = () => {
 
-    const { user } = useAuth();
     const navigate = useNavigate()
+
+    const { credential, setRequestedProduct, setCart  } = useAuth();
+    const user = credential.user
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const requestedProducts = JSON.parse(localStorage.getItem('requested-product')) || []
 
     const onSubmit = data => {
+        document.getElementById('order_now').style.display = 'none'
         placeOrder(data);
     }
 
@@ -49,7 +52,10 @@ const Shipping = () => {
                         text: `${data.message}`,
                     })
                     localStorage.removeItem('cart');
+                    localStorage.removeItem('shopping-cart');
                     localStorage.removeItem('requested-product');
+                    setRequestedProduct([])
+                    setCart([])
                     navigate('/orders')
                 }
                 else {
@@ -90,7 +96,7 @@ const Shipping = () => {
                             </div>
                         </div>
 
-                        <input className='btn btn-dark px-3 mt-3' type="submit" value='Order Now' />
+                        <input id='order_now' className='btn btn-dark px-3 mt-3' type="submit" value='Order Now' />
                     </form>
 
                 </div>

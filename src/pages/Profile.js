@@ -11,15 +11,15 @@ import down from '../images/down.svg'
 
 const Profile = () => {
 
-    const { user } = useAuth();
+    const { credential } = useAuth();
 
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`https://corporateorders.herokuapp.com/orders/ordersById/${user._id}`)
+        fetch(`https://corporateorders.herokuapp.com/orders/ordersById/${credential.user._id}`)
             .then(response => response.json())
             .then(data => setOrders(data.result))
-    }, [user._id])
+    }, [credential.user._id])
 
     const handleClick = () => {
         document.getElementById('update_form').style.display === 'none' ?
@@ -29,7 +29,7 @@ const Profile = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        fetch(`https://corporateorders.herokuapp.com/user/${user._id}`, {
+        fetch(`https://corporateorders.herokuapp.com/user/${credential.user._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -77,9 +77,9 @@ const Profile = () => {
                     backgroundColor: '#FFF7E1', maxWidth: '500px',
                     // height: '170px' 
                 }} className="py-5 ps-5 collapse multi-collapse">
-                    <h2 style={{ fontSize: '18px', fontWeight: '600' }} className=''><span>{user.company_name}</span></h2>
+                    <h2 style={{ fontSize: '18px', fontWeight: '600' }} className=''><span>{credential.user.company_name}</span></h2>
 
-                    <h3 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>Total <span style={{ color: '#F97D48' }}>{orders.map(order => order.products.reduce((a, b) => a + b.price * b.count, 0)).reduce((a, b) => a + b, 0)}</span> Tk Transaction</h3>
+                    {/* <h3 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>Total <span style={{ color: '#F97D48' }}>{orders.map(order => order.products.reduce((a, b) => a + b.price * b.count, 0)).reduce((a, b) => a + b, 0)}</span> Tk Transaction</h3> */}
 
                     <h4 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>Total <span style={{ color: '#F97D48' }}>{orders.length}</span> Orders</h4>
                 </div>
@@ -87,86 +87,86 @@ const Profile = () => {
                 <div style={{ maxWidth: '500px' }} className="d-flex justify-content-between align-items-center mt-5 pt-5">
                     <div style={{ cursor: 'pointer' }} data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-controls="multiCollapseExample2"><h2 className='fs-5 fw-bold'>Personal Profile <img className='' src={down} alt="click for details" /></h2></div>
                     {/* <div type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-controls="multiCollapseExample2" className=""><img className='pb-2' src={down} alt="click for details" /></div> */}
-                    <div onClick={() => handleClick(user._id)} style={{ cursor: 'pointer', color: '#F1833E', fontSize: '20px', fontWeight: '600' }} className="pb-2">Edit</div>
+                    <div onClick={() => handleClick(credential.user._id)} style={{ cursor: 'pointer', color: '#F1833E', fontSize: '20px', fontWeight: '600' }} className="pb-2">Edit</div>
                 </div>
 
                 <div id="multiCollapseExample2" style={{
                     backgroundColor: '#E9F9E8', maxWidth: '500px',
                     // height: '170px' 
                 }} className="py-5 ps-5 collapse multi-collapse">
-                    <h2 style={{ fontSize: '18px', fontWeight: '600' }} className=''>Primary Client Name : {user?.primary_client_name}</h2>
+                    <h2 style={{ fontSize: '18px', fontWeight: '600' }} className=''>Primary Client Name : {credential.user?.primary_client_name}</h2>
 
-                    <h3 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>{user?.primary_client_number}</h3>
+                    <h3 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>{credential.user?.primary_client_number}</h3>
 
-                    <h4 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>{user?.primary_client_email}</h4>
+                    <h4 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>{credential.user?.primary_client_email}</h4>
 
-                    <h2 style={{ fontSize: '18px', fontWeight: '600' }} className='mt-5'>Secondary Client Name : {user?.secondary_client_name}</h2>
+                    <h2 style={{ fontSize: '18px', fontWeight: '600' }} className='mt-5'>Secondary Client Name : {credential.user?.secondary_client_name}</h2>
 
-                    <h3 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>{user?.secondary_client_number}</h3>
+                    <h3 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>{credential.user?.secondary_client_number}</h3>
 
-                    <h4 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>{user?.secondary_client_email}</h4>
+                    <h4 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>{credential.user?.secondary_client_email}</h4>
                 </div>
 
                 {
-                    user?.email && <div id='update_form' style={{ display: 'none', maxWidth: '500px' }} className="p-3 mt-3">
+                    credential.user?.email && <div id='update_form' style={{ display: 'none', maxWidth: '500px' }} className="p-3 mt-3">
 
                         <form onSubmit={handleSubmit(onSubmit)}>
 
                             <div className="form-group mt-2">
-                                <input type="text" placeholder='Company Name' defaultValue={user?.company_name} className="form-control p-2" {...register("company_name")} />
+                                <input type="text" placeholder='Company Name' defaultValue={credential.user?.company_name} className="form-control p-2" {...register("company_name")} />
                             </div>
 
                             <div className="form-group mt-2">
-                                <input type="text" placeholder='Company Address' defaultValue={user?.address} className="form-control p-2" {...register("address")} />
+                                <input type="text" placeholder='Company Address' defaultValue={credential.user?.address} className="form-control p-2" {...register("address")} />
                             </div>
 
                             <div className="form-group mt-2">
-                                <input type="email" placeholder='Email' defaultValue={user?.email} className="form-control p-2" {...register("email")} disabled />
+                                <input type="email" placeholder='Email' defaultValue={credential.user?.email} className="form-control p-2" {...register("email")} disabled />
                             </div>
 
                             <div className="form-group mt-2">
-                                <input type="phone" placeholder='Phone' defaultValue={user?.phone} className="form-control p-2" {...register("phone")} />
+                                <input type="phone" placeholder='Phone' defaultValue={credential.user?.phone} className="form-control p-2" {...register("phone")} />
                             </div>
 
                             <div className="form-group mt-2">
                                 <input type="text" placeholder='Primary Client Name'
-                                    defaultValue={user?.primary_client_name} 
+                                    defaultValue={credential.user?.primary_client_name} 
                                     className="form-control p-2" {...register("primary_client_name")} />
                             </div>
 
                             <div className="form-group mt-2">
                                 <input type="phone" placeholder='Primary Client Number'
-                                    defaultValue={user?.primary_client_number} 
+                                    defaultValue={credential.user?.primary_client_number} 
                                     className="form-control p-2" {...register("primary_client_number")} />
                             </div>
 
                             <div className="form-group mt-2">
                                 <input type="email" placeholder='Primary Client Email Address'
-                                    defaultValue={user?.primary_client_email} 
+                                    defaultValue={credential.user?.primary_client_email} 
                                     className="form-control p-2" {...register("primary_client_email")} />
                             </div>
 
                             <div className="form-group mt-2">
                                 <input type="text" placeholder='Secondary Client Name'
-                                    defaultValue={user?.secondary_client_name} 
+                                    defaultValue={credential.user?.secondary_client_name} 
                                     className="form-control p-2" {...register("secondary_client_name")} />
                             </div>
 
                             <div className="form-group mt-2">
                                 <input type="phone" placeholder='Secondary Client Number'
-                                    defaultValue={user?.secondary_client_number} 
+                                    defaultValue={credential.user?.secondary_client_number} 
                                     className="form-control p-2" {...register("secondary_client_number")} />
                             </div>
 
                             <div className="form-group mt-2">
                                 <input type="email" placeholder='Secondary Client Email Address'
-                                    defaultValue={user?.secondary_client_email} 
+                                    defaultValue={credential.user?.secondary_client_email} 
                                     className="form-control p-2" {...register("secondary_client_email")} />
                             </div>
 
                             <div className="form-group mt-2">
                                 <input type="password" placeholder='Password'
-                                    defaultValue={user?.password} 
+                                    defaultValue={credential.user?.password} 
                                     className="form-control p-2" {...register("password")} />
                             </div>
 

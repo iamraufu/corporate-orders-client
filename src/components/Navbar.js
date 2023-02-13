@@ -5,7 +5,7 @@ import React, {
 import '../styles/ProfileDropDown.css'
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../images/logo.jpg'
-import { getStoredCart } from '../utilities/localDB';
+// import { getStoredCart } from '../utilities/localDB';
 import useAuth from '../hooks/useAuth';
 import categories from '../images/categories.svg'
 // import cartImage from '../images/cart.svg'
@@ -15,7 +15,7 @@ import searchIcon from '../images/search.svg'
 
 const Navbar = ({ searchKey }) => {
 
-    const { user } = useAuth();
+    const { credential, getStoredCart } = useAuth();
     const navigate = useNavigate()
     const savedCart = getStoredCart()
     const productKeys = Object.keys(savedCart)
@@ -134,8 +134,16 @@ const Navbar = ({ searchKey }) => {
                                     className="nav-link text-white fw-bold text-center" to="/cart">Cart</NavLink>
                         } */}
 
+                        <NavLink
+                            onClick={() => { window.scrollTo(0, 0); }}
+                            style={({ isActive }) => (
+                                isActive ? activeStyles : undefined
+                            )}
+                            className="nav-link text-white fw-bold text-center" to="/profile">Profile</NavLink>
+                        <button style={{ background: 'transparent', border: 'none' }} className="nav-link text-white fw-bold text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Request Product</button>
+
                         {
-                            user?.email ?
+                            credential.user?.email ?
                                 <>
                                     <NavLink
                                         onClick={() => { window.scrollTo(0, 0); }}
@@ -143,14 +151,6 @@ const Navbar = ({ searchKey }) => {
                                             isActive ? activeStyles : undefined
                                         )}
                                         className="nav-link text-white fw-bold text-center" to="/orders">Orders</NavLink>
-                                    <NavLink
-                                        onClick={() => { window.scrollTo(0, 0); }}
-                                        style={({ isActive }) => (
-                                            isActive ? activeStyles : undefined
-                                        )}
-                                        className="nav-link text-white fw-bold text-center" to="/profile">Profile</NavLink>
-                                    <button style={{ background: 'transparent', border: 'none' }} className="nav-link text-white fw-bold text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Request Product</button>
-
                                     {/* <ProfileDropDown /> */}
                                     <ProfileNameDropDown />
                                 </>

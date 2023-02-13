@@ -7,8 +7,11 @@ import down from '../images/down.svg'
 import Sidebar from '../components/Sidebar';
 import VegCart from '../components/VegCart';
 import WhatsApp from '../components/WhatsApp';
+import useAuth from '../hooks/useAuth';
 
 const Orders = () => {
+
+    const { addCartProductsToDB, setRequestedProduct } = useAuth();
 
     const uId = localStorage.getItem('uId')
     const [orders, setOrders] = useState([])
@@ -21,12 +24,15 @@ const Orders = () => {
 
     const thisMonthOrders = orders.filter(order => order.date.slice(5, 7) === new Date().toISOString().slice(5, 7))
 
-    const handleAddAllToCart = (products) => {
+    const handleAddAllToCart = (order) => {
         let cart = {}
-        products.forEach(product => {
+        order.products.forEach(product => {
             cart[product.code] = product.count;
             localStorage.setItem('cart', JSON.stringify(cart));
         })
+        addCartProductsToDB(order.products)
+        setRequestedProduct(order.requested_products)
+        // localStorage.setItem('shopping-cart', JSON.stringify('shopping-cart'));
         document.getElementById('view_cart').click()
     }
 
@@ -51,8 +57,7 @@ const Orders = () => {
 
                 <div className="d-flex justify-content-between align-items-center pb-3 p-2">
                     <div className="col-md-3"><h2 style={{ color: '#655D5D' }} className="fs-6 fw-bold">Date</h2></div>
-                    <div className="col-md-3"><h2 style={{ color: '#655D5D' }} className="fs-6 fw-bold">Order</h2></div>
-                    <div className="col-md-4"><h2 style={{ color: '#655D5D' }} className="fs-6 fw-bold">Status</h2></div>
+                    <div className="col-md-4"><h2 style={{ color: '#655D5D' }} className="fs-6 fw-bold px-5">Status</h2></div>
                     <div className="col-md-2"></div>
                 </div>
                 {
@@ -61,15 +66,11 @@ const Orders = () => {
                         <div onClick={() => handleClick(index + 1)} key={order._id} style={{ backgroundColor: '#FCFCFC', cursor: 'pointer' }} className="">
                             <div className="d-flex justify-content-between align-items-center p-2">
                                 <div className="col-md-3">
-                                    <p style={{ fontSize: '18px' }} className='text-black'>{order.date}</p>
-                                </div>
-
-                                <div className="col-md-3">
-                                    <p style={{ color: '#232D42', fontSize: '14px' }} className='fs-6'>{order.products.reduce((a, b) => a + b.price * b.count, 0)} Tk</p>
+                                    <p style={{ fontSize: '18px' }} className='text-black'>{new Date(order.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                                 </div>
 
                                 <div className="col-md-4">
-                                    <button onClick={() => handleAddAllToCart(order.products)} className='btn-add-add-items-to-bag mb-3'>Add all items to bag</button>
+                                    <button onClick={() => handleAddAllToCart(order)} className='btn-add-add-items-to-bag mb-3'>Add all items to bag</button>
                                 </div>
 
                                 <div className="col-md-2 ps-3">
@@ -78,18 +79,14 @@ const Orders = () => {
                             </div>
 
                             <div style={{ display: 'none' }} id={`product-${index + 1}`} className="py-2">
-                                <div style={{ backgroundColor: 'lightgrey' }} className="d-flex justify-content-between align-items-center p-2">
-                                    <div className="col-md-3 fw-bold">Price</div>
+                                <div style={{ backgroundColor: '#ebebeb' }} className="d-flex justify-content-between align-items-center p-2">
                                     <div className="col-md-3 fw-bold">Name</div>
                                     <div className="col-md-3 fw-bold text-center">Quantity</div>
-                                    <div className="col-md-3 fw-bold text-center">Sub Total</div>
                                 </div>
                                 {order.products.map(product =>
-                                    <div key={product._id} style={{ backgroundColor: 'lightgrey' }} className="d-flex justify-content-between align-items-center px-2 pb-2">
-                                        <div className="col-md-3"><small>{product.price}</small></div>
+                                    <div key={product._id} style={{ backgroundColor: '#ececec' }} className="d-flex justify-content-between align-items-center px-2 pb-2">
                                         <div className="col-md-3"><small>{product.name}</small></div>
                                         <div className="col-md-3 text-center"><small>{product.count}</small></div>
-                                        <div className="col-md-3 text-center"><small>{product.count * product.price} Tk</small></div>
                                     </div>
                                 )}
                             </div>

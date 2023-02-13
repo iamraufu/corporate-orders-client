@@ -4,14 +4,14 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import Orders from './pages/Orders';
-import Cart from './pages/Cart';
+// import Cart from './pages/Cart';
 import Profile from './pages/Profile';
 import AuthProvider from './context/AuthProvider';
 import { Suspense } from 'react';
 import logo from './images/logo.jpg';
 import PrivateOutlet from './components/PrivateOutlet';
 import Shipping from './pages/Shipping';
-import Product from './pages/Product';
+// import Product from './pages/Product';
 import Category from './pages/Category';
 import Search from './pages/Search';
 
@@ -29,11 +29,11 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
-          <Route path="/product/:id" element={<Product />} />
+          {/* <Route path="/product/:id" element={<Product />} /> */}
           <Route path="/search/:id" element={<Search />} />
           <Route path="/search/" element={<Search />} />
           <Route path="/:id" element={<Category />} />
-          <Route path='/cart' element={<Cart />} />
+          {/* <Route path='/cart' element={<Cart />} /> */}
           <Route path='/login' element={<Login />} />
 
           <Route path='/' element={<PrivateOutlet />}>
