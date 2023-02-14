@@ -11,7 +11,10 @@ import useAuth from '../hooks/useAuth';
 
 const Orders = () => {
 
-    const { addCartProductsToDB, setRequestedProduct } = useAuth();
+    const { addCartProductsToDB,
+        // setRequestedProduct 
+    }
+        = useAuth();
 
     const uId = localStorage.getItem('uId')
     const [orders, setOrders] = useState([])
@@ -19,7 +22,10 @@ const Orders = () => {
     useEffect(() => {
         fetch(`https://corporateorders.herokuapp.com/orders/ordersById/${uId}`)
             .then(response => response.json())
-            .then(data => setOrders(data.result))
+            .then(data => {
+                console.log(data.result)
+                setOrders(data.result.reverse())
+            })
     }, [uId])
 
     const thisMonthOrders = orders.filter(order => order.date.slice(5, 7) === new Date().toISOString().slice(5, 7))
@@ -31,7 +37,7 @@ const Orders = () => {
             localStorage.setItem('cart', JSON.stringify(cart));
         })
         addCartProductsToDB(order.products)
-        setRequestedProduct(order.requested_products)
+        // setRequestedProduct(order.requested_products)
         // localStorage.setItem('shopping-cart', JSON.stringify('shopping-cart'));
         document.getElementById('view_cart').click()
     }
@@ -83,10 +89,12 @@ const Orders = () => {
                                     <div className="col-md-3 fw-bold">Name</div>
                                     <div className="col-md-3 fw-bold text-center">Quantity</div>
                                 </div>
+
                                 {order.products.map(product =>
                                     <div key={product._id} style={{ backgroundColor: '#ececec' }} className="d-flex justify-content-between align-items-center px-2 pb-2">
                                         <div className="col-md-3"><small>{product.name}</small></div>
                                         <div className="col-md-3 text-center"><small>{product.count}</small></div>
+
                                     </div>
                                 )}
                             </div>

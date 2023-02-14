@@ -71,12 +71,21 @@ const Profile = () => {
 
             <div className="container mt-5">
 
-                <h2 style={{ cursor: 'pointer', maxWidth: '500px' }} data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" className='fs-5 fw-bold d-flex justify-content-between align-items-center'>Business Profile <img src={down} alt="click for details" /></h2>
+                <h2 style={{ 
+                    // cursor: 'pointer', 
+                    maxWidth: '500px' }} 
+                    // data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" 
+                    className='fs-5 fw-bold d-flex justify-content-between align-items-center'>Business Profile 
+                {/* <img src={down} alt="click for details" /> */}
+                </h2>
 
-                <div id="multiCollapseExample1" style={{
+                <div 
+                // id="multiCollapseExample1" 
+                style={{
                     backgroundColor: '#FFF7E1', maxWidth: '500px',
                     // height: '170px' 
-                }} className="py-5 ps-5 collapse multi-collapse">
+                    // collapse multi-collapse
+                }} className="py-5 ps-5">
                     <h2 style={{ fontSize: '18px', fontWeight: '600' }} className=''><span>{credential.user.company_name}</span></h2>
 
                     {/* <h3 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>Total <span style={{ color: '#F97D48' }}>{orders.map(order => order.products.reduce((a, b) => a + b.price * b.count, 0)).reduce((a, b) => a + b, 0)}</span> Tk Transaction</h3> */}
@@ -84,7 +93,7 @@ const Profile = () => {
                     <h4 style={{ fontSize: '18px', fontWeight: '600' }} className='fs-6 pt-2'>Total <span style={{ color: '#F97D48' }}>{orders.length}</span> Orders</h4>
                 </div>
 
-                <div style={{ maxWidth: '500px' }} className="d-flex justify-content-between align-items-center mt-5 pt-5">
+                <div style={{ maxWidth: '500px' }} className="d-flex justify-content-between align-items-center pt-5">
                     <div style={{ cursor: 'pointer' }} data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-controls="multiCollapseExample2"><h2 className='fs-5 fw-bold'>Personal Profile <img className='' src={down} alt="click for details" /></h2></div>
                     {/* <div type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-controls="multiCollapseExample2" className=""><img className='pb-2' src={down} alt="click for details" /></div> */}
                     <div onClick={() => handleClick(credential.user._id)} style={{ cursor: 'pointer', color: '#F1833E', fontSize: '20px', fontWeight: '600' }} className="pb-2">Edit</div>

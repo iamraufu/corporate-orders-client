@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import useAuth from '../hooks/useAuth';
 
@@ -17,7 +17,7 @@ const ProductRequest = () => {
     // eslint-disable-next-line
     const [skip, setSkip] = useState(0)
     // eslint-disable-next-line
-    const [limit, setLimit] = useState(208)
+    const [limit, setLimit] = useState(400)
 
     const onSubmit = data => {
 
@@ -45,17 +45,16 @@ const ProductRequest = () => {
         document.getElementById('view_cart').click()
     }
 
-    const handleChange = value => {
-        setSearchedValue(value)
-        if (value.length > 0) {
+    useEffect(()=> {
+        if (searchedValue.length > 0) {
             const handler = setTimeout(() => {
-                fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${value}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        window.scrollTo(0, 0);
-                        setSearchedProducts(data.products)
-                    })
-            }, 500)
+                fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${searchedValue}`)
+                .then(response => response.json())
+                .then(data => {
+                    window.scrollTo(0, 0);
+                    setSearchedProducts(data.products)
+                })
+            }, 1000)
             return () => {
                 clearTimeout(handler);
             };
@@ -63,7 +62,7 @@ const ProductRequest = () => {
         else {
             setSearchedProducts([])
         }
-    }
+    },[skip,limit, searchedValue])
 
     const handleClick = (product) => {
         document.getElementById('product_request_close_btn').click()
@@ -77,15 +76,15 @@ const ProductRequest = () => {
             <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                     <div className="modal-content">
-                        <div style={{ borderBottom: 'none' }} className="modal-header">
+                        <div style={{ borderBottom: 'none' }} className="modal-header mx-auto d-block">
                             <h1 className="modal-title fs-5 fw-bold" id="staticBackdropLabel">Add Product Request</h1>
-                            <button id='product_request_close_btn' type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button id='product_request_close_btn' type="button" className="btn-close position-absolute top-0 end-0 m-1" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
                         <div className="modal-body px-5 ">
                             <form id='product_request_form' onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-group">
-                                    <input placeholder='Product Name e.g. Rice, ' onChangeCapture={(event) => handleChange(event.target.value)} type="text" className="form-control p-2" {...register("title", { required: true })} />
+                                    <input placeholder='Product Name e.g. Rice, ' onChangeCapture={(event) => setSearchedValue(event.target.value)} type="text" className="form-control p-2" {...register("title", { required: true })} />
                                     {errors.title && <span className='text-danger'>Title required</span>}
                                 </div>
 
@@ -117,12 +116,15 @@ const ProductRequest = () => {
                             </form>
 
                             {
+                                searchedProducts.length > 0 && <h1 className="fs-5 fw-bold text-center">Available Products Named {searchedValue}</h1>
+                            }
+
+                            {
                                 searchedProducts.length > 0 &&
-                                <div style={{ maxHeight: '300px', overflow: 'auto' }} className=''>
-                                    <h2 style={{ fontSize: '14px' }} className='text-muted fw-bold'>Available Products with {searchedValue}</h2>
+                                <div style={{ maxHeight: '300px', overflow: 'auto' }} className='py-2'>
                                     {
                                         searchedProducts.map(product =>
-                                            <div style={{ maxWidth: '400px' }} className="d-flex justify-content-between align-items-center py-1">
+                                            <div key={product._id} style={{ maxWidth: '400px' }} className="d-flex justify-content-between align-items-center py-1">
                                                 <div style={{ fontSize: '14px' }}>{product.name}</div>
                                                 {
                                                     cart.find(cart => cart.code === product.code) ?

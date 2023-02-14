@@ -102,6 +102,7 @@ const Category = () => {
                                     </div>
                                     :
                                     <div style={{ margin: '0' }} className="row justify-content-center align-items-center px-3">
+                                        <h1 style={{ fontSize: '14px' }} className='text-center fw-bold mb-3'>Loading...</h1>
                                         {
                                             skeleton.map(item =>
                                                 <div key={item} className='col-lg-3 col-md-4 col-sm-6 col-12'>

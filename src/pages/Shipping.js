@@ -12,7 +12,7 @@ const Shipping = () => {
 
     const navigate = useNavigate()
 
-    const { credential, setRequestedProduct, setCart  } = useAuth();
+    const { credential, setRequestedProduct, setCart } = useAuth();
     const user = credential.user
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -21,6 +21,7 @@ const Shipping = () => {
 
     const onSubmit = data => {
         document.getElementById('order_now').style.display = 'none'
+        document.getElementById('processing').style.display = 'block'
         placeOrder(data);
     }
 
@@ -80,7 +81,7 @@ const Shipping = () => {
                 <h1 className='mt-5 fs-4 text-center'>Shipping Details</h1>
                 <p>Client Name: <b>{user?.company_name}</b></p>
                 <p>Email: <b>{user?.email}</b></p>
-                <p>Password: <b>{user?.password}</b></p>
+                {/* <p>Password: <b>{user?.password}</b></p> */}
                 <p>Address: <b>{user?.address}</b></p>
                 <p>Phone: <b>{user?.phone}</b></p>
 
@@ -99,6 +100,7 @@ const Shipping = () => {
                         <input id='order_now' className='btn btn-dark px-3 mt-3' type="submit" value='Order Now' />
                     </form>
 
+                    <button style={{ display: 'none' }} id='processing' className='btn btn-dark px-3 mt-3' disabled> <div style={{ height: '15px', width: '15px' }} className="spinner-border me-1"></div>Processing...</button>
                 </div>
             </div>
             <ProductRequest />
