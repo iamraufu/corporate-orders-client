@@ -4,13 +4,20 @@ import useAuth from '../hooks/useAuth';
 
 const ProductRequest = () => {
 
-    const {setRequestedProduct} = useAuth();
+    const { addToDB, setRequestedProduct, cart } = useAuth()
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const [unit, setUnit] = useState('')
     let reqProduct = localStorage.getItem('requested-product')
     let orderRequest = []
+
+    const [searchedValue, setSearchedValue] = useState('')
+    const [searchedProducts, setSearchedProducts] = useState([])
+    // eslint-disable-next-line
+    const [skip, setSkip] = useState(0)
+    // eslint-disable-next-line
+    const [limit, setLimit] = useState(208)
 
     const onSubmit = data => {
 
@@ -27,7 +34,7 @@ const ProductRequest = () => {
     }
 
     const reqProductToDB = product => {
-        if(reqProduct){
+        if (reqProduct) {
             orderRequest = JSON.parse(localStorage.getItem('requested-product'))
         }
         orderRequest.push(product)
@@ -36,6 +43,32 @@ const ProductRequest = () => {
         document.getElementById('product_request_form').reset()
         document.getElementById('product_request_close_btn').click()
         document.getElementById('view_cart').click()
+    }
+
+    const handleChange = value => {
+        setSearchedValue(value)
+        if (value.length > 0) {
+            const handler = setTimeout(() => {
+                fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${value}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        window.scrollTo(0, 0);
+                        setSearchedProducts(data.products)
+                    })
+            }, 500)
+            return () => {
+                clearTimeout(handler);
+            };
+        }
+        else {
+            setSearchedProducts([])
+        }
+    }
+
+    const handleClick = (product) => {
+        document.getElementById('product_request_close_btn').click()
+        document.getElementById('view_cart').click()
+        addToDB(product)
     }
 
     return (
@@ -52,7 +85,7 @@ const ProductRequest = () => {
                         <div className="modal-body px-5 ">
                             <form id='product_request_form' onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-group">
-                                    <input placeholder='Title' type="text" className="form-control p-2" {...register("title", { required: true })} />
+                                    <input placeholder='Product Name e.g. Rice, ' onChangeCapture={(event) => handleChange(event.target.value)} type="text" className="form-control p-2" {...register("title", { required: true })} />
                                     {errors.title && <span className='text-danger'>Title required</span>}
                                 </div>
 
@@ -82,6 +115,25 @@ const ProductRequest = () => {
                                 </div>
                                 <input className='btn-confirm-order px-5 my-3 mx-auto d-block fw-bold' type="submit" value='Add to Cart' />
                             </form>
+
+                            {
+                                searchedProducts.length > 0 &&
+                                <div style={{ maxHeight: '300px', overflow: 'auto' }} className=''>
+                                    <h2 style={{ fontSize: '14px' }} className='text-muted fw-bold'>Available Products with {searchedValue}</h2>
+                                    {
+                                        searchedProducts.map(product =>
+                                            <div style={{ maxWidth: '400px' }} className="d-flex justify-content-between align-items-center py-1">
+                                                <div style={{ fontSize: '14px' }}>{product.name}</div>
+                                                {
+                                                    cart.find(cart => cart.code === product.code) ?
+                                                        <div style={{ fontSize: '14px' }} className="fw-bold d-flex justify-content-center align-items-center text-success">Added</div>
+                                                        :
+                                                        <div onClick={() => handleClick(product)} style={{ width: '18px', height: '18px', backgroundColor: '#198754', cursor: 'pointer' }} className="col-md-2 fw-bold d-flex justify-content-center align-items-center text-white">+</div>
+                                                }
+                                            </div>
+                                        )}
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
