@@ -22,13 +22,5 @@
     {
         "name": "PACKED COMMODITY",
         "route": "packed-commodity"
-    },
-    {
-        "name": "44-E-COM HOME DELIVERY",
-        "route": "44-e-com-home-delivery"
-    },
-    {
-        "name": "44-HOME DELIVERY",
-        "route": "44-home-delivery"
     }
 ]
