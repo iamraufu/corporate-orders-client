@@ -84,7 +84,7 @@ const ProductRequest = () => {
                         <div className="modal-body px-5 ">
                             <form id='product_request_form' onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-group">
-                                    <input placeholder='Product Name e.g. Rice, ' onChangeCapture={(event) => setSearchedValue(event.target.value)} type="text" className="form-control p-2" {...register("title", { required: true })} />
+                                    <input placeholder='Product Name e.g. Rice, Egg, Fish etc.' onChangeCapture={(event) => setSearchedValue(event.target.value)} type="text" className="form-control p-2" {...register("title", { required: true })} />
                                     {errors.title && <span className='text-danger'>Title required</span>}
                                 </div>
 
