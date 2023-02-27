@@ -9,7 +9,7 @@ const Product = () => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetch(`https://corporateorders.herokuapp.com/product/${id}`)
+        fetch(`https://corporate-orders-server.onrender.com/product/${id}`)
             .then(response => response.json())
             .then(data => setProduct(data))
     }, [id])

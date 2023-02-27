@@ -23,7 +23,7 @@ const Login = () => {
     const [loginError, setLoginError] = useState('');
 
     const processLogin = (details) => {
-        fetch('https://corporateorders.herokuapp.com/login', {
+        fetch('https://corporate-orders-server.onrender.com/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(details)

@@ -22,7 +22,7 @@ const Search = () => {
 
     useEffect(() => {
         const handler = setTimeout(() => {
-            fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${id}`)
+            fetch(`https://corporate-orders-server.onrender.com/products/${skip}/${limit}?search=${id}`)
                 .then(response => response.json())
                 .then(data => {
                     window.scrollTo(0, 0);

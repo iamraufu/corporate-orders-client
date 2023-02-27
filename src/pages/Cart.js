@@ -22,7 +22,7 @@ const Cart = () => {
     let cart = []
 
     useEffect(() => {
-        fetch('https://corporateorders.herokuapp.com/productsByCodes', {
+        fetch('https://corporate-orders-server.onrender.com/productsByCodes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

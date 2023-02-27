@@ -39,7 +39,7 @@ const Shipping = () => {
             date: data.date
         }
 
-        fetch('https://corporateorders.herokuapp.com/order', {
+        fetch('https://corporate-orders-server.onrender.com/order', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(orderDetails)

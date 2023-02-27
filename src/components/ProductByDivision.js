@@ -10,7 +10,7 @@ const ProductByDivision = ({ category }) => {
     const skeleton = [0, 1, 2, 3, 4, 5,6,7]
 
     useEffect(() => {
-        fetch(`https://corporateorders.herokuapp.com/products/${category?.name}/0/8`)
+        fetch(`https://corporate-orders-server.onrender.com/products/${category?.name}/0/8`)
             .then(response => response.json())
             .then(data => setProducts(data))
     }, [category])

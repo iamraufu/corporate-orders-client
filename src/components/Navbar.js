@@ -31,7 +31,7 @@ const Navbar = ({ searchKey }) => {
         const fetchData = async () => {
             if (Object.keys(getStoredCart()).length > 0) {
 
-                const response = await fetch('https://corporateorders.herokuapp.com/productsByCodes', {
+                const response = await fetch('https://corporate-orders-server.onrender.com/productsByCodes', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ const Navbar = ({ searchKey }) => {
             }
         };
         fetchData();
-        // fetch('https://corporateorders.herokuapp.com/productsByCodes', {
+        // fetch('https://corporate-orders-server.onrender.com/productsByCodes', {
         //     method: 'POST',
         //     headers: {
         //         'Content-Type': 'application/json'

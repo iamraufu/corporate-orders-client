@@ -16,7 +16,7 @@ const Profile = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`https://corporateorders.herokuapp.com/orders/ordersById/${credential.user._id}`)
+        fetch(`https://corporate-orders-server.onrender.com/orders/ordersById/${credential.user._id}`)
             .then(response => response.json())
             .then(data => setOrders(data.result))
     }, [credential.user._id])
@@ -29,7 +29,7 @@ const Profile = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        fetch(`https://corporateorders.herokuapp.com/user/${credential.user._id}`, {
+        fetch(`https://corporate-orders-server.onrender.com/user/${credential.user._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

@@ -20,7 +20,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`https://corporateorders.herokuapp.com/orders/ordersById/${uId}`)
+        fetch(`https://corporate-orders-server.onrender.com/orders/ordersById/${uId}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data.result)

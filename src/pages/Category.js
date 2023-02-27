@@ -30,7 +30,7 @@ const Category = () => {
     }, [category, skip, limit]);
 
     const fetchData = async () => {
-        const data = await fetch(`https://corporateorders.herokuapp.com/products/${category}/${skip}/${limit}`)
+        const data = await fetch(`https://corporate-orders-server.onrender.com/products/${category}/${skip}/${limit}`)
             .then(response => response.json());
 
         if (data.length === 0) {

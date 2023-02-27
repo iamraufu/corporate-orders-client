@@ -48,7 +48,7 @@ const ProductRequest = () => {
     useEffect(()=> {
         if (searchedValue.length > 0) {
             const handler = setTimeout(() => {
-                fetch(`https://corporateorders.herokuapp.com/products/${skip}/${limit}?search=${searchedValue}`)
+                fetch(`https://corporate-orders-server.onrender.com/products/${skip}/${limit}?search=${searchedValue}`)
                 .then(response => response.json())
                 .then(data => {
                     window.scrollTo(0, 0);
