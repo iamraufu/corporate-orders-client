@@ -27,12 +27,11 @@ const Category = () => {
     useEffect(() => {
         hasMore && fetchData();
         // eslint-disable-next-line
-    }, [category, skip, limit]);
+    }, [category, skip, limit, hasMore]);
 
     const fetchData = async () => {
         const data = await fetch(`https://corporate-orders-server.onrender.com/products/${category}/${skip}/${limit}`)
             .then(response => response.json());
-
         if (data.length === 0) {
             setHasMore(false);
             return;
@@ -80,7 +79,7 @@ const Category = () => {
                                 products?.length > 0 ?
                                     <div style={{ margin: '0' }} className="row px-3">
                                         {
-                                            products.map(product =>
+                                            products.map((product, index) =>
                                                 // col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center align-items-center px-2
                                                 <div style={{ padding: '0' }} key={product._id} className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center px-2">
                                                     <ProductCard product={product} />

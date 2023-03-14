@@ -14,6 +14,8 @@ import Shipping from './pages/Shipping';
 // import Product from './pages/Product';
 import Category from './pages/Category';
 import Search from './pages/Search';
+import AdminDashboard from './pages/AdminDashboard';
+import ToPrint from './components/ToPrint';
 
 function App() {
 
@@ -38,8 +40,10 @@ function App() {
 
           <Route path='/' element={<PrivateOutlet />}>
             <Route path="profile" element={<Profile />} />
+            <Route path="print" element={<ToPrint />} />
             <Route path="shipping" element={<Shipping />} />
             <Route path='orders' element={<Orders />} />
+            <Route path='admin' element={<AdminDashboard />} />
           </Route>
 
           <Route path='*' element={<NotFound />} />

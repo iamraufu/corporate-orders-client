@@ -23,7 +23,6 @@ const Orders = () => {
         fetch(`https://corporate-orders-server.onrender.com/orders/ordersById/${uId}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data.result)
                 setOrders(data.result.reverse())
             })
     }, [uId])
@@ -63,7 +62,8 @@ const Orders = () => {
 
                 <div className="d-flex justify-content-between align-items-center pb-3 p-2">
                     <div className="col-md-3"><h2 style={{ color: '#655D5D' }} className="fs-6 fw-bold">Date</h2></div>
-                    <div className="col-md-4"><h2 style={{ color: '#655D5D' }} className="fs-6 fw-bold px-5">Status</h2></div>
+                    <div className="col-md-2"><h2 style={{ color: '#655D5D' }} className="fs-6 fw-bold px-5">Status</h2></div>
+                    <div className="col-md-2"></div>
                     <div className="col-md-2"></div>
                 </div>
                 {
@@ -72,15 +72,29 @@ const Orders = () => {
                         <div onClick={() => handleClick(index + 1)} key={order._id} style={{ backgroundColor: '#FCFCFC', cursor: 'pointer' }} className="">
                             <div className="d-flex justify-content-between align-items-center p-2">
                                 <div className="col-md-3">
-                                    <p style={{ fontSize: '18px' }} className='text-black'>{new Date(order.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                    <p style={{ fontSize: '18px' }} className='text-black m-0'>{new Date(order.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                </div>
+
+                                <div className="col-md-2 text-center">
+                                    {
+                                        order.status === 'Pending' && <p style={{ backgroundColor: '#f7d635', width: '120px', height: '30px', borderRadius: '5px' }} className='d-flex justify-content-center align-items-center m-0 fw-bold'>{order.status}</p>
+                                    }
+                                    
+                                    {
+                                        order.status === 'Acknowledged' && <p style={{ backgroundColor: '#a4dd74', width: '120px', height: '30px', borderRadius: '5px' }} className='d-flex justify-content-center align-items-center m-0 fw-bold'>{order.status}</p>
+                                    }
+                                    
+                                    {
+                                        order.status === 'Delivered' && <p style={{ backgroundColor: '#5454e8', width: '120px', height: '30px', borderRadius: '5px' }} className='d-flex justify-content-center align-items-center m-0 fw-bold text-white'>{order.status}</p>
+                                    }
                                 </div>
 
                                 <div className="col-md-4">
-                                    <button onClick={() => handleAddAllToCart(order)} className='btn-add-add-items-to-bag mb-3'>Add all items to bag</button>
+                                    <button onClick={() => handleAddAllToCart(order)} className='btn-add-add-items-to-bag'>Add all items to bag</button>
                                 </div>
 
                                 <div className="col-md-2 ps-3">
-                                    <img className='img-fluid mb-3 mx-auto d-block' src={down} alt="click for details" />
+                                    <img className='img-fluid my-3 mx-auto d-block' src={down} alt="click for details" />
                                 </div>
                             </div>
 
@@ -92,9 +106,8 @@ const Orders = () => {
 
                                 {order.products.map(product =>
                                     <div key={product._id} style={{ backgroundColor: '#ececec' }} className="d-flex justify-content-between align-items-center px-2 pb-2">
-                                        <div className="col-md-3"><small>{product.name}</small></div>
+                                        <div className="col-md-9"><small>{product.name}</small></div>
                                         <div className="col-md-3 text-center"><small>{product.count}</small></div>
-
                                     </div>
                                 )}
                             </div>

@@ -51,7 +51,6 @@ const ProductRequest = () => {
                 fetch(`https://corporate-orders-server.onrender.com/products/${skip}/${limit}?search=${searchedValue}`)
                 .then(response => response.json())
                 .then(data => {
-                    window.scrollTo(0, 0);
                     setSearchedProducts(data.products)
                 })
             }, 1000)

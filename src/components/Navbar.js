@@ -3,28 +3,43 @@ import React, {
     // useState 
 } from 'react';
 import '../styles/ProfileDropDown.css'
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../images/logo.jpg'
 // import { getStoredCart } from '../utilities/localDB';
 import useAuth from '../hooks/useAuth';
-import categories from '../images/categories.svg'
+// import categories from '../images/categories.svg'
 // import cartImage from '../images/cart.svg'
 // import ProfileDropDown from './ProfileDropDown';
 import ProfileNameDropDown from './ProfileNameDropDown';
-import searchIcon from '../images/search.svg'
+// import searchIcon from '../images/search.svg'
+import { useForm } from "react-hook-form";
 
-const Navbar = ({ searchKey }) => {
+const Navbar = () => {
 
     const { credential, getStoredCart } = useAuth();
-    const navigate = useNavigate()
     const savedCart = getStoredCart()
     const productKeys = Object.keys(savedCart)
     // const [cart, setCart] = useState([])
 
     const activeStyles = {
-        color: '#dc3545',
+        // color: '#dc3545',
+        color: '#fff',
         backgroundColor: '#000',
         borderRadius: '5px'
+    }
+
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => handleSearch(data);
+
+    const handleSearch = data => {
+        // const handler = setTimeout(() => {
+        //     navigate(`/search/${data.searchKey}`)
+        // }, 1200)
+        // return () => {
+        //     clearTimeout(handler);
+        // };
+        // navigate(`/search/${data.searchKey}`)
+        window.location = `/search/${data.searchKey}`
     }
 
     useEffect(() => {
@@ -69,26 +84,42 @@ const Navbar = ({ searchKey }) => {
         // eslint-disable-next-line
     }, [])
 
-    const handleChange = data => {
-        // document.getElementById('search_icon').style.display = 'none'
-        navigate(`/search/${data}`)
-    }
+    // const handleChange = data => {
+    //     // document.getElementById('search_icon').style.display = 'none'
+    //     navigate(`/search/${data}`)
+    // }
 
     return (
         <nav style={{ backgroundColor: '#df0100', boxShadow: '0 5px 15px #c4c4c44d' }} className="navbar navbar-expand-md sticky-top">
-            <div className="container-fluid">
+            <div className="container-fluid p-0">
 
                 {/* d-none d-lg-block */}
-                <Link onClick={() => { window.scrollTo(0, 0); }} className="navbar-brand" to="/"><img className='img-fluid' width={70} src={logo} alt="logo" /></Link>
+                <Link onClick={() => { window.scrollTo(0, 0); }} className="navbar-brand m-0 p-0" to="/"><img className='img-fluid px-1' width={70} src={logo} alt="logo" /></Link>
 
-                <img src={categories} width={30} className='img-fluid d-lg-none' alt="categories" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" />
+                {/* <img src={categories} width={30} className='img-fluid d-lg-none' alt="categories" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" /> */}
 
                 <div className="search-bar form-group p-1 d-flex justify-content-center align-items-center">
-                    <input placeholder='Search for Alu, shak by typing' onChange={(e) => handleChange(e.target.value)} className='form-control mx-auto d-block' type="search" name="" id="" defaultValue={searchKey} autoFocus />
-                    <img id='search_icon' style={{ marginLeft: '-1.5rem' }} className='img-fluid' src={searchIcon} alt="search" />
+                    <form className='w-100 d-flex' onSubmit={handleSubmit(onSubmit)}>
+                        <input placeholder='Search for Alu, shak by typing'
+                            className='form-control mx-auto d-block' type="search" name="" id=""
+                            {...register("searchKey", { required: true })}
+                        // onChange={(e) => handleChange(e.target.value)} 
+                        // defaultValue={searchKey} 
+                        // autoFocus 
+                        />
+                        <button
+                            style={{
+                                // marginLeft: '-2.7rem', 
+                                // background: '#f4f4f4' 
+                            }}
+                            className=' text-white btn btn-dark ms-2'>
+                            {/* <img id='search_icon' className='img-fluid' src={searchIcon} alt="search" /> */}
+                            Search
+                        </button>
+                    </form>
                 </div>
 
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" className="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
@@ -101,14 +132,14 @@ const Navbar = ({ searchKey }) => {
 
                 <div
                     style={{ maxWidth: '400px' }}
-                    className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    className="collapse navbar-collapse d-none d-lg-block" id="navbarNavAltMarkup">
 
                     {/* <div className="form-group p-1 w-50 d-flex justify-content-center mx-auto d-block">
                     <input placeholder='Search for Alu, shak by typing' onChange={(e) => handleChange(e.target.value)} className='rounded form-control' type="search" name="" id="" defaultValue={searchKey} autoFocus />
                     <img id='search_icon' style={{ marginLeft: '-1.5rem' }} className='img-fluid' src={searchIcon} alt="search" />
                 </div> */}
 
-                    <div className="navbar-nav ms-auto pt-2">
+                    <div className="navbar-nav ms-auto pt-2 pe-2">
                         <NavLink
                             onClick={() => { window.scrollTo(0, 0); }}
                             style={({ isActive }) => (

@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const useCredential = () => {
 
+    const navigate = useNavigate();
+
     const id = localStorage.getItem('uId')
     const [user, setUser] = useState({});
+    const [searchProducts, setSearchProducts] = useState([])
 
     // getting userInfo from localStorage id and backend API
     const userData = () => {
@@ -25,12 +29,15 @@ const useCredential = () => {
     const logOut = () => {
         localStorage.removeItem('uId')
         setUser({})
+        navigate('/')
     }
 
     return {
         setUser,
         user,
-        logOut
+        logOut,
+        searchProducts, 
+        setSearchProducts
     }
 };
 

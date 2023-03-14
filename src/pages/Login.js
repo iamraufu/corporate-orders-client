@@ -56,10 +56,8 @@ const Login = () => {
                 
                 <div className="col-lg-3 col-md-4 px-2">
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        {/* <div className="col-lg-3 col-md-4 col-sm-6 mx-auto d-block px-2"> */}
-
                             <div className="form-group">
-                                <label htmlFor='email' className='p-1'>Email</label>
+                                <label htmlFor='email' className='p-1'>Email or Phone</label>
                                 <input type='text' className="form-control p-2" {...register("email", { required: true })} />
                                 {errors.email && <span className='text-danger'>This field is required</span>}
                             </div>
@@ -72,22 +70,7 @@ const Login = () => {
 
                             <p><small className="form-text text-muted">We'll never share your information with anyone else.</small></p>
                             <p className='text-danger fw-bold'>{loginError}</p>
-
-                            {/* <div className="mt-3">
-                        <Link to='/reset-password' className='text-black text-decoration-none'>Can't Remember your password? <span className='text-primary text-decoration-underline'>Click here</span></Link>
-                    </div> */}
-
                             <input type="submit" className="btn btn-dark px-5 mt-2" value="Log In" />
-
-                            {/* <button onClick={resetPassword} className='btn btn-outline-dark p-2 ms-2'>Reset Password</button> */}
-
-
-
-                            {/* <div className="mt-3">
-                        <Link to='/register' className='text-black text-decoration-none'>Don't have an Account? <span className='text-primary text-decoration-underline'>Register as a new user</span></Link>
-                    </div> */}
-                        {/* </div> */}
-
                     </form>
                 </div>
             </div>

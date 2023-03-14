@@ -36,7 +36,8 @@ const Shipping = () => {
             phone: user.phone,
             products: JSON.parse(localStorage.getItem('shopping-cart')),
             requested_products: requestedProducts,
-            date: data.date
+            date: data.date,
+            status: 'Pending'
         }
 
         fetch('https://corporate-orders-server.onrender.com/order', {
